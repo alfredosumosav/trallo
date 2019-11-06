@@ -23,12 +23,25 @@ class SessionForm extends React.Component {
         this.props.processForm(this.state);
     }
 
+    renderErrors() {
+        return (
+            <ul>
+                {this.props.errors.map((error, i) => (
+                 <li key={`error-${i}`}>
+                     { error }
+                 </li>   
+                ))}
+            </ul>
+        );
+    }
+
     render() {
         // debugger
         const { formType } = this.props;
         return (
             <div>
                 <form onSubmit={this.handleSubmit} >
+                    {this.renderErrors()}
                     <h1>{ formType === 'signup' ? 'Sign Up' : 'Log In'}</h1>
                     <label>Username
                         <input 
@@ -37,6 +50,7 @@ class SessionForm extends React.Component {
                         onChange={this.update('username')}
                         />
                     </label>
+                    <br/>
                     {formType === 'signup' ? 
                         (<label>Email
                             <input 
@@ -44,7 +58,9 @@ class SessionForm extends React.Component {
                             value={this.state.email}
                             onChange={this.update('email')}
                             />
-                        </label>) : ""
+                            <br />
+                        </label>
+                        ) : ""
                     }
                     <label>Password
                         <input 
@@ -53,6 +69,7 @@ class SessionForm extends React.Component {
                         onChange={this.update('password')}
                         />
                     </label>
+                    <br/>
                     <input type="submit" value={ formType === 'signup' ? 'Sign Up' : 'Log In' } />
                 </form>
                 { formType === 'login' ? <Link to={'/signup'} >Sign Up</Link> : <Link to={'/login'} >Log In</Link> }
