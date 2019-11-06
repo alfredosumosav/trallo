@@ -3,6 +3,10 @@ import GreetingContainer from './greeting_container';
 import LoginFormContainer from './login_form_container';
 import SignupFormContainer from './signup_form_container';
 import { Link, Route, Switch } from 'react-router-dom';
+import {
+    AuthRoute,
+    ProtectedRoute
+} from '../utils/route_utils';
 
 class App extends React.Component {
     constructor(props) {
@@ -11,17 +15,16 @@ class App extends React.Component {
     }
 
     render() {
+        debugger
         return (
             <div>
                 <header>
-                    <nav>
-                    <Link id="logo" to={"/"}>Trallo</Link>
-                    <Switch>
-                    <Route path="/login" component={LoginFormContainer} />
-                    <Route path="/signup" component={SignupFormContainer} />
-                    <Route exact to="/" component={GreetingContainer} />
-                    </Switch>
+                    <nav className="navbar">
+                        <Link id="logo" to={"/"}>Trallo</Link>
+                            <Route exact to="/" component={GreetingContainer} />
                     </nav>
+                            <AuthRoute path="/login" component={LoginFormContainer} />
+                            <AuthRoute path="/signup" component={SignupFormContainer} />
                 </header>
 
             </div>
