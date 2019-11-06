@@ -38,42 +38,49 @@ class SessionForm extends React.Component {
     render() {
         const { formType, loggedIn } = this.props;
         return (
-            <div id="session-form">
-                <form onSubmit={this.handleSubmit}>
-                    {this.renderErrors()}
-                    <h1>{ formType === 'signup' ? 'Sign Up' : 'Log In'}</h1>
-                    <label>Username
-                        <input 
-                        type="text"
-                        value={this.state.username}
-                        onChange={this.update('username')}
-                        />
-                    </label>
-                    <br/>
-                    {formType === 'signup' ? 
-                        (<label>Email
+            <div id="form-container">
+                <form id="session-form" onSubmit={this.handleSubmit}>
+                    <div id="form-elements-container">
+                        {this.renderErrors()}
+                        <h1 className="form-title">{ formType === 'signup' ? 'Sign up to Trallo' : 'Log in to Trallo'}</h1>
+                        <div id="input-container">
                             <input 
+                            id="form-input"
                             type="text"
-                            value={this.state.email}
-                            onChange={this.update('email')}
+                            autoCapitalize="off"
+                            autoFocus="autofocus"
+                            value={this.state.username}
+                            placeholder="Enter username"
+                            onChange={this.update('username')}
                             />
-                            <br />
-                        </label>
-                        ) : ""
-                    }
-                    <label>Password
-                        <input 
-                        type="password"
-                        value={this.state.password}
-                        onChange={this.update('password')}
-                        />
-                    </label>
-                    <br/>
-                    <input className="btn" type="submit" value={ formType === 'signup' ? 'Sign Up' : 'Log In' } />
-                    <ul className="bottom-form-link">
-                        { formType === 'login' ? <Link className="btn" to={'/signup'} >Sign up for an account</Link> : <Link className="btn" to={'/login'} >Already have an account? Log in</Link> }
-                    </ul>
+                        {formType === 'signup' ? 
+                            (
+                                <input 
+                                id="form-input"
+                                type="email"
+                                autoCapitalize="off"
+                                value={this.state.email}
+                                placeholder="Enter email"
+                                onChange={this.update('email')}
+                                />
+                            ) : ""
+                        }
+                            <input 
+                            id="form-input"
+                            type="password"
+                            value={this.state.password}
+                            placeholder="Enter password"
+                            onChange={this.update('password')}
+                            />
+                        </div>
+                        <div id="submit-container">
+                            <input id="submit-btn" className="btn" type="submit" value={ formType === 'signup' ? 'Sign Up' : 'Log In' } />
+                        </div>
+                    </div>
                 </form>
+                    <ul className="bottom-form-link">
+                        {formType === 'login' ? <Link id="toggle-form" className="btn" to={'/signup'} >Sign up for an account</Link> : <Link id="toggle-form" className="btn" to={'/login'} >Already have an account? Log in</Link> }
+                    </ul>
             </div>
         );
     }
