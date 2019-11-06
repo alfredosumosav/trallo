@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -25,9 +25,9 @@ class SessionForm extends React.Component {
 
     renderErrors() {
         return (
-            <ul>
+            <ul className="error-list">
                 {this.props.errors.map((error, i) => (
-                 <li key={`error-${i}`}>
+                 <li className="error-item" key={`error-${i}`}>
                      { error }
                  </li>   
                 ))}
@@ -36,11 +36,10 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        // debugger
-        const { formType } = this.props;
+        const { formType, loggedIn } = this.props;
         return (
-            <div>
-                <form onSubmit={this.handleSubmit} >
+            <div id="session-form">
+                <form onSubmit={this.handleSubmit}>
                     {this.renderErrors()}
                     <h1>{ formType === 'signup' ? 'Sign Up' : 'Log In'}</h1>
                     <label>Username
@@ -70,9 +69,11 @@ class SessionForm extends React.Component {
                         />
                     </label>
                     <br/>
-                    <input type="submit" value={ formType === 'signup' ? 'Sign Up' : 'Log In' } />
+                    <input className="btn" type="submit" value={ formType === 'signup' ? 'Sign Up' : 'Log In' } />
+                    <ul className="bottom-form-link">
+                        { formType === 'login' ? <Link className="btn" to={'/signup'} >Sign up for an account</Link> : <Link className="btn" to={'/login'} >Already have an account? Log in</Link> }
+                    </ul>
                 </form>
-                { formType === 'login' ? <Link to={'/signup'} >Sign Up</Link> : <Link to={'/login'} >Log In</Link> }
             </div>
         );
     }

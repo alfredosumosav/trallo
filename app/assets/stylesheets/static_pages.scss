@@ -1,3 +1,48 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#logo {
+    display: flex;
+    justify-content: center;
+}
+
+.header-group {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+a:link, a:visited {
+    color: #1975BF;
+    margin: 10px ;
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+#session-form {
+    display: flex;
+    justify-content: center;
+}
+
+.bottom-form-link {
+    text-decoration: none;
+}
+
+.error-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.error-item {
+    color: red;
+}
