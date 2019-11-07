@@ -73,6 +73,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 85px;
 }
 
 #form-element-container {
@@ -102,7 +103,7 @@ a:hover {
 
 #submit-btn {
     background-color: #5AAC44;
-    border: 2px solid #DFE1E6;;
+    border: 2px solid transparent;;
     border-radius: 3px;
     color: #ffffff;
     font-size: 14px;
@@ -114,6 +115,7 @@ a:hover {
 
 .bottom-form-link {
     text-decoration: none;
+    margin-top: 18px;
 }
 
 .error-list {
@@ -138,14 +140,14 @@ a:hover {
 
 .form-title {
     text-align: center;
-    color: #ffffff;
+    color: #5E6C84;
     font-size: 1.5625rem;
     margin-top: 10px;
     margin-bottom: 25px;
 }
 
 #toggle-form {
-    color: #ffffff;
+    color: #4C9AFF;
 }
 
 #submit-btn:hover {
@@ -165,13 +167,34 @@ a:hover {
     background-color: #eb5a46;
     color: #fbedeb;
     padding: 0.5em 1em;
-    margin: 1em;
+    margin: 0.5em;
     line-height: 1.333;
+}
+
+.header-name {
+    margin-right: 1.5rem;
+    color: #ffffff;
+}
+
+.btn-logout {
+    background-color: #cf513d;
+    border: 2px solid transparent;;
+    border-radius: 3px;
+    color: #ffffff;
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.btn-logout:hover {
+    background-color: #eb5a46;
 }
 
 #form-container {
     display: flex;
     flex-direction: column;
+    background-color: #ffffff;
 }
 
 #submit-container {
@@ -183,4 +206,28 @@ a:hover {
 
 #input-container {
     width: 100%;
+}
+
+#form-elements-container {
+    padding: 25px 40px;
+    box-shadow: rgba(0,0,0,0.1) 0 0 10px;
+    background-color: #ffffff;
+}
+
+#logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1.5rem;
+}
+
+#logo-container > i {
+    color: #ffffff;
+    font-size: 40px;
+}
+
+#welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

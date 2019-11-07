@@ -18,10 +18,13 @@ class App extends React.Component {
     render() {
         // debugger
         return (
-            <div class="main">
+            <div className="main">
                 <header>
                     <nav className="navbar">
-                        <Link id="logo" to={"/"}>Trallo</Link>
+                        <div id="logo-container">
+                            <i className="fab fa-trello"></i>
+                            <Link id="logo" to={"/"}>Trallo</Link>
+                        </div>
                             <Route exact to="/" component={NavBarContainer} />
                             {/* <Route exact to="/" component={GreetingContainer} /> */}
                     </nav>
