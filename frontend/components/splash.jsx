@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 import SplashWelcome from './splash_welcome';
+import SplashCollaborate from './splash-collaborate';
 
 class Splash extends React.Component {
     constructor(props) {
@@ -12,6 +13,9 @@ class Splash extends React.Component {
             <div className="splash">
                 <div className="splash-welcome-container">
                     <SplashWelcome />
+                </div>
+                <div className="splash-collaborate-container">
+                    <SplashCollaborate />
                 </div>
             </div>
         );

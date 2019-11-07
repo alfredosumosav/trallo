@@ -2,7 +2,7 @@ import React from 'react';
 
 const SplashWelcome = (props) => {
     return (
-        <div className="splash-welcome">
+        <div className="splash-container">
             <div className="welcome-msg">
                 <h1>Trallo lets you work more collaboratively and get more done.</h1>
                 <p>Trello’s boards, lists, and cards enable you to organize and prioritize your projects in a fun, flexible, and rewarding way.</p>
