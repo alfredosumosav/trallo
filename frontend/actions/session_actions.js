@@ -1,8 +1,3 @@
-// import {
-//     signup,
-//     logout,
-//     login
-// } from '../utils/session';
 import * as SessionAPIUtil from '../utils/session_api_util';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';

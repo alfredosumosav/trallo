@@ -8,7 +8,6 @@ const _nullErrors = [];
 
 const sessionErrorsReducer = (oldState = _nullErrors, action) => {
     Object.freeze(oldState);
-    let nextState = Object.assign({}, oldState);
 
     switch (action.type) {
         case RECEIVE_SESSION_ERRORS:

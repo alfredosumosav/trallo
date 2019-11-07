@@ -28,9 +28,8 @@ class App extends React.Component {
                         <Route exact to="/" component={NavBarContainer} />
                     </nav>
                 </header>
-                            <AuthRoute path="/login" component={LoginFormContainer} />
-                            <AuthRoute path="/signup" component={SignupFormContainer} />
-
+                    <AuthRoute path="/login" component={LoginFormContainer} />
+                    <AuthRoute path="/signup" component={SignupFormContainer} />
             </div>
         );
     }

@@ -11,5 +11,5 @@ const mSTP = state => {
 const mDTP = dispatch => ({
     logout: () => dispatch(logout())
 });
-// debugger
+
 export default connect(mSTP, mDTP)(Greeting);
