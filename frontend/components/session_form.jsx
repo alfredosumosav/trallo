@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -49,7 +49,7 @@ class SessionForm extends React.Component {
                         <h1 className="form-title">{ formType === 'signup' ? 'Sign up to Trallo' : 'Log in to Trallo'}</h1>
                         <div id="input-container">
                             <input 
-                            id="form-input"
+                            className="form-input"
                             type="text"
                             autoCapitalize="off"
                             autoFocus="autofocus"
@@ -60,7 +60,7 @@ class SessionForm extends React.Component {
                         {formType === 'signup' ? 
                             (
                                 <input 
-                                id="form-input"
+                                className="form-input"
                                 type="email"
                                 autoCapitalize="off"
                                 value={this.state.email}
@@ -70,7 +70,7 @@ class SessionForm extends React.Component {
                             ) : ""
                         }
                             <input 
-                            id="form-input"
+                            className="form-input"
                             type="password"
                             value={this.state.password}
                             placeholder="Enter password"

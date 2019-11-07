@@ -28,7 +28,7 @@ a:hover {
     background-color: #0079BF;
 }
 
-.btn {
+#btn-demo {
     
 }
 
@@ -82,7 +82,7 @@ a:hover {
     max-width: 585px;
 }
 
-#form-input {
+.form-input {
     box-sizing: border-box;
     border: 2px solid #DFE1E6;
     border-radius: 3px;
@@ -96,7 +96,7 @@ a:hover {
     margin-bottom: 18px;
 }
 
-#form-input:focus {
+.form-input:focus {
     border: 2px solid #4C9AFF;
     background-color: white;
 }
@@ -191,6 +191,37 @@ a:hover {
     background-color: #eb5a46;
 }
 
+.btn-success {
+    background-color: #5AAC44;
+    border: 2px solid transparent;;
+    border-radius: 3px;
+    color: #ffffff;
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.btn-success:hover {
+    cursor: pointer;
+    background-color: #61BD4F;
+}
+
+#signup {
+    background-color: white;
+    border: 2px solid transparent;;
+    border-radius: 3px;
+    color: #0079BF;
+    width: auto;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+#signup:hover {
+    background-color: #ffffff;
+}
+
 #form-container {
     display: flex;
     flex-direction: column;
@@ -227,6 +258,12 @@ a:hover {
 }
 
 #welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#session-actions-container {
     display: flex;
     justify-content: center;
     align-items: center;

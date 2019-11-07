@@ -4,13 +4,14 @@ import NavBar from './nav_bar';
 
 // Comment this back in after you have built the login functionality
 
-import { logout } from '../actions/session_actions';
+import { logout, login } from '../actions/session_actions';
 
 const mapStateToProps = state => ({
     currentUser: state.entities.users[state.session.id]
 });
 
 const mapDispatchToProps = dispatch => ({
+    login: user => dispatch(login(user)),
     logout: () => dispatch(logout()),
 });
 

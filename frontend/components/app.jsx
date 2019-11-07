@@ -25,12 +25,11 @@ class App extends React.Component {
                             <i className="fab fa-trello"></i>
                             <Link id="logo" to={"/"}>Trallo</Link>
                         </div>
-                            <Route exact to="/" component={NavBarContainer} />
-                            {/* <Route exact to="/" component={GreetingContainer} /> */}
+                        <Route exact to="/" component={NavBarContainer} />
                     </nav>
+                </header>
                             <AuthRoute path="/login" component={LoginFormContainer} />
                             <AuthRoute path="/signup" component={SignupFormContainer} />
-                </header>
 
             </div>
         );
