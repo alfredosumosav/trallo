@@ -6,5 +6,16 @@
     ).html_safe %>
   </script>
 <% end %>
+<script type="text/javascript">
+  window.onscroll = function() {
+    let currentScrollPos = window.pageYOffset;
+      if (currentScrollPos > 0) {
+        document.getElementById("header").classList.add("header");
+      } else {
+        document.getElementById("header").classList.add("header-top");
+        document.getElementById("header").classList.remove("header");
+      }
+  }
+</script>
 
 <div id="root"></div>
