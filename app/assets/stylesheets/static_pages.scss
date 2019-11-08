@@ -294,6 +294,7 @@ a:hover {
 .splash-welcome-container {
     background: linear-gradient(135deg, #0079bf, #5067c5);
     padding-top: 85px;
+    padding-bottom: 5rem;
 }
 
 .splash-collaborate-container {
@@ -303,7 +304,7 @@ a:hover {
 
 .splash-container {
     display: flex;
-    flex-direction: column;
+    // flex-direction: row;
     align-items: center;
     margin-right: 7%;
     margin-left: 7%;
@@ -331,6 +332,10 @@ a:hover {
     line-height: 1.5;
     margin-bottom: 1rem;
     box-sizing: border-box;
+}
+
+.welcome-img {
+    margin-left: 8.3%;
 }
 
 .splash-row {
