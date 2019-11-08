@@ -334,6 +334,10 @@ a:hover {
     box-sizing: border-box;
 }
 
+.text-center {
+    text-align: center;
+}
+
 .welcome-img {
     margin-left: 8.3%;
 }
@@ -349,6 +353,52 @@ a:hover {
     font-weight: 500;
     line-height: 1.2;
     color: rgb(23, 43, 77);
+}
+
+.features-container {
+    display: flex;
+    justify-content: center;
+}
+
+.splash-features-container {
+    background-color: #fff;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.splash-card {
+    min-height: 1px;
+    width: 100%;
+    max-width: 33%;
+    padding-right: 15px;
+    padding-left: 15px;
+    text-align: center;
+
+    h5 {
+        font-size: 1.5625rem;
+    }
+}
+
+.small {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.app-store {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.img-fluid {
+    border: 1px solid transparent;
+    border-radius: 0.3em;
+    box-shadow: 0 1px 0 #a5acb0;
+    height: 44px;
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    opacity: 0.8;
+    vertical-align: middle;
 }
 
 .board .splash-board-header .title h3 {
@@ -390,6 +440,13 @@ a:hover {
     padding: 18px;
     position: relative;
     text-align: left;
+}
+
+#f1 {
+    max-width: 50%;
+    h3 {
+        font-size: 2.1875rem;
+    }
 }
 
 #signup {
