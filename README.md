@@ -1,24 +1,5 @@
-# README
+# Trallo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Trallo, a Trello clone, is a project management web application based on the Kanban system to manage work at a personal or organizational level.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[Trallo Live](https://trallo-fsp.herokuapp.com)
