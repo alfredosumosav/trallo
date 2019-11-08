@@ -4,6 +4,7 @@ import LoginFormContainer from './login_form_container';
 import SignupFormContainer from './signup_form_container';
 import NavBarContainer from './nav_bar_container';
 import SplashContainer from './splash_container';
+import Footer from './footer';
 import { Link, Route, Switch } from 'react-router-dom';
 import {
     AuthRoute,
@@ -28,11 +29,12 @@ class App extends React.Component {
                             <Route exact to="/" component={NavBarContainer} />
                         </nav>
                     </header>
-                <Switch>
-                    <AuthRoute path="/login" component={LoginFormContainer} />
-                    <AuthRoute path="/signup" component={SignupFormContainer} />
-                    <Route to="/" component={SplashContainer} />
-                </Switch>
+                    <Switch>
+                        <AuthRoute path="/login" component={LoginFormContainer} />
+                        <AuthRoute path="/signup" component={SignupFormContainer} />
+                        <Route to="/" component={SplashContainer} />
+                    </Switch>
+                    <Footer />
             </div>
         );
     }

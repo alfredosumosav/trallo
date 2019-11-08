@@ -303,6 +303,32 @@ a:hover {
     // padding-top: 85px;
 }
 
+.icon {
+    font-size: 40px;
+    margin: 0 5px;
+    color: #172B4D;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    padding: 5px 0;
+}
+
+.footer-container {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2.5% 0;
+    width: 100%;
+    color: #172B4D;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
 .splash-container {
     display: flex;
     // flex-direction: row;
