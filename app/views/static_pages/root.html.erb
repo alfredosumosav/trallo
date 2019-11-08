@@ -11,6 +11,7 @@
     let currentScrollPos = window.pageYOffset;
       if (currentScrollPos > 0) {
         document.getElementById("header").classList.add("header");
+        document.getElementById("header").classList.remove("header-top");
       } else {
         document.getElementById("header").classList.add("header-top");
         document.getElementById("header").classList.remove("header");

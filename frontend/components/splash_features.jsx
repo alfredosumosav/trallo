@@ -44,7 +44,7 @@ const SplashFeatures = (props) => {
                         <p className="small">
                             No matter where you are, Trello stays in sync across all of your devices. Collaborate with your team anywhere, from sitting on the bus to sitting on the beach.
                         </p>
-                        <p>
+                        <p className="app-store">
                             <img src="https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/eebf313cb223112b503b7322173b013c/btn-appstore-black.png" className="img-fluid" alt="Available on the App Store"></img>
                             <img src="https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/bcde9868a665af4ab4efe460c46fbc7b/btn-playstore-black.png" className="img-fluid" alt="Android App on Google Play"></img>
                         </p>
