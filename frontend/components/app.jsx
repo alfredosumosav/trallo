@@ -17,7 +17,6 @@ class App extends React.Component {
     }
 
     render() {
-        // debugger
         return (
             <div className="main">
                     <header id="header">
