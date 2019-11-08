@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const SplashGetStarted = (props) => {
     return (
-        <div className="splash-container get-started-container">
+        <div className="get-started-container">
             <div id="gs1" className="splash-column">
                 <h3>Start Planning Today</h3>
                 <p>Sign up and become one of the millions of people around the world using Trello to get more done.</p>

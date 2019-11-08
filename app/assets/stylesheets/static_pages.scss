@@ -8,6 +8,7 @@ html {
 
 .main {
     position: relative;
+    // top: -85px;
 }
 
 header {
@@ -58,9 +59,9 @@ a:hover {
 }
 
 .main {
-    // background-color: #0079BF;
-    background: linear-gradient(135deg, #0079bf, #5067c5);
-    background-image: linear-gradient(rgb(255, 255, 255) 0%, rgb(247, 236, 255) 46%, rgb(210, 236, 255) 74%, rgb(255, 255, 255) 100%);
+    // background: linear-gradient(135deg, #0079bf, #5067c5);
+    background-color: #0079BF;
+
 }
 
 #btn-demo {
@@ -170,6 +171,7 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    // background-color: #0079BF;
 }
 
 .navbar-content {
@@ -295,7 +297,8 @@ a:hover {
 
 .splash-welcome-container {
     position: relative;
-    top: -85px;
+    margin-top: -85px;
+    // top: -85px;
     background: linear-gradient(135deg, #0079bf, #5067c5);
     padding-top: 85px;
     padding-bottom: 5rem;
@@ -384,8 +387,8 @@ a:hover {
 }
 
 .splash-get-started-container {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    padding-top: 1.5rem;
+    // margin-bottom: 1.5rem;
 
     // .get-started-container {
     //     text-align: center;
@@ -433,8 +436,8 @@ a:hover {
     max-width: 384px;
 }
 
-#get-started {
-    background-color: transparent;
+.get-started-container {
+    background: transparent;
     display: flex;
     justify-content: center;
     background-image: url(https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/97db7688a52a697ea9376a5f0fe5d98f/trellians-2x-2.png);
@@ -573,4 +576,8 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#get-started {
+    background: linear-gradient(to bottom, #fff 0%, #f7ecff 46%, #d2ecff 74%, #fff 100%);
 }
