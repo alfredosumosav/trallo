@@ -2,6 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
+import {
+        requestBoards,
+        requestBoard,
+        createBoard,
+        updateBoard,
+        deleteBoard
+    } from './actions/board_actions';
 // TESTING
 // import {
 //     signup,
@@ -12,7 +19,7 @@ import Root from './components/root';
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
-
+    window.fetch = fetch;
     let store;
     if (window.currentUser) {
         const preloadedState = {
@@ -27,6 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
         store = configureStore();
     }
 
+    window.dispatch = store.dispatch;
+    window.getState = store.dispatch;
+    window.requestBoards = requestBoards;
+
+    // now we can test our code from the console
+    // dispatch(fetchBenches()).then(console.log);
     // TESTING
     // window.user = {
     //     username: "alfredo",
