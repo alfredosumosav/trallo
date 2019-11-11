@@ -11,8 +11,17 @@ class BoardIndex extends React.Component {
     }
 
     render() {
+        const { boards, openModal } = this.props;
         return (
-            <div>Hello from Board index</div>
+            <div className="boards-container">
+                <ul>
+                    {
+                        boards.map(board => (
+                            <BoardIndexItem openModal={openModal} key={board.id} board={board} />
+                        ))
+                    }
+                </ul>
+            </div>
         );
     }
 }

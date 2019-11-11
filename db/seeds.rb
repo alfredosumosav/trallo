@@ -9,5 +9,10 @@
 User.destroy_all
 Board.destroy_all
 test = User.create!(username: "test-user", email: "test@aa.io", password: "password")
+u1 = User.create!(username: "User 1", email: "u1@aa.io", password: "password")
+u2 = User.create!(username: "User 2", email: "u2@aa.io", password: "password")
 board1 = test.boards.create(title: 'board 1')
 board2 = test.boards.create(title: 'board 2')
+board3 = u1.boards.create(title: 'board 3')
+board4 = u1.boards.create(title: 'board 4')
+board5 = u2.boards.create(title: 'board 5')
