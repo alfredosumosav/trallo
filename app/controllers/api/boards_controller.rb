@@ -1,7 +1,7 @@
 class Api::BoardsController < ApplicationController
 
     def index
-        @boards = Board.all
+        @boards = current_user.boards
         render :index
     end
 
