@@ -12,7 +12,7 @@ const SplashCollaborate = (props) => {
                 </div>
                 <div className="splash-column">
                     <div className="board-img">
-                        <img src="https://trello-attachments.s3.amazonaws.com/5b9270821913198b25dc6c3f/5da88172fa474e353d3190de/6fef214f283f536655eb0584b895e9df/board.png" alt="board"/>
+                        <img src="https://trello-attachments.s3.amazonaws.com/5b9270821913198b25dc6c3f/5dc991d0b414ca552bc7aa95/5f8b2c5f8b21276bd6a816acf486faa1/board.png" alt="board"/>
                     </div>
                 </div>
             </div>
