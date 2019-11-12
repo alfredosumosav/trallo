@@ -18,8 +18,7 @@ class BoardForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const board = Object.assign({}, this.state);
-        this.props.processForm(board).then(this.props.closeModal);
+        this.props.processForm(this.state).then(this.props.closeModal);
     }
 
     renderErrors() {
@@ -35,32 +34,25 @@ class BoardForm extends React.Component {
     }
 
     render() {
+        const { formType } = this.props;
         return (
             <div className="board-form-container">
                 <form onSubmit={this.handleSubmit} className="board-form-box">
-                    {formType === 'create' ? 'Create a Board' : 'Update a Board'}
                     <br />
                     <div onClick={this.props.closeModal} className="close-x">X</div>
                     {this.renderErrors()}
+                    {formType === 'create' ? 'Create a Board' : 'Update a Board'}
                     <div className="board-form">
                         <br />
-                        <label>Username:
+                        <label>Title:
                             <input type="text"
-                                            value={this.state.username}
-                                            onChange={this.update('username')}
-                                            className="login-input"
+                                value={this.state.title}
+                                onChange={this.update('title')}
+                                className="login-input"
                             />
                         </label>
                         <br />
-                        <label>Password:
-                            <input type="password"
-                                            value={this.state.password}
-                                            onChange={this.update('password')}
-                                            className="login-input"
-                            />
-                        </label>
-                        <br />
-                        <input className="session-submit" type="submit" value={ formType === 'create' ? 'Create Board' : 'Update Board' } />
+                        <input className="session-submit" type="submit" value={formType === 'create' ? 'Create Board' : 'Update Board'} />
                     </div>
                 </form>
             </div>
