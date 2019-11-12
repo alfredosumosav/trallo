@@ -1,10 +1,13 @@
 import { connect } from 'react-redux';
-import { createBoard, removeErrors } from '../../actions/board_actions';
+import { createBoard, removeErrors, requestBoard } from '../../actions/board_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import BoardForm from './board_form';
 
 const mSTP = (state, ownProps) => ({
     errors: state.errors.board,
+    board: {
+        title: ""
+    },
     formType: 'create'
 });
 
