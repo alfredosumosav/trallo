@@ -1,3 +1,4 @@
+import React from 'react';
 import SessionForm from './session_form';
 import { connect } from 'react-redux';
 import { login, removeErrors } from '../actions/session_actions';
