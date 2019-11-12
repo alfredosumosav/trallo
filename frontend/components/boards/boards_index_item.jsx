@@ -9,13 +9,17 @@ class BoardIndexItem extends React.Component {
     render() {
         const { board, openModal } = this.props;
         return (
-            <div className="boards-item-container">
-                <div className="boards-item">
+                <div className="list-container">
                     <Link to={`/boards/${board.id}`} className="item-link" >
-                        {board.title}
-                    </Link>
+                        <div className="overlay">
+                        </div>
+                            {board.title}
+                    </Link>                    
                 </div>
-            </div>
+
+
+
+
         );
     }
 }
