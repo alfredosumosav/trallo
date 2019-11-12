@@ -31,9 +31,9 @@ class SessionForm extends React.Component {
         return (
             <ul className="error-list">
                 {this.props.errors.map((error, i) => (
-                 <li className="error-item" key={`error-${i}`}>
-                     { error }
-                 </li>   
+                    <li className="error-item" key={`error-${i}`}>
+                        {error}
+                    </li>
                 ))}
             </ul>
         );
@@ -50,46 +50,46 @@ class SessionForm extends React.Component {
                 <form id="session-form" onSubmit={this.handleSubmit}>
                     <div id="form-elements-container">
                         {this.renderErrors()}
-                        <h1 className="form-title">{ formType === 'signup' ? 'Sign up to Trallo' : 'Log in to Trallo'}</h1>
+                        <h1 className="form-title">{formType === 'signup' ? 'Sign up to Trallo' : 'Log in to Trallo'}</h1>
                         <div id="input-container">
-                            <input 
-                            className="form-input"
-                            type="text"
-                            autoCapitalize="off"
-                            autoFocus="autofocus"
-                            value={this.state.username}
-                            placeholder="Enter username"
-                            onChange={this.update('username')}
-                            />
-                        {formType === 'signup' ? 
-                            (
-                                <input 
+                            <input
                                 className="form-input"
-                                type="email"
+                                type="text"
                                 autoCapitalize="off"
-                                value={this.state.email}
-                                placeholder="Enter email"
-                                onChange={this.update('email')}
-                                />
-                            ) : ""
-                        }
-                            <input 
-                            className="form-input"
-                            type="password"
-                            value={this.state.password}
-                            placeholder="Enter password"
-                            onChange={this.update('password')}
+                                autoFocus="autofocus"
+                                value={this.state.username}
+                                placeholder="Enter username"
+                                onChange={this.update('username')}
+                            />
+                            {formType === 'signup' ?
+                                (
+                                    <input
+                                        className="form-input"
+                                        type="email"
+                                        autoCapitalize="off"
+                                        value={this.state.email}
+                                        placeholder="Enter email"
+                                        onChange={this.update('email')}
+                                    />
+                                ) : ""
+                            }
+                            <input
+                                className="form-input"
+                                type="password"
+                                value={this.state.password}
+                                placeholder="Enter password"
+                                onChange={this.update('password')}
                             />
                         </div>
                         <div id="submit-container">
-                            <input id="submit-btn" className="btn" type="submit" value={ formType === 'signup' ? 'Sign Up' : 'Log In' } />
+                            <input id="submit-btn" className="btn" type="submit" value={formType === 'signup' ? 'Sign Up' : 'Log In'} />
                         </div>
                     </div>
                 </form>
-                    <ul className="bottom-form-link">
-                        {formType === 'login' ? (<button className="btn-success" onClick={() => this.props.login(demoUser)}>Demo User</button>) : ''}
-                        {formType === 'login' ? <Link id="toggle-form" className="btn" to={'/signup'} >Sign up for an account</Link> : <Link id="toggle-form" className="btn" to={'/login'} >Already have an account? Log in</Link> }
-                    </ul>
+                <ul className="bottom-form-link">
+                    {formType === 'login' ? (<button className="btn-success" onClick={() => this.props.login(demoUser)}>Demo User</button>) : ''}
+                    {formType === 'login' ? <Link id="toggle-form" className="btn" to={'/signup'} >Sign up for an account</Link> : <Link id="toggle-form" className="btn" to={'/login'} >Already have an account? Log in</Link>}
+                </ul>
             </div>
         );
     }
