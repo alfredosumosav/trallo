@@ -7,7 +7,6 @@ class BoardShow extends React.Component {
     }
 
     componentDidMount() {
-        debugger
         this.props.requestBoard(this.props.match.params.boardId);
     }
 
@@ -23,7 +22,7 @@ class BoardShow extends React.Component {
                         <p>{this.props.board.title}</p>
                     </div>
                     <div className="trash-can">
-                        <i class="far fa-trash-alt"></i>
+                        <i className="far fa-trash-alt"></i>
                     </div>
                 </div>
                 <div className="list-container">

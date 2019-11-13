@@ -5,9 +5,11 @@ class BoardForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: ''
+            title: '',
+            photoFile: null
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleFile = this.handleFile.bind(this);
     }
 
     update(field) {
@@ -16,9 +18,18 @@ class BoardForm extends React.Component {
         });
     }
 
+    handleFile(e) {
+        this.setState({
+            photoFile: e.currentTarget.files[0]
+        })
+    }
+
     handleSubmit(e) {
         e.preventDefault();
-        this.props.processForm(this.state).then(this.props.closeModal);
+        let formData = new FormData();
+        formData.append('board[title]', this.state.title);
+        formData.append('board[photo]', this.state.photoFile);
+        this.props.processForm(formData).then(this.props.closeModal);
     }
 
     renderErrors() {
@@ -52,6 +63,11 @@ class BoardForm extends React.Component {
                             />
                         </label>
                         <br />
+                        <label>Photo:
+                            <input type="file"
+                                onChange={this.handleFile}
+                            />
+                        </label>
                         <input className="session-submit" type="submit" value={formType === 'create' ? 'Create Board' : 'Update Board'} />
                     </div>
                 </form>

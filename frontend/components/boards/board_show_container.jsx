@@ -3,7 +3,6 @@ import BoardShow from './board_show';
 import { requestBoard } from '../../actions/board_actions';
 
 const mSTP = (state, ownProps) => {
-    debugger
     return ({
         board: state.entities.boards[ownProps.match.params.boardId]
     })

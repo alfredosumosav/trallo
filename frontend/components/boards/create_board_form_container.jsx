@@ -6,7 +6,8 @@ import BoardForm from './board_form';
 const mSTP = (state, ownProps) => ({
     errors: state.errors.board,
     board: {
-        title: ""
+        title: "",
+        photoFile: null
     },
     formType: 'create'
 });
