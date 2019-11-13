@@ -6,17 +6,24 @@ class BoardShow extends React.Component {
 
     }
 
+    componentDidMount() {
+        debugger
+        this.props.requestBoard(this.props.match.params.boardId);
+    }
+
     render() {
-        const { board, boardAuthor } = this.props;
+        if (this.props.board === undefined) {
+         return null;   
+        }
+        // const { board } = this.props;
         return (
             <div className="board-show-container">
                 <div className="row">
                     <div className="board-title">
-                        <p>{board.title}</p>
-                        <div className="member-list">
-                            <div>{boardAuthor.username}</div>
-                            <div>Another member</div>
-                        </div>
+                        <p>{this.props.board.title}</p>
+                    </div>
+                    <div className="trash-can">
+                        <i class="far fa-trash-alt"></i>
                     </div>
                 </div>
                 <div className="list-container">

@@ -38,7 +38,7 @@ class App extends React.Component {
                     <AuthRoute path="/login" component={LoginFormContainer} />
                     <AuthRoute path="/signup" component={SignupFormContainer} />
                     <ProtectedRoute path="/dashboard" component={BoardIndexContainer} />
-                    <Route exact path="/boards/:boardId" component={BoardShowContainer} />
+                    <ProtectedRoute exact path="/boards/:boardId" component={BoardShowContainer} />
                     <AuthRoute2 exact path="/" component={SplashContainer} />
                     <Redirect to="/" />
                     {/* <Route to="/" component={SplashContainer} /> */}
