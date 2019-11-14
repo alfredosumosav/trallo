@@ -6,7 +6,7 @@ class BoardForm extends React.Component {
         super(props);
         this.state = {
             title: '',
-            photoFile: null
+            photoFile: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFile = this.handleFile.bind(this);
