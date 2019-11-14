@@ -17,7 +17,7 @@
     justify-content: center;
     align-items: center;
     margin: 0;
-    width: 80%;
+    width: 70%;
     min-height: 1px;
 }
 
@@ -97,6 +97,7 @@
     height: 80px;
     background: #0079BF;
     padding: 1em 1.5em;
+    
 }
 
 .item-link {
@@ -159,4 +160,26 @@
 
 .b-title {
     z-index: 1;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board-bar {
+    // justify-content: space-between;
+    color: white;
+    font-size: 14px;
+    line-height: 32px;
+    background: rgba(0,0,0,0.24);
+    padding: 8px 4px 4px 8px;
+}
+
+.board-title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 32px;
+    max-width: calc(100% - 24px);
 }

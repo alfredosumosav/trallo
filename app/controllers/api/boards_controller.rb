@@ -17,7 +17,6 @@ class Api::BoardsController < ApplicationController
             @board.title = board_params['title']
             # if I want to by default set a background image
             # file = open('https://trallo-dev.s3-us-west-1.amazonaws.com/board.jpg')
-            # debugger
             # @board.photo.attach(io: file, filename: 'board.jpg')
         else
             @board = Board.new(board_params)
@@ -32,6 +31,7 @@ class Api::BoardsController < ApplicationController
 
     def update
         @board = Board.find_by(id: params[:id])
+        
         if @board.update(board_params)
             render :show
         else

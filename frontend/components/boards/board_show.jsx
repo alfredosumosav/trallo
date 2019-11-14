@@ -3,26 +3,42 @@ import React from 'react';
 class BoardShow extends React.Component {
     constructor(props) {
         super(props);
-
+        this.state = this.props.board;
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    componentDidMount() {
-        this.props.requestBoard(this.props.match.params.boardId);
+    update(field) {
+        return e => {
+            this.setState({ [field]: e.currentTarget.value });
+        }
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.updateBoard(this.state);
     }
 
     render() {
-        if (this.props.board === undefined) {
-         return null;   
-        }
-        // const { board } = this.props;
+        debugger
         return (
             <div className="board-show-container">
-                <div className="row">
+                <div className="row board-bar">
                     <div className="board-title">
-                        <p>{this.props.board.title}</p>
+                        <div className="board-name">{this.props.board.title}</div>
+                        <form onSubmit={this.handleSubmit}>
+                            <input 
+                                type="text"
+                                value={this.state.title}
+                                onChange={this.update('title')}
+                            />
+                            <input type="submit" value={'update'}/>  
+                        </form>
+                    </div>
+                    <div className="star-board">
+                        <i className="far fa-star btn"></i>
                     </div>
                     <div className="trash-can">
-                        <i className="far fa-trash-alt"></i>
+                        <i className="far fa-trash-alt btn"></i>
                     </div>
                 </div>
                 <div className="list-container">
