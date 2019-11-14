@@ -12,16 +12,15 @@ export const fetchBoard = boardId => (
     })
 );
 
-export const createBoard = board => (
-    
-    $.ajax({
+export const createBoard = board => {
+    return $.ajax({
         url: `/api/boards`,
         method: 'POST',
-        data:  board ,
+        data: board,
         contentType: false,
         processData: false
     })
-);
+}
 
 export const updateBoard = board => (
     $.ajax({

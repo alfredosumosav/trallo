@@ -7,7 +7,7 @@ const mSTP = (state, ownProps) => ({
     errors: state.errors.board,
     board: {
         title: "",
-        photoFile: null
+        photoFile: ""
     },
     formType: 'create'
 });
