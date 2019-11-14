@@ -60,6 +60,7 @@ class BoardForm extends React.Component {
                                 value={this.state.title}
                                 onChange={this.update('title')}
                                 className="login-input"
+                                autoFocus="autofocus"
                             />
                         </label>
                         <br />

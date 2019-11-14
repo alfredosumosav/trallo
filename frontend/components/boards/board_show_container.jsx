@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import BoardShow from './board_show';
-import { requestBoard, updateBoard } from '../../actions/board_actions';
+import { requestBoard, updateBoard, deleteBoard } from '../../actions/board_actions';
 
 class BoardShowEdit extends React.Component {
     componentDidMount() {
@@ -14,14 +14,12 @@ class BoardShowEdit extends React.Component {
         }
 
         return (
-            <BoardShow board={this.props.board} updateBoard={this.props.updateBoard} />
+            <BoardShow board={this.props.board} updateBoard={this.props.updateBoard} deleteBoard={this.props.deleteBoard} />
         )
     }
 }
 
 const mSTP = (state, ownProps) => {
-
-    debugger
     return ({
         board: state.entities.boards[ownProps.match.params.boardId]
     })
@@ -29,7 +27,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => ({
     requestBoard: boardId => dispatch(requestBoard(boardId)),
-    updateBoard: board => dispatch(updateBoard(board))
+    updateBoard: board => dispatch(updateBoard(board)),
+    deleteBoard: boardId => dispatch(deleteBoard(boardId))
 });
 
 export default connect(mSTP, mDTP)(BoardShowEdit);
