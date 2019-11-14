@@ -6,13 +6,24 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'open-uri'
+
+# Cleans the db
 User.destroy_all
 Board.destroy_all
-test = User.create!(username: "test-user", email: "test@aa.io", password: "password")
+
+#create a user
+user = User.create!(username: 'demoUser', email: 'test@aa.io', password: 'password')
 u1 = User.create!(username: "User 1", email: "u1@aa.io", password: "password")
 u2 = User.create!(username: "User 2", email: "u2@aa.io", password: "password")
-board1 = test.boards.create(title: 'board 1')
-board2 = test.boards.create(title: 'board 2')
-board3 = u1.boards.create(title: 'board 3')
-board4 = u1.boards.create(title: 'board 4')
-board5 = u2.boards.create(title: 'board 5')
+
+#creates a file from url
+file = open('https://trallo-dev.s3-us-west-1.amazonaws.com/board.jpg')
+
+#creates boards
+board1 = user.boards.create!(title: 'board 1')
+board1.photo.attach(io: file, filename: 'bg.jpg')
+# board.save
+board2 = user.boards.create(title: 'board 2')
+board3 = user.boards.create(title: 'board 3')
+board3.photo.attach(io: file, filename: 'bg.jpg')
