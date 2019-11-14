@@ -1,5 +1,6 @@
 import React from 'react';
 import BoardIndexItem from './boards_index_item';
+import { Link } from 'react-router-dom';
 
 class BoardIndex extends React.Component {
     constructor(props) {
@@ -24,6 +25,15 @@ class BoardIndex extends React.Component {
                                 <BoardIndexItem openModal={openModal} key={board.id} board={board} />
                             ))
                         }
+                        <div className="list-container">
+                            <Link to="#" id="new-b" onClick={() => this.props.openModal('create_board')} className="item-link">
+                                <div className="overlay">
+                                </div>
+                                <div className="b-title">
+                                    Create new board
+                                </div>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>
