@@ -1,4 +1,5 @@
 class Api::BoardsController < ApplicationController
+    require 'open-uri'
 
     def index
         @boards = @boards || current_user.boards
@@ -11,7 +12,16 @@ class Api::BoardsController < ApplicationController
     end
 
     def create
-        @board = Board.new(board_params)
+        if board_params['photo'].empty?
+            @board = Board.new()
+            @board.title = board_params['title']
+            # if I want to by default set a background image
+            # file = open('https://trallo-dev.s3-us-west-1.amazonaws.com/board.jpg')
+            # debugger
+            # @board.photo.attach(io: file, filename: 'board.jpg')
+        else
+            @board = Board.new(board_params)
+        end
         @board.author_id = current_user.id
         if @board.save
             render :show
