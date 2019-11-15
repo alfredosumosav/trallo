@@ -44,6 +44,9 @@ class App extends React.Component {
                         <Redirect to="/" />
                         {/* <Route to="/" component={SplashContainer} /> */}
                     </Switch>
+                    <div id="footer-container">
+                        
+                    </div>
                 <Footer />
                 </div>
             </div>

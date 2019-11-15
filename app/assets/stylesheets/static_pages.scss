@@ -310,6 +310,7 @@ a:hover {
     font-size: 40px;
     margin: 0 5px;
     color: #172B4D;
+    z-index: 2;
 }
 
 .social {
@@ -330,8 +331,8 @@ a:hover {
     color: #172B4D;
     font-weight: 400;
     line-height: 1.5;
-    bottom: 40px;
-    height: 40px;
+    bottom: 5px;
+    height: 65px;
 }
 
 .splash-container {
@@ -608,4 +609,18 @@ a:hover {
 
 .board-show-container {
     padding-bottom: 40px;
+}
+
+#footer-container {
+    background: rgba(255,255,255,0.3);
+    // filter: blur(8px);
+    max-height: 85px;
+    min-height: 1px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    // margin-left: 25%;
 }
