@@ -22,32 +22,46 @@ class BoardShow extends React.Component {
     }
 
     delete(boardId) {
-        this.props.deleteBoard(boardId);
+        this.props.deleteBoard(boardId).then(() => this.props.history.push('/'));
     }
 
     render() {
+        let img;
+
+        if (this.props.board.photoUrl) {
+            img = <img src={this.props.board.photoUrl} className="image"></img>
+            let s = "s"
+        } else {
+            img = ""
+        }
         return (
             <div className="board-show-container">
+                <div className="board-bg">
+                    {img}
+                </div>
                 <div className="row board-bar">
-                    <div className="board-title">
+                    <div className="board-title nav-ele">
                         <div className="board-name">{this.state.title}</div>
                         <form onSubmit={this.handleSubmit}>
                             <input 
                                 type="text"
                                 value={this.state.title}
                                 onChange={this.update('title')}
+                                className="name-input"
                             />
                             <input type="submit" value={'update'}/>  
                         </form>
                     </div>
-                    <div className="star-board">
-                        <i className="far fa-star btn"></i>
-                    </div>
-                    <div className="trash-can">
-                        <i onClick={() => this.delete(this.state.id)} className="far fa-trash-alt btn"></i>
+                    <div className="nav-actions nav-ele">
+                        <div className="star-board">
+                            <i className="far fa-star btn board-name"></i>
+                        </div>
+                        <div className="trash-can board-name">
+                            <i onClick={() => this.delete(this.state.id)} className="far fa-trash-alt btn"></i>
+                        </div>
                     </div>
                 </div>
-                <div className="list-container">
+                <div className="row">
                     <h1>List 1</h1>
                     <h1>List 2</h1>
                     <h1>List 3</h1>
@@ -58,4 +72,4 @@ class BoardShow extends React.Component {
     }
 }
 
-export default BoardShow;
+export default withRouter(BoardShow);
