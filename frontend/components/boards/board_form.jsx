@@ -36,7 +36,7 @@ class BoardForm extends React.Component {
         return (
             <ul>
                 {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
+                    <li className="in" key={`error-${i}`}>
                         {error}
                     </li>
                 ))}
@@ -49,27 +49,30 @@ class BoardForm extends React.Component {
         return (
             <div className="board-form-container">
                 <form onSubmit={this.handleSubmit} className="board-form-box">
-                    <br />
-                    <div onClick={this.props.closeModal} className="close-x">X</div>
+                    <div onClick={this.props.closeModal} className="close-x"><span>X</span></div>
                     {this.renderErrors()}
-                    {formType === 'create' ? 'Create a Board' : 'Update a Board'}
+                    <div className="in form-name">
+                        {formType === 'create' ? 'Create a Board' : 'Update a Board'}
+                    </div>
                     <div className="board-form">
-                        <br />
-                        <label>Title:
+                        <label id="i-title" className="in">
                             <input type="text"
                                 value={this.state.title}
                                 onChange={this.update('title')}
                                 className="login-input"
                                 autoFocus="autofocus"
+                                placeholder="Enter board title"
                             />
                         </label>
-                        <br />
-                        <label>Photo:
+                        <label className="in photo-up">
+                        <div>
+                            Photo:
+                        </div>
                             <input type="file"
                                 onChange={this.handleFile}
                             />
                         </label>
-                        <input className="session-submit" type="submit" value={formType === 'create' ? 'Create Board' : 'Update Board'} />
+                        <input className="in session-submit btn-success" type="submit" value={formType === 'create' ? 'Create Board' : 'Update Board'} />
                     </div>
                 </form>
             </div>

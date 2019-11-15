@@ -78,7 +78,7 @@ class BoardShow extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="row">
+                <div className="row list">
                     <h1>List 1</h1>
                     <h1>List 2</h1>
                     <h1>List 3</h1>
