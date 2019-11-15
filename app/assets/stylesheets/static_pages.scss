@@ -254,7 +254,6 @@ a:hover {
     border: 1px solid transparent;
     padding: 6px 12px;
     font-size: 1.25rem;
-    // line-height: 1.5;
     border-radius: 6px;
     -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
@@ -298,7 +297,6 @@ a:hover {
 .splash-welcome-container {
     position: relative;
     margin-top: -85px;
-    // top: -85px;
     background: linear-gradient(135deg, #0079bf, #5067c5);
     padding-top: 85px;
     padding-bottom: 5rem;
@@ -306,7 +304,6 @@ a:hover {
 
 .splash-collaborate-container {
     background: #fff;
-    // padding-top: 85px;
 }
 
 .icon {
@@ -322,22 +319,23 @@ a:hover {
 }
 
 .footer-container {
-    background-color: white;
+    position: absolute;
+    background-color: transparent;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 2.5% 0;
     width: 100%;
     color: #172B4D;
     font-weight: 400;
     line-height: 1.5;
+    bottom: 0;
+    height: 40px;
 }
 
 .splash-container {
     display: flex;
-    // flex-direction: row;
     align-items: center;
     margin-right: 7%;
     margin-left: 7%;
@@ -394,9 +392,13 @@ a:hover {
 }
 
 .splash-features-container {
-    background-color: #fff;
+    background-color: transparent;
     padding-top: 5rem;
     padding-bottom: 5rem;
+}
+
+.splash {
+    background: linear-gradient(to bottom, #fff 0%, #f7ecff 46%, #d2ecff 74%, #fff 100%);
 }
 
 .splash-card {
@@ -533,7 +535,7 @@ a:hover {
 #form-container {
     display: flex;
     flex-direction: column;
-    background-color: #ffffff;
+    background-color: #fafbfc;
 }
 
 #submit-container {
@@ -579,7 +581,6 @@ a:hover {
 
 #get-started {
     padding-top: 1.5rem;
-    background: linear-gradient(to bottom, #fff 0%, #f7ecff 46%, #d2ecff 74%, #fff 100%);
 }
 
 .modal-background {
@@ -597,4 +598,15 @@ a:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.content {
+    position: relative;
+    background: #fafbfc;
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+.board-show-container {
+    padding-bottom: 40px;
 }
