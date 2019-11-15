@@ -12,7 +12,8 @@ class Api::BoardsController < ApplicationController
     end
 
     def create
-        if board_params['photo'].empty?
+        debugger
+        if board_params['photo'] == ""
             @board = Board.new()
             @board.title = board_params['title']
             # if I want to by default set a background image
