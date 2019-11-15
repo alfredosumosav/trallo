@@ -34,16 +34,18 @@ class App extends React.Component {
                         <Route exact to="/" component={NavBarContainer} />
                     </nav>
                 </header>
-                <Switch>
-                    <AuthRoute path="/login" component={LoginFormContainer} />
-                    <AuthRoute path="/signup" component={SignupFormContainer} />
-                    <ProtectedRoute path="/dashboard" component={BoardIndexContainer} />
-                    <ProtectedRoute exact path="/boards/:boardId" component={BoardShowContainer} />
-                    <AuthRoute2 exact path="/" component={SplashContainer} />
-                    <Redirect to="/" />
-                    {/* <Route to="/" component={SplashContainer} /> */}
-                </Switch>
+                <div className="content">
+                    <Switch>
+                        <AuthRoute path="/login" component={LoginFormContainer} />
+                        <AuthRoute path="/signup" component={SignupFormContainer} />
+                        <ProtectedRoute path="/dashboard" component={BoardIndexContainer} />
+                        <ProtectedRoute exact path="/boards/:boardId" component={BoardShowContainer} />
+                        <AuthRoute2 exact path="/" component={SplashContainer} />
+                        <Redirect to="/" />
+                        {/* <Route to="/" component={SplashContainer} /> */}
+                    </Switch>
                 <Footer />
+                </div>
             </div>
         );
     }
