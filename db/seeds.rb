@@ -19,6 +19,7 @@ u2 = User.create!(username: "User 2", email: "u2@aa.io", password: "password")
 
 #creates a file from url
 file = open('https://trallo-dev.s3-us-west-1.amazonaws.com/board.jpg')
+file2 = open('https://trallo-dev.s3-us-west-1.amazonaws.com/stars.jpg')
 
 #creates boards
 board1 = user.boards.create!(title: 'board 1')
@@ -26,4 +27,4 @@ board1.photo.attach(io: file, filename: 'bg.jpg')
 # board.save
 board2 = user.boards.create(title: 'board 2')
 board3 = user.boards.create(title: 'board 3')
-board3.photo.attach(io: file, filename: 'bg.jpg')
+board3.photo.attach(io: file2, filename: 'bg2.jpg')
