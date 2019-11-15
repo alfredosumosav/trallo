@@ -18,7 +18,6 @@ class BoardShow extends React.Component {
     }
 
     handleSubmit(e) {
-        debugger
         let formData = new FormData();
         formData.append('board[id]', this.state.id);
         formData.append('board[title]', this.state.title);
@@ -43,7 +42,6 @@ class BoardShow extends React.Component {
     }
 
     handleFile(e) {
-        debugger
         this.setState({
             photoFile: e.currentTarget.files[0]
         })
@@ -86,7 +84,6 @@ class BoardShow extends React.Component {
                                     id="file-input"
                                     type="file"
                                     onChange={(e) => {
-                                        debugger
                                         this.handleFile(e);
                                         this.focusInput(e);
                                         this.blurInput(e);
@@ -105,7 +102,6 @@ class BoardShow extends React.Component {
                                     id="file-input"
                                     type="file"
                                     onChange={(e) => {
-                                        debugger
                                         this.handleFile(e);
                                         this.focusInput(e);
                                         this.blurInput(e);

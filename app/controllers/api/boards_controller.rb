@@ -31,7 +31,6 @@ class Api::BoardsController < ApplicationController
     end
 
     def update
-        debugger
         if board_params['photo'] == "undefined"
             @board = Board.find_by(id: params[:board][:id])
             @board.title = params[:board][:title]
