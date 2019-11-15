@@ -18,11 +18,24 @@ class BoardShow extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.updateBoard(this.state);
+        this.props.updateBoard(this.state).then(() => this.blurInput());
     }
 
     delete(boardId) {
         this.props.deleteBoard(boardId).then(() => this.props.history.push('/'));
+    }
+
+    focusInput() {
+        // document.getElementById('title-input').focus();
+        document.getElementById('title-text').classList.add('hidden2');
+        document.getElementById('title-input').classList.remove('hidden2');
+        document.getElementById('title-input').select();
+    }
+
+    blurInput() {
+        document.getElementById('title-input').classList.add('hidden2');
+        document.getElementById('title-text').classList.remove('hidden2');
+        this.handleSubmit();
     }
 
     render() {
@@ -37,19 +50,23 @@ class BoardShow extends React.Component {
         return (
             <div className="board-show-container">
                 <div className="board-bg">
+                <div className="overlay2"></div>
                     {img}
                 </div>
                 <div className="row board-bar">
                     <div className="board-title nav-ele">
-                        <div className="board-name">{this.state.title}</div>
+                        <div id="title-text" onClick={this.focusInput} className="board-name">
+                            {this.state.title}
+                        </div>
                         <form onSubmit={this.handleSubmit}>
                             <input 
-                                type="text"
-                                value={this.state.title}
-                                onChange={this.update('title')}
-                                className="name-input"
+                            id="title-input"
+                            type="text"
+                            value={this.state.title}
+                            onChange={this.update('title')}
+                            onBlur={this.handleSubmit}
+                            className="board-name hidden2"
                             />
-                            <input type="submit" value={'update'}/>  
                         </form>
                     </div>
                     <div className="nav-actions nav-ele">

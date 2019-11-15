@@ -12,7 +12,7 @@ class Api::BoardsController < ApplicationController
     end
 
     def create
-        debugger
+        # debugger
         if board_params['photo'] == ""
             @board = Board.new()
             @board.title = board_params['title']

@@ -148,6 +148,16 @@
     background: rgba(0, 0, 0, 0.2);
 }
 
+.overlay2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 150px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+}
+
 .bbg {
     position: absolute;
     top: 0;
@@ -183,13 +193,22 @@
 }
 
 .board-title {
+    display: flex;
+    flex-direction: column;
     font-size: 18px;
     font-weight: 700;
     line-height: 32px;
     max-width: calc(100% - 24px);
+
 }
 
 .board-name {
+    color: white;
+    font-size: 100%;
+    line-height: 32px;
+    font-weight: 700;
+    background: rgba(0,0,0,0.04);
+    padding: 8px 4px 4px 8px;
     display: flex;
     justify-content: center;
     border: 1px solid transparent;
@@ -205,11 +224,18 @@
 
 .name-input {
     display: none;
-    display: inline-block;
+    display: block;
 }
 
 .nav-actions {
     display: flex;
+    align-items: center;
+    i {
+        height: auto;
+    }
+    .btn {
+        height: 100%;
+    }
 }
 
 .nav-ele {
@@ -229,4 +255,18 @@
     min-height: 100vh;
     width: 100%;
     // z-index: -1;
+}
+
+.hidden2 {
+    visibility: hidden;
+    display: none;
+}
+
+.focused {
+    display: block;
+}
+
+#title-input {
+    // width: inherit;
+    // text-align: center;
 }
