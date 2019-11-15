@@ -30,7 +30,6 @@ class BoardShow extends React.Component {
     }
 
     focusInput(e) {
-        // document.getElementById('title-input').focus();
         document.getElementById('title-text').classList.add('hidden2');
         document.getElementById('title-input').classList.remove('hidden2');
         document.getElementById('title-input').select();

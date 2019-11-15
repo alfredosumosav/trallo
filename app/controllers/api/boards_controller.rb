@@ -12,7 +12,6 @@ class Api::BoardsController < ApplicationController
     end
 
     def create
-        # debugger
         if board_params['photo'] == ""
             @board = Board.new()
             @board.title = board_params['title']
@@ -34,12 +33,10 @@ class Api::BoardsController < ApplicationController
         if board_params['photo'] == "undefined"
             @board = Board.find_by(id: params[:board][:id])
             @board.title = params[:board][:title]
-            # new_params = {title: params[:board][:title]}
         else
             @board = Board.find_by(id: params[:board][:id])
             @board.title = params[:board][:title]
             @board.photo = params[:board][:photo]
-            # new_params = board_params
         end
         
         if @board.save

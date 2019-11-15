@@ -37,7 +37,3 @@ class BoardIndexItem extends React.Component {
 }
 
 export default BoardIndexItem;
-
-// {
-//     (board.photoUrl === true) ? (<img src={board.photoUrl}></img>) : ""
-// }
