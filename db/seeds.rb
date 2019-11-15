@@ -30,25 +30,25 @@ f6 = open('https://trallo-dev.s3-us-west-1.amazonaws.com/ctg3.jpg')
 f7 = open('https://trallo-dev.s3-us-west-1.amazonaws.com/ctg4.jpg')
 
 #creates boards
-board1 = user.boards.create!(title: 'board 1')
+board1 = user.boards.create!(title: 'Moving to SF')
 board1.photo.attach(io: f1, filename: 'bg1.jpg')
 
-board2 = user.boards.create!(title: 'board 2')
+board2 = user.boards.create!(title: 'Before moving')
 board2.photo.attach(io: f2, filename: 'bg2.jpg')
 
-board3 = user.boards.create!(title: 'board 3')
+board3 = user.boards.create!(title: 'Plan trip')
 board3.photo.attach(io: f3, filename: 'bg3.jpg')
 
-board4 = user.boards.create!(title: 'board 4')
+board4 = user.boards.create!(title: 'Bay area tour')
 board4.photo.attach(io: f4, filename: 'bg4.jpg')
 
-board5 = user.boards.create!(title: 'board 5')
+board5 = user.boards.create!(title: 'Cartagena')
 board5.photo.attach(io: f5, filename: 'b5.jpg')
 
-board6 = user.boards.create!(title: 'board 6')
+board6 = user.boards.create!(title: 'Night plan 😎')
 board6.photo.attach(io: f6, filename: 'bg6.jpg')
 
-board7 = user.boards.create!(title: 'board 7')
+board7 = user.boards.create!(title: 'Cultural activities')
 board7.photo.attach(io: f7, filename: 'bg7.jpg')
 # board.save
 # board2 = user.boards.create(title: 'board 2')
