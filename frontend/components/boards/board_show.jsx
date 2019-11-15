@@ -7,6 +7,7 @@ class BoardShow extends React.Component {
         super(props);
         this.state = this.props.board;
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleFile = this.handleFile.bind(this);
         this.delete = this.delete.bind(this);
     }
 
@@ -17,25 +18,35 @@ class BoardShow extends React.Component {
     }
 
     handleSubmit(e) {
-        e.preventDefault();
-        this.props.updateBoard(this.state).then(() => this.blurInput());
+        debugger
+        let formData = new FormData();
+        formData.append('board[id]', this.state.id);
+        formData.append('board[title]', this.state.title);
+        formData.append('board[photo]', this.state.photoFile);
+        this.props.updateBoard(formData);
     }
 
     delete(boardId) {
         this.props.deleteBoard(boardId).then(() => this.props.history.push('/'));
     }
 
-    focusInput() {
+    focusInput(e) {
         // document.getElementById('title-input').focus();
         document.getElementById('title-text').classList.add('hidden2');
         document.getElementById('title-input').classList.remove('hidden2');
         document.getElementById('title-input').select();
     }
 
-    blurInput() {
+    blurInput(e) {
         document.getElementById('title-input').classList.add('hidden2');
         document.getElementById('title-text').classList.remove('hidden2');
-        this.handleSubmit();
+    }
+
+    handleFile(e) {
+        debugger
+        this.setState({
+            photoFile: e.currentTarget.files[0]
+        })
     }
 
     render() {
@@ -58,18 +69,50 @@ class BoardShow extends React.Component {
                         <div id="title-text" onClick={this.focusInput} className="board-name">
                             {this.state.title}
                         </div>
-                        <form onSubmit={this.handleSubmit}>
+                        <form onSubmit={(e) => this.blurInput(e)}>
                             <input 
                             id="title-input"
                             type="text"
                             value={this.state.title}
                             onChange={this.update('title')}
-                            onBlur={this.handleSubmit}
+                            onBlur={(e) => this.handleSubmit(e)}
                             className="board-name hidden2"
                             />
+                            <label className="in photo-up hidden2">
+                                <div>
+                                    Photo:
+                                </div>
+                                <input
+                                    id="file-input"
+                                    type="file"
+                                    onChange={(e) => {
+                                        debugger
+                                        this.handleFile(e);
+                                        this.focusInput(e);
+                                        this.blurInput(e);
+                                    }}
+                                />
+                            </label>
                         </form>
                     </div>
                     <div className="nav-actions nav-ele">
+                        <div className="bg-board">
+                            <label className="in photo-up">
+                                <div className="bg-update-text">
+                                    Update background
+                                </div>
+                                <input
+                                    id="file-input"
+                                    type="file"
+                                    onChange={(e) => {
+                                        debugger
+                                        this.handleFile(e);
+                                        this.focusInput(e);
+                                        this.blurInput(e);
+                                    }}
+                                />
+                            </label>
+                        </div>
                         <div className="star-board">
                             <i className="far fa-star btn board-name"></i>
                         </div>

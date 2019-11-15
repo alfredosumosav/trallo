@@ -260,11 +260,6 @@
     // z-index: -1;
 }
 
-.hidden2 {
-    visibility: hidden;
-    display: none;
-}
-
 .focused {
     display: block;
 }
@@ -301,6 +296,8 @@
 .photo-up {
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin-right: -16%;
 }
 
 #i-title input {
@@ -341,4 +338,21 @@
     h1 {
         margin: 0 5px;
     }
+}
+
+.hidden2 {
+    visibility: hidden;
+    display: none;
+}
+
+.bg-update-text {
+    width: 100%;
+    padding-right: 20px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.bg-board {
+    display: flex;
+    justify-content: flex-end;
 }

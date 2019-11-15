@@ -31,9 +31,19 @@ class Api::BoardsController < ApplicationController
     end
 
     def update
-        @board = Board.find_by(id: params[:id])
+        debugger
+        if board_params['photo'] == "undefined"
+            @board = Board.find_by(id: params[:board][:id])
+            @board.title = params[:board][:title]
+            # new_params = {title: params[:board][:title]}
+        else
+            @board = Board.find_by(id: params[:board][:id])
+            @board.title = params[:board][:title]
+            @board.photo = params[:board][:photo]
+            # new_params = board_params
+        end
         
-        if @board.update(board_params)
+        if @board.save
             render :show
         else
             render json: @board.errors.full_messages, status: 404
