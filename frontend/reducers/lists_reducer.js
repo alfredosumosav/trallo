@@ -12,11 +12,12 @@ const listsReducer = (oldState = {}, action) => {
         case RECEIVE_LISTS:
             return action.lists;
         case RECEIVE_LIST:
-            // let list = Object.values(action.list)[0]
-            // nextState[list.id] = list;
+            //debugger?
+            let list = Object.values(action.list)[0]
+            nextState[list.id] = list;
             return nextState;
         case REMOVE_LIST:
-            // delete nextState[action.listId];
+            delete nextState[action.listId];
             return nextState;
         default:
             return oldState;
