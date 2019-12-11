@@ -17,7 +17,17 @@ class BoardIndex extends React.Component {
             <div className="boards-container">
                 <div className="boards-index">
                     <div className="boards-header-name">
-                        <span>Your Boards!</span>
+                        <span>Starred Boards!</span>
+                    </div>
+                    <div className="boards-list">
+                        {
+                            boards.filter(board => board.favorited).map(board => (
+                                <BoardIndexItem openModal={openModal} key={board.id} board={board} />
+                            ))
+                        }
+                    </div>
+                    <div className="boards-header-name">
+                        <span>Personal Boards!</span>
                     </div>
                     <div className="boards-list">
                         {
