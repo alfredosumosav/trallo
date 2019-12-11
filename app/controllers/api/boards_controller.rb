@@ -33,6 +33,7 @@ class Api::BoardsController < ApplicationController
         if board_params['photo'] == "undefined"
             @board = Board.find_by(id: params[:board][:id])
             @board.title = params[:board][:title]
+            @board.favorited = params[:board][:favorited]
         else
             @board = Board.find_by(id: params[:board][:id])
             @board.title = params[:board][:title]
@@ -58,7 +59,7 @@ class Api::BoardsController < ApplicationController
     private
     
     def board_params
-        params.require(:board).permit(:title, :photo)
+        params.require(:board).permit(:title, :photo, :favorited)
     end
 
 end
