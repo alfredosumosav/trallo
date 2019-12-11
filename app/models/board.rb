@@ -20,4 +20,9 @@ class Board < ApplicationRecord
     class_name: :User
     
     has_one_attached :photo
+
+    has_many :lists,
+        primary_key: :id,
+        foreign_key: :board_id,
+        classname: :List
 end
