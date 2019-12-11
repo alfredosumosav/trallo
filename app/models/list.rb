@@ -16,10 +16,10 @@ class List < ApplicationRecord
     belongs_to :board,
         primary_key: :id,
         foreign_key: :board_id,
-        classname: :Board
+        class_name: :Board
 
     belongs_to :author,
         primary_key: :id,
         foreign_key: :author_id,
-        classname: :User
+        class_name: :User
 end
