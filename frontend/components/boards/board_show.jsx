@@ -8,6 +8,7 @@ class BoardShow extends React.Component {
         this.state = this.props.board;
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFile = this.handleFile.bind(this);
+        this.handleFav = this.handleFav.bind(this);
         this.delete = this.delete.bind(this);
     }
 
@@ -18,10 +19,12 @@ class BoardShow extends React.Component {
     }
 
     handleSubmit(e) {
+        e.preventDefault();
         let formData = new FormData();
         formData.append('board[id]', this.state.id);
         formData.append('board[title]', this.state.title);
         formData.append('board[photo]', this.state.photoFile);
+        formData.append('board[favorited]', this.state.favorited);
         this.props.updateBoard(formData);
     }
 
@@ -44,6 +47,13 @@ class BoardShow extends React.Component {
         this.setState({
             photoFile: e.currentTarget.files[0]
         })
+    }
+
+    handleFav(e) {
+        e.preventDefault();
+        return this.setState({
+            favorited: !this.state.favorited
+        });
     }
 
     render() {
@@ -109,7 +119,11 @@ class BoardShow extends React.Component {
                             </label>
                         </div>
                         <div className="star-board">
-                            <i className="far fa-star btn board-name"></i>
+                            <i onClick={(e) => {
+                                this.handleFav(e);
+                                this.focusInput(e);
+                                this.blurInput(e);
+                            }} className={`far fa-star btn board-name ${this.state.favorited === true ? 'yellow' : ''}`}></i>
                         </div>
                         <div className="trash-can board-name">
                             <i onClick={() => this.delete(this.state.id)} className="far fa-trash-alt btn"></i>
