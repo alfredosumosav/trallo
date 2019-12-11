@@ -55,7 +55,7 @@ class BoardIndex extends React.Component {
                     </div>
                     <div id="archived" className="boards-list archived">
                         {
-                            boards.filter(board => board.archived).filter(board => board.favorited).map(board => (
+                            boards.filter(board => board.archived).map(board => (
                                 <BoardIndexItem openModal={openModal} key={board.id} board={board} />
                             ))
                         }
