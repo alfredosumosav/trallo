@@ -51,7 +51,7 @@ class BoardIndex extends React.Component {
                         </div>
                     </div>
                     <div className="boards-header-name">
-                        <span><i className='fas fa-archive i'></i>Archived Boards!&nbsp;<i onClick={this.show} className={`fas fa-angle-double-down i i-carot ${show}`}></i></span>
+                        <span className="archived-title" onClick={this.show}><i className='fas fa-archive i'></i>Archived Boards!&nbsp;<i className={`fas fa-angle-double-down i i-carot`}></i></span>
                     </div>
                     <div id="archived" className="boards-list archived">
                         {
