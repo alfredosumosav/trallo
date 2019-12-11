@@ -34,12 +34,15 @@ class Api::BoardsController < ApplicationController
             @board = Board.find_by(id: params[:board][:id])
             @board.title = params[:board][:title]
             @board.favorited = params[:board][:favorited]
+            @board.archived = params[:board][:archived]
         else
             @board = Board.find_by(id: params[:board][:id])
             @board.title = params[:board][:title]
             @board.photo = params[:board][:photo]
+            @board.favorited = params[:board][:favorited]
+            @board.archived = params[:board][:archived]
         end
-        
+
         if @board.save
             render :show
         else
@@ -59,7 +62,7 @@ class Api::BoardsController < ApplicationController
     private
     
     def board_params
-        params.require(:board).permit(:title, :photo, :favorited)
+        params.require(:board).permit(:title, :photo, :favorited, :archived)
     end
 
 end

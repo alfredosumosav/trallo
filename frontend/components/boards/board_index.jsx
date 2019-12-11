@@ -11,27 +11,32 @@ class BoardIndex extends React.Component {
         this.props.requestBoards();
     }
 
+    show(e) {
+        document.getElementById('archived').classList.toggle('show');
+    }
+
     render() {
+        let show = '';
         const { boards, openModal } = this.props;
         return (
             <div className="boards-container">
                 <div className="boards-index">
                     <div className="boards-header-name">
-                        <span>Starred Boards!</span>
+                        <span><i className='far fa-star i'></i>Starred Boards!</span>
                     </div>
                     <div className="boards-list">
                         {
-                            boards.filter(board => board.favorited).map(board => (
+                            boards.filter(board => !board.archived).filter(board => board.favorited).map(board => (
                                 <BoardIndexItem openModal={openModal} key={board.id} board={board} />
                             ))
                         }
                     </div>
                     <div className="boards-header-name">
-                        <span>Personal Boards!</span>
+                        <span><i className="far fa-user i"></i>Personal Boards!</span>
                     </div>
                     <div className="boards-list">
                         {
-                            boards.map(board => (
+                            boards.filter(board => !board.archived).map(board => (
                                 <BoardIndexItem openModal={openModal} key={board.id} board={board} />
                             ))
                         }
@@ -44,6 +49,16 @@ class BoardIndex extends React.Component {
                                 </div>
                             </Link>
                         </div>
+                    </div>
+                    <div className="boards-header-name">
+                        <span><i className='fas fa-archive i'></i>Archived Boards!&nbsp;<i onClick={this.show} className={`fas fa-angle-double-down i i-carot ${show}`}></i></span>
+                    </div>
+                    <div id="archived" className="boards-list archived">
+                        {
+                            boards.filter(board => board.archived).filter(board => board.favorited).map(board => (
+                                <BoardIndexItem openModal={openModal} key={board.id} board={board} />
+                            ))
+                        }
                     </div>
                 </div>
             </div>

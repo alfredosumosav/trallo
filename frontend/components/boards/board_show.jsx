@@ -9,22 +9,26 @@ class BoardShow extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFile = this.handleFile.bind(this);
         this.handleFav = this.handleFav.bind(this);
+        this.handleArchive = this.handleArchive.bind(this);
         this.delete = this.delete.bind(this);
     }
 
     update(field) {
         return e => {
+            debugger
             this.setState({ [field]: e.currentTarget.value });
         }
     }
 
     handleSubmit(e) {
         e.preventDefault();
+        debugger
         let formData = new FormData();
         formData.append('board[id]', this.state.id);
         formData.append('board[title]', this.state.title);
         formData.append('board[photo]', this.state.photoFile);
         formData.append('board[favorited]', this.state.favorited);
+        formData.append('board[archived]', this.state.archived);
         this.props.updateBoard(formData);
     }
 
@@ -56,6 +60,17 @@ class BoardShow extends React.Component {
         });
     }
 
+    handleArchive(e) {
+        e.preventDefault();
+        let formData = new FormData();
+        formData.append('board[id]', this.state.id);
+        formData.append('board[title]', this.state.title);
+        formData.append('board[photo]', this.state.photoFile);
+        formData.append('board[favorited]', this.state.favorited);
+        formData.append('board[archived]', this.state.archived);
+        this.props.updateBoard(formData);
+    }
+
     render() {
         let img;
 
@@ -64,6 +79,28 @@ class BoardShow extends React.Component {
             let s = "s"
         } else {
             img = ""
+        }
+        if (this.props.board.archived) {
+            return (
+                <div className="board-show-container">
+                    <div className="boards-header-name b-closed">
+                        <span>This Board is closed!</span>
+                    </div>
+                    <div className="b-closed-actions">
+                        <span onClick={(e) => {
+                                this.state.archived = !this.state.archived;
+                                this.setState({
+                                    archived: this.state.archived
+                                });
+                                this.handleArchive(e);
+                            }} className="">
+                            Re-open
+                        </span>
+
+                        <span onClick={() => this.delete(this.state.id)} className="">Permanently Delete Board...</span>
+                    </div>
+                </div>
+            )
         }
         return (
             <div className="board-show-container">
@@ -127,6 +164,15 @@ class BoardShow extends React.Component {
                         </div>
                         <div className="trash-can board-name">
                             <i onClick={() => this.delete(this.state.id)} className="far fa-trash-alt btn"></i>
+                        </div>
+                        <div className="archive-board board-name">
+                            <i onClick={(e) => {
+                                this.state.archived = !this.state.archived;
+                                this.setState({
+                                    archived: this.state.archived
+                                });
+                                this.handleArchive(e);
+                            }} className={`fas fa-archive btn`}></i>
                         </div>
                     </div>
                 </div>
