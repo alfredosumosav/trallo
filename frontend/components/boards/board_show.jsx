@@ -84,7 +84,7 @@ class BoardShow extends React.Component {
             return (
                 <div className="board-show-container">
                     <div className="boards-header-name b-closed">
-                        <span>This Board is closed!</span>
+                        <h1>{this.props.board.title} is closed!</h1>
                     </div>
                     <div className="b-closed-actions">
                         <span onClick={(e) => {
