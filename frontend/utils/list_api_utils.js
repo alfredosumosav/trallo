@@ -1,9 +1,8 @@
-export const fetchLists = () => {
-    return $.ajax({
+export const fetchLists = (data) => ($.ajax({
         url: `/api/lists`,
-        method: 'GET'
-    })
-};
+        method: 'GET',
+        data
+    }));
 
 export const fetchList = listId => {
     return $.ajax({
