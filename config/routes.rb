@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
     resources :boards, except: [:new, :edit]
-    # resources :lists, only: [:create, :update, :destroy]
+    resources :lists, except: [:new, :edit]
     # resources :cards, except: [:new, :edit]
   end
 end
