@@ -183,6 +183,13 @@ class BoardShow extends React.Component {
                     {
                         lists.map((list, id) => <ListIndexItem key={id} list={list} />)
                     }
+                    <div className="board-list-container">
+                        <div className="list-content-container new-list">
+                            <div className="board-list-title">
+                                <h2><i class="fas fa-plus"></i> Add another list</h2>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         );
