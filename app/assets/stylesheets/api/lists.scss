@@ -1,3 +1,45 @@
 // Place all the styles related to the api/lists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.board-list-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 149px);
+    min-width: 20vw;
+    // background: rgba(0, 0, 0, 0.5);
+    // background: #ebecf0;
+    // border: 1px solid transparent;
+    // border-radius: 3px;
+    // padding: 3px;
+    margin: 0 4px;
+    z-index: 0;
+}
+
+.board-list-container:first-child {
+    margin-left: 8px;
+}
+
+.list-content-container {
+    border: 1px solid transparent;
+    border-radius: 3px;
+    padding: 3px;
+    background: #ebecf0;
+}
+
+#bl-container {
+    display: flex;
+    // margin-bottom: 8px;
+    max-width: 100vw;
+    overflow-x: scroll;
+}
+
+.board-list-title {
+    min-height: 20px;
+    padding: 10px 8px;
+
+    h2 {
+        font-weight: bold;
+    }
+}

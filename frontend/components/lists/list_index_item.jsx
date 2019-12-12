@@ -11,16 +11,18 @@ class ListIndexItem extends React.Component {
 
         return (
             <div className="board-list-container">
-                <div className="board-list-title">
-                    {
-                        list.title
-                    }
-                </div>
-                <div className="cards-container">
-                    <div>card 1</div>
-                    <div>card 2</div>
-                    <div>card 3</div>
-                    <div>card 4</div>
+                <div className="list-content-container">
+                    <div className="board-list-title">
+                        <h2>{
+                            list.title
+                        }</h2>
+                    </div>
+                    <div className="cards-container">
+                        <div>card 1</div>
+                        <div>card 2</div>
+                        <div>card 3</div>
+                        <div>card 4</div>
+                    </div>
                 </div>
             </div>
 

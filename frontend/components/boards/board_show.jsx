@@ -74,7 +74,7 @@ class BoardShow extends React.Component {
 
     render() {
         const { lists } = this.props;
-        debugger
+        // debugger
         let img;
 
         if (this.props.board.photoUrl) {
@@ -179,7 +179,7 @@ class BoardShow extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="row list">
+                <div id="bl-container" className="">
                     {
                         lists.map((list, id) => <ListIndexItem key={id} list={list} />)
                     }
