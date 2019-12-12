@@ -10,7 +10,7 @@ const listsReducer = (oldState = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_LISTS:
-            debugger
+            // debugger
             return action.lists;
         case RECEIVE_LIST:
             //debugger?
