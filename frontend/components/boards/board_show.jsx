@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect, Route, withRouter } from 'react-router-dom';
+import ListIndexItem from '../lists/list_index_item';
 
 class BoardShow extends React.Component {
     constructor(props) {
@@ -15,14 +16,14 @@ class BoardShow extends React.Component {
 
     update(field) {
         return e => {
-            debugger
+            // debugger
             this.setState({ [field]: e.currentTarget.value });
         }
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger
+        // debugger
         let formData = new FormData();
         formData.append('board[id]', this.state.id);
         formData.append('board[title]', this.state.title);
@@ -72,6 +73,8 @@ class BoardShow extends React.Component {
     }
 
     render() {
+        const { lists } = this.props;
+        debugger
         let img;
 
         if (this.props.board.photoUrl) {
@@ -177,10 +180,9 @@ class BoardShow extends React.Component {
                     </div>
                 </div>
                 <div className="row list">
-                    <h1>List 1</h1>
-                    <h1>List 2</h1>
-                    <h1>List 3</h1>
-                    <h1>List 4</h1>
+                    {
+                        lists.map((list, id) => <ListIndexItem key={id} list={list} />)
+                    }
                 </div>
             </div>
         );
