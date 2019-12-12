@@ -1,7 +1,10 @@
 class Api::ListsController < ApplicationController
 
     def index
-        @lists = @lists || List.find_by(board_id: params[:id])
+        # debugger
+        # @lists = @lists || List.all
+        # @lists = List.in_board(params[board_id])
+        @lists = List.all.where(board_id: params[:boardId])
         render :index
     end
 
@@ -40,7 +43,7 @@ class Api::ListsController < ApplicationController
     private
 
     def list_params
-        params.require(:list).permit(:title)
+        params.require(:list).permit(:title, :data)
     end
 
 end
