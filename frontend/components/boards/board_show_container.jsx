@@ -12,12 +12,13 @@ class BoardShowEdit extends React.Component {
     }
 
     render() {
+        // debugger
         if (this.props.board === undefined) {
             return null;
         }
 
         return (
-            <BoardShow board={this.props.board} updateBoard={this.props.updateBoard} deleteBoard={this.props.deleteBoard} />
+            <BoardShow lists={this.props.lists} board={this.props.board} updateBoard={this.props.updateBoard} deleteBoard={this.props.deleteBoard} />
         )
     }
 }
@@ -25,7 +26,7 @@ class BoardShowEdit extends React.Component {
 const mSTP = (state, ownProps) => {
     return ({
         board: state.entities.boards[ownProps.match.params.boardId],
-        lists: state.entities.lists
+        lists: Object.values(state.entities.lists)
     })
 };
 
