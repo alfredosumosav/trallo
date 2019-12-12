@@ -40,7 +40,7 @@
     font-size: 16px;
     font-weight: 700;
     color: #172b4d;
-    span {
+    .archived-title {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -51,7 +51,7 @@
         transition: background  0.2s ease 0s;
     }
 
-    span:hover {
+    .archived-title:hover {
         cursor: pointer;
         background: rgba(0, 0, 0, 0.2);
     }
