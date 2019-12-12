@@ -9,6 +9,7 @@ class BoardIndex extends React.Component {
 
     componentDidMount() {
         this.props.requestBoards();
+        this.props.requestLists();
     }
 
     show(e) {
