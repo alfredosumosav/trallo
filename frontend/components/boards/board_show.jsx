@@ -44,6 +44,7 @@ class BoardShow extends React.Component {
     }
 
     blurInput(e) {
+        e.preventDefault();
         document.getElementById('title-input').classList.add('hidden2');
         document.getElementById('title-text').classList.remove('hidden2');
     }
