@@ -186,7 +186,7 @@ class BoardShow extends React.Component {
                     <div className="board-list-container">
                         <div className="list-content-container new-list">
                             <div className="board-list-title">
-                                <h2><i class="fas fa-plus"></i> Add another list</h2>
+                                <h2><i class="fas fa-plus"></i> Add a list</h2>
                             </div>
                         </div>
                     </div>
