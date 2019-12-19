@@ -16,10 +16,19 @@ export const createList = list => {
         url: `/api/lists`,
         method: 'POST',
         data: list,
+        processData: false,
         contentType: false,
-        proccessData: false
     })
 };
+
+// EXAMPLE
+// $.ajax({
+//     url: `/api/lists`,
+//     method: 'POST',
+//     data: { list: { title: "hola", board_id: 87, author_id: 10 } },
+//     contentType: false,
+//     proccessData: false
+// })
 
 export const updateList = list => {
     return $.ajax({
