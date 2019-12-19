@@ -8,17 +8,16 @@ class BoardShowEdit extends React.Component {
     componentDidMount() {
         // debugger
         this.props.requestBoard(this.props.match.params.boardId);
-        this.props.requestLists(this.props.match.params);
     }
 
     render() {
         // debugger
-        if (this.props.board === undefined || this.props.lists === undefined) {
+        if (this.props.board === undefined) {
             return null;
         }
 
         return (
-            <BoardShow lists={this.props.lists} board={this.props.board} updateBoard={this.props.updateBoard} deleteBoard={this.props.deleteBoard} createList={this.props.createList} />
+            <BoardShow board={this.props.board} updateBoard={this.props.updateBoard} deleteBoard={this.props.deleteBoard} />
         )
     }
 }
@@ -26,7 +25,6 @@ class BoardShowEdit extends React.Component {
 const mSTP = (state, ownProps) => {
     return ({
         board: state.entities.boards[ownProps.match.params.boardId],
-        lists: Object.values(state.entities.lists)
     })
 };
 
@@ -34,8 +32,6 @@ const mDTP = (dispatch, ownProps) => ({
     requestBoard: boardId => dispatch(requestBoard(boardId)),
     updateBoard: board => dispatch(updateBoard(board)),
     deleteBoard: boardId => dispatch(deleteBoard(boardId)),
-    requestLists: boardId => dispatch(requestLists(boardId)),
-    createList: list => dispatch(createList(list))
 });
 
 export default connect(mSTP, mDTP)(BoardShowEdit);
