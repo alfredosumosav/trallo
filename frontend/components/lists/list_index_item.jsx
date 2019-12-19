@@ -7,7 +7,7 @@ class ListIndexItem extends React.Component {
     }
 
     render() {
-        const { list, openModal } = this.props;
+        const { list } = this.props;
 
         return (
             <div className="board-list-container">
@@ -17,12 +17,12 @@ class ListIndexItem extends React.Component {
                             list.title
                         }</h2>
                     </div>
-                    <div className="cards-container">
+                    {/* <div className="cards-container">
                         <div>card 1</div>
                         <div>card 2</div>
                         <div>card 3</div>
                         <div>card 4</div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
@@ -33,4 +33,4 @@ class ListIndexItem extends React.Component {
     }
 }
 
-export default withRouter(ListIndexItem);
+export default ListIndexItem;

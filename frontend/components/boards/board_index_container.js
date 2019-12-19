@@ -6,12 +6,10 @@ import { openModal } from '../../actions/modal_actions';
 
 const mSTP = state => ({
     boards: Object.values(state.entities.boards),
-    lists: Object.values(state.entities.lists)
 });
 
 const mDTP = dispatch => ({
     requestBoards: () => dispatch(requestBoards()),
-    requestLists: () => dispatch(requestLists()),
     openModal: modal => dispatch(openModal(modal))
 
 });

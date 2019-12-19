@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect, Route, withRouter } from 'react-router-dom';
-import ListIndexItem from '../lists/list_index_item';
+import ListIndexContainer from '../lists/list_index_container';
 
 class BoardShow extends React.Component {
     constructor(props) {
@@ -74,7 +74,6 @@ class BoardShow extends React.Component {
     }
 
     render() {
-        const { lists } = this.props;
         // debugger
         let img;
 
@@ -182,12 +181,15 @@ class BoardShow extends React.Component {
                 </div>
                 <div id="bl-container" className="">
                     {
-                        lists.map((list, id) => <ListIndexItem key={id} list={list} />)
+                        <ListIndexContainer />
                     }
+                    {/* {
+                        lists.map((list, id) => <ListIndexItem key={id} list={list} />)
+                    } */}
                     <div className="board-list-container">
                         <div className="list-content-container new-list">
                             <div className="board-list-title">
-                                <h2><i class="fas fa-plus"></i> Add another list</h2>
+                                <h2><i className="fas fa-plus"></i> Add a list</h2>
                             </div>
                         </div>
                     </div>
