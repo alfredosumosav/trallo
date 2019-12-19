@@ -607,6 +607,8 @@ a:hover {
 }
 
 .content {
+    display: flex;
+    justify-content: center;
     position: relative;
     background: #fafbfc;
     min-height: 100vh;
