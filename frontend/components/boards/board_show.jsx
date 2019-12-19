@@ -7,10 +7,12 @@ class BoardShow extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.board;
+        this.state.list_title = '';
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFile = this.handleFile.bind(this);
         this.handleFav = this.handleFav.bind(this);
         this.handleArchive = this.handleArchive.bind(this);
+        this.handleNewList = this.handleNewList.bind(this);
         this.delete = this.delete.bind(this);
     }
 
@@ -49,10 +51,26 @@ class BoardShow extends React.Component {
         document.getElementById('title-text').classList.remove('hidden2');
     }
 
+    focusInputList(e) {
+        document.getElementById('title-text').classList.add('hidden2');
+        document.getElementById('title-input').classList.remove('hidden2');
+        document.getElementById('title-input').select();
+    }
+
     handleFile(e) {
         this.setState({
             photoFile: e.currentTarget.files[0]
         })
+    }
+
+    handleNewList(e) {
+        e.preventDefault();
+        // debugger
+
+        let listFormData = new FormData();
+        listFormData.append('list[title]', this.state.list_title);
+        listFormData.append('list[board_id]', this.state.id);
+        this.props.createList(listFormData);
     }
 
     handleFav(e) {
@@ -188,9 +206,42 @@ class BoardShow extends React.Component {
                     } */}
                     <div className="board-list-container">
                         <div className="list-content-container new-list">
-                            <div className="board-list-title">
-                                <h2><i className="fas fa-plus"></i> Add a list</h2>
+                            <div id="list-text"  onClick={(e) => {
+                                    // const l1 = $('.list-text');
+                                    // const l2 = $('.list-input');
+                                    document.getElementById('list-text').classList.add('hidden2');
+                                    document.getElementById('list-input').classList.remove('hidden2');
+                                    document.getElementById('submit-list-input').classList.remove('hidden2');
+                                    // document.getElementsByClassName('list-input').classList.remove('hidden2');
+                                    // l1.addClass('hidden2');
+                                    // l2.removeClass('hidden2');
+                                    document.getElementById('list-input').select();
+                                }}
+                                className="board-list-title">
+
+                                <div className="list-text"><i className="fas fa-plus"></i> Add a list</div>
+
                             </div>
+                            <form onSubmit={this.handleNewList}>
+                                <input
+                                    id="list-input"
+                                    type="text"
+                                    value={this.state.list_title}
+                                    onChange={this.update('list_title')}
+                                    onBlur={() => {
+                                        document.getElementById('list-input').classList.add('hidden2');
+                                        document.getElementById('submit-list-input').classList.add('hidden2');
+                                        document.getElementById('list-text').classList.remove('hidden2');
+                                    }}
+                                    className="board-list-title list-input hidden2"
+                                />
+                                <input 
+                                    type="submit"
+                                    value="Add List"
+                                    id="submit-list-input"
+                                    className="list-input hidden2"
+                                />
+                            </form>
                         </div>
                     </div>
                 </div>
