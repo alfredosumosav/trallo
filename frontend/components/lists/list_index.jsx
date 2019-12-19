@@ -3,11 +3,26 @@ import { Redirect, Route, withRouter } from 'react-router-dom';
 import ListIndexItem from '../lists/list_index_item';
 
 class ListIndex extends React.Component {
-    constructor() {
+    constructor(props) {
         super(props);
-        this.state = this.props.board;
-        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidMount() {
+        // debugger
+        this.props.requestLists(this.props.match.params);
+    }
+
+    render() {
+
+        if (this.props.lists === undefined) {
+            return null;
+        }
+
+        const { lists } = this.props;
+        return (
+                    lists.map((list, id) => <ListIndexItem key={id} list={list} />)
+        );
     }
 }
 
-export default ListIndex;
+export default withRouter(ListIndex);
