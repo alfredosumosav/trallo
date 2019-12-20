@@ -49,7 +49,7 @@
 }
 
 .new-list {
-    background: hsla(0,0%,100%,.24);
+    background: hsla(0,0%,100%,.32);
     h2 {
         font-size: 14px;
     }
@@ -57,7 +57,7 @@
 
 .new-list:hover {
     cursor: pointer;
-    background-color: hsla(0,0%,100%,.32);
+    background-color: hsla(0,0%,100%,.52);
     // background: rgba(255,255,255, 0.5);
 }
 
