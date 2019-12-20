@@ -218,35 +218,19 @@ class BoardShow extends React.Component {
             </div>
             <div id="bl-container" className="">
               {<ListIndexContainer />}
-              {/* {
-                        lists.map((list, id) => <ListIndexItem key={id} list={list} />)
-                    } */}
               <div className="board-list-container">
                 <div className="list-content-container new-list">
                   <div
                     id="list-text"
                     onClick={e => {
-                      // const l1 = $('.list-text');
-                      // const l2 = $('.list-input');
-                      document
-                        .getElementById("list-text")
-                        .classList.add("hidden2");
-                      document
-                        .getElementById("list-input")
-                        .classList.remove("hidden2");
-                      document
-                        .getElementById("submit-list-input")
-                        .classList.remove("hidden2");
-                      document
-                        .getElementById("list-input2")
-                        .classList.remove("hidden2");
-                      // document.getElementsByClassName('list-input').classList.remove('hidden2');
-                      // l1.addClass('hidden2');
-                      // l2.removeClass('hidden2');
+                      document.getElementById("list-text").classList.add("hidden2");
+                      document.getElementById("list-input").classList.remove("hidden2");
+                      document.getElementById("submit-list-input").classList.remove("hidden2");
+                      document.getElementById("list-input2").classList.remove("hidden2");
+                      document.getElementById("list-actions-container").classList.remove("hidden2");
                       document.getElementById("list-input").select();
                     }}
-                    className="board-list-title"
-                  >
+                    className="board-list-title">
                     <div className="list-text">
                       <i className="fas fa-plus"></i> Add a list
                     </div>
@@ -255,42 +239,36 @@ class BoardShow extends React.Component {
                     id="list-f"
                     onSubmit={e => {
                       this.handleNewList(e);
-                    }}
-                  >
-                    <input
-                      id="list-input"
-                      type="text"
-                      value={this.state.list_title}
-                      autoComplete="off"
-                      onChange={this.update("list_title")}
-                      className="board-list-title list-input hidden2"
-                    />
-                    <div>
-                        <input
-                        type="submit"
-                        value="Add List"
-                        id="submit-list-input"
-                        className="list-input hidden2"
-                        />
+                    }}>
+                      <input
+                        id="list-input"
+                        type="text"
+                        value={this.state.list_title}
+                        autoComplete="off"
+                        placeholder="Enter list title..."
+                        onChange={this.update("list_title")}
+                        className="board-list-title list-input hidden2"
+                      />
+                    <div id="list-actions-container" className="list-input hidden2">
+                        <div onClick={this.handleNewList} id="submit-list-input" className="btn-success list-input hidden2">
+                          Add List
+                        </div>
                         <div
-                        id="list-input2"
-                        className="list-input hidden2"
-                        onClick={e => {
-                            document
-                            .getElementById("list-input")
-                            .classList.add("hidden2");
-                            document
-                            .getElementById("submit-list-input")
-                            .classList.add("hidden2");
-                            document
-                            .getElementById("list-input2")
-                            .classList.add("hidden2");
-                            document
-                            .getElementById("list-text")
-                            .classList.remove("hidden2");
-                        }}
-                        >
-                        X
+                          id="list-input2"
+                          className="list-input hidden2 board-name"
+                          onClick={e => {
+                              this.setState({
+                                list_title: ""
+                              });
+                              document.getElementById("list-input").classList.add("hidden2");
+                              document.getElementById("submit-list-input").classList.add("hidden2");
+                              document.getElementById("list-input2").classList.add("hidden2");
+                              document.getElementById("list-actions-container").classList.add("hidden2");
+                              document.getElementById("list-text").classList.remove("hidden2");
+                          }}>
+                            <div className="btn">
+                              <i class="fas fa-times"></i>
+                            </div>
                         </div>
                     </div>
                   </form>
