@@ -4,7 +4,6 @@
 
 html {
     scroll-behavior: smooth;
-    // width: max-content;
 }
 
 .main {
@@ -608,27 +607,13 @@ a:hover {
 }
 
 .content {
-    display: flex;
-    // justify-content: center;
-    // width: max-content;
     position: relative;
     background: #fafbfc;
     min-height: 100vh;
-
-    .boards-container {
-        margin: auto;
-    }
-
-    // .boards-index {
-    //     margin: auto;
-    // }
 }
 
 .board-show-container {
     padding-bottom: 40px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
 }
 
 #footer-container {
