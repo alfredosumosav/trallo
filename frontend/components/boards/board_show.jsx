@@ -267,7 +267,7 @@ class BoardShow extends React.Component {
                               document.getElementById("list-text").classList.remove("hidden2");
                           }}>
                             <div className="btn">
-                              <i class="fas fa-times"></i>
+                              <i className="fas fa-times"></i>
                             </div>
                         </div>
                     </div>
