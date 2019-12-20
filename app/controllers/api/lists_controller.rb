@@ -10,7 +10,6 @@ class Api::ListsController < ApplicationController
 
     def create
         @list = List.new(list_params)
-        @list.board_id = params[:id]
         @list.author_id = current_user.id
         if @list.save
             render :show
@@ -43,7 +42,7 @@ class Api::ListsController < ApplicationController
     private
 
     def list_params
-        params.require(:list).permit(:title, :data)
+        params.require(:list).permit(:title, :board_id)
     end
 
 end

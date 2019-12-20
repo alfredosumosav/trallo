@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ListIndex from './list_index';
-import { requestLists } from '../../actions/list_actions';
+import { requestLists, createList } from '../../actions/list_actions';
 import { openModal } from '../../actions/modal_actions';
 
 const mSTP = state => ({
@@ -9,6 +9,7 @@ const mSTP = state => ({
 
 const mDTP = dispatch => ({
     requestLists: boardId => dispatch(requestLists(boardId)),
+    createList: list => dispatch(createList(list))
 
 });
 
