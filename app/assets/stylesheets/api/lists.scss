@@ -72,3 +72,12 @@
 .list-btn {
     display: block;
 }
+
+#list-f {
+    display: flex;
+    flex-direction: column;
+
+    #submit-list-input {
+        width: 34%;
+    }
+}
