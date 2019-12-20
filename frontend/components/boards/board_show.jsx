@@ -176,12 +176,12 @@ class BoardShow extends React.Component {
                                 />
                             </label>
                         </div>
-                        <div className="star-board">
+                        <div className="star-board board-name">
                             <i onClick={(e) => {
                                 this.handleFav(e);
                                 this.focusInput(e);
                                 this.blurInput(e);
-                            }} className={`far fa-star btn board-name ${this.state.favorited === true ? 'yellow' : ''}`}></i>
+                            }} className={`far fa-star btn ${this.state.favorited === true ? 'yellow' : ''}`}></i>
                         </div>
                         <div className="trash-can board-name">
                             <i onClick={() => this.delete(this.state.id)} className="far fa-trash-alt btn"></i>
