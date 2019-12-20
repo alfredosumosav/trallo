@@ -70,7 +70,15 @@ class BoardShow extends React.Component {
         let listFormData = new FormData();
         listFormData.append('list[title]', this.state.list_title);
         listFormData.append('list[board_id]', this.state.id);
-        this.props.createList(listFormData);
+        this.props.createList(listFormData).then(() => {
+            this.setState({
+                list_title: ''
+            });
+            document.getElementById('list-input').classList.add('hidden2');
+            document.getElementById('list-input2').classList.add('hidden2');
+            document.getElementById('submit-list-input').classList.add('hidden2');
+            document.getElementById('list-text').classList.remove('hidden2');
+        });
     }
 
     handleFav(e) {
@@ -124,128 +132,172 @@ class BoardShow extends React.Component {
             )
         }
         return (
-            <div className="board-show-container">
-                <div className="board-bg">
-                <div className="overlay2"></div>
-                    {img}
+          <div className="board-show-container">
+            <div className="board-bg">
+              <div className="overlay2"></div>
+              {img}
+            </div>
+            <div className="row board-bar">
+              <div className="board-title nav-ele">
+                <div
+                  id="title-text"
+                  onClick={this.focusInput}
+                  className="board-name"
+                >
+                  {this.state.title}
                 </div>
-                <div className="row board-bar">
-                    <div className="board-title nav-ele">
-                        <div id="title-text" onClick={this.focusInput} className="board-name">
-                            {this.state.title}
-                        </div>
-                        <form onSubmit={(e) => this.blurInput(e)}>
-                            <input 
-                            id="title-input"
-                            type="text"
-                            value={this.state.title}
-                            onChange={this.update('title')}
-                            onBlur={(e) => this.handleSubmit(e)}
-                            className="board-name hidden2"
-                            />
-                            <label className="in photo-up hidden2">
-                                <div>
-                                    Photo:
-                                </div>
-                                <input
-                                    id="file-input"
-                                    type="file"
-                                    onChange={(e) => {
-                                        this.handleFile(e);
-                                        this.focusInput(e);
-                                        this.blurInput(e);
-                                    }}
-                                />
-                            </label>
-                        </form>
-                    </div>
-                    <div className="nav-actions nav-ele">
-                        <div className="bg-board">
-                            <label className="in photo-up">
-                                <div className="bg-update-text">
-                                    Update background
-                                </div>
-                                <input
-                                    id="file-input"
-                                    type="file"
-                                    onChange={(e) => {
-                                        this.handleFile(e);
-                                        this.focusInput(e);
-                                        this.blurInput(e);
-                                    }}
-                                />
-                            </label>
-                        </div>
-                        <div className="star-board board-name">
-                            <i onClick={(e) => {
-                                this.handleFav(e);
-                                this.focusInput(e);
-                                this.blurInput(e);
-                            }} className={`far fa-star btn ${this.state.favorited === true ? 'yellow' : ''}`}></i>
-                        </div>
-                        <div className="trash-can board-name">
-                            <i onClick={() => this.delete(this.state.id)} className="far fa-trash-alt btn"></i>
-                        </div>
-                        <div className="archive-board board-name">
-                            <i onClick={(e) => {
-                                this.state.archived = !this.state.archived;
-                                this.setState({
-                                    archived: this.state.archived
-                                });
-                                this.handleArchive(e);
-                            }} className={`fas fa-archive btn`}></i>
-                        </div>
-                    </div>
+                <form onSubmit={e => this.blurInput(e)}>
+                  <input
+                    id="title-input"
+                    type="text"
+                    value={this.state.title}
+                    onChange={this.update("title")}
+                    onBlur={e => this.handleSubmit(e)}
+                    className="board-name hidden2"
+                  />
+                  <label className="in photo-up hidden2">
+                    <div>Photo:</div>
+                    <input
+                      id="file-input"
+                      type="file"
+                      onChange={e => {
+                        this.handleFile(e);
+                        this.focusInput(e);
+                        this.blurInput(e);
+                      }}
+                    />
+                  </label>
+                </form>
+              </div>
+              <div className="nav-actions nav-ele">
+                <div className="bg-board">
+                  <label className="in photo-up">
+                    <div className="bg-update-text">Update background</div>
+                    <input
+                      id="file-input"
+                      type="file"
+                      onChange={e => {
+                        this.handleFile(e);
+                        this.focusInput(e);
+                        this.blurInput(e);
+                      }}
+                    />
+                  </label>
                 </div>
-                <div id="bl-container" className="">
-                    {
-                        <ListIndexContainer />
-                    }
-                    {/* {
+                <div className="star-board board-name">
+                  <i
+                    onClick={e => {
+                      this.handleFav(e);
+                      this.focusInput(e);
+                      this.blurInput(e);
+                    }}
+                    className={`far fa-star btn ${
+                      this.state.favorited === true ? "yellow" : ""
+                    }`}
+                  ></i>
+                </div>
+                <div className="trash-can board-name">
+                  <i
+                    onClick={() => this.delete(this.state.id)}
+                    className="far fa-trash-alt btn"
+                  ></i>
+                </div>
+                <div className="archive-board board-name">
+                  <i
+                    onClick={e => {
+                      this.state.archived = !this.state.archived;
+                      this.setState({
+                        archived: this.state.archived
+                      });
+                      this.handleArchive(e);
+                    }}
+                    className={`fas fa-archive btn`}
+                  ></i>
+                </div>
+              </div>
+            </div>
+            <div id="bl-container" className="">
+              {<ListIndexContainer />}
+              {/* {
                         lists.map((list, id) => <ListIndexItem key={id} list={list} />)
                     } */}
-                    <div className="board-list-container">
-                        <div className="list-content-container new-list">
-                            <div id="list-text"  onClick={(e) => {
-                                    // const l1 = $('.list-text');
-                                    // const l2 = $('.list-input');
-                                    document.getElementById('list-text').classList.add('hidden2');
-                                    document.getElementById('list-input').classList.remove('hidden2');
-                                    document.getElementById('submit-list-input').classList.remove('hidden2');
-                                    // document.getElementsByClassName('list-input').classList.remove('hidden2');
-                                    // l1.addClass('hidden2');
-                                    // l2.removeClass('hidden2');
-                                    document.getElementById('list-input').select();
-                                }}
-                                className="board-list-title">
-
-                                <div className="list-text"><i className="fas fa-plus"></i> Add a list</div>
-
-                            </div>
-                            <form onSubmit={this.handleNewList}>
-                                <input
-                                    id="list-input"
-                                    type="text"
-                                    value={this.state.list_title}
-                                    onChange={this.update('list_title')}
-                                    onBlur={() => {
-                                        document.getElementById('list-input').classList.add('hidden2');
-                                        document.getElementById('submit-list-input').classList.add('hidden2');
-                                        document.getElementById('list-text').classList.remove('hidden2');
-                                    }}
-                                    className="board-list-title list-input hidden2"
-                                />
-                                <input 
-                                    type="submit"
-                                    value="Add List"
-                                    id="submit-list-input"
-                                    className="list-input hidden2"
-                                />
-                            </form>
+              <div className="board-list-container">
+                <div className="list-content-container new-list">
+                  <div
+                    id="list-text"
+                    onClick={e => {
+                      // const l1 = $('.list-text');
+                      // const l2 = $('.list-input');
+                      document
+                        .getElementById("list-text")
+                        .classList.add("hidden2");
+                      document
+                        .getElementById("list-input")
+                        .classList.remove("hidden2");
+                      document
+                        .getElementById("submit-list-input")
+                        .classList.remove("hidden2");
+                      document
+                        .getElementById("list-input2")
+                        .classList.remove("hidden2");
+                      // document.getElementsByClassName('list-input').classList.remove('hidden2');
+                      // l1.addClass('hidden2');
+                      // l2.removeClass('hidden2');
+                      document.getElementById("list-input").select();
+                    }}
+                    className="board-list-title"
+                  >
+                    <div className="list-text">
+                      <i className="fas fa-plus"></i> Add a list
+                    </div>
+                  </div>
+                  <form
+                    id="list-f"
+                    onSubmit={e => {
+                      this.handleNewList(e);
+                    }}
+                  >
+                    <input
+                      id="list-input"
+                      type="text"
+                      value={this.state.list_title}
+                      autoComplete="off"
+                      onChange={this.update("list_title")}
+                      className="board-list-title list-input hidden2"
+                    />
+                    <div>
+                        <input
+                        type="submit"
+                        value="Add List"
+                        id="submit-list-input"
+                        className="list-input hidden2"
+                        />
+                        <div
+                        id="list-input2"
+                        className="list-input hidden2"
+                        onClick={e => {
+                            document
+                            .getElementById("list-input")
+                            .classList.add("hidden2");
+                            document
+                            .getElementById("submit-list-input")
+                            .classList.add("hidden2");
+                            document
+                            .getElementById("list-input2")
+                            .classList.add("hidden2");
+                            document
+                            .getElementById("list-text")
+                            .classList.remove("hidden2");
+                        }}
+                        >
+                        X
                         </div>
                     </div>
+                  </form>
                 </div>
+              </div>
             </div>
+          </div>
         );
     }
 }
