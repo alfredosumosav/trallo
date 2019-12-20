@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ListIndex from './list_index';
-import { requestLists, createList } from '../../actions/list_actions';
+import { requestLists, updateList } from '../../actions/list_actions';
 import { openModal } from '../../actions/modal_actions';
 
 const mSTP = state => ({
