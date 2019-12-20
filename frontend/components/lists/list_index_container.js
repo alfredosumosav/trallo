@@ -9,7 +9,7 @@ const mSTP = state => ({
 
 const mDTP = dispatch => ({
     requestLists: boardId => dispatch(requestLists(boardId)),
-    createList: list => dispatch(createList(list))
+    updateList: list => dispatch(updateList(list))
 
 });
 
