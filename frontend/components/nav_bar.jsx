@@ -7,7 +7,7 @@ const NavBar = ({ currentUser, logout, openModal }) => {
             <h2 className="header-name">Hi, {currentUser.username}!</h2>
             <div className="btn-container"><button className="header-button btn-logout" onClick={logout}>Log Out</button></div>
             <div className="plus">
-                    <button className="btn" onClick={() => openModal('create_board')}><i class="fas fa-plus"></i></button>
+                    <button className="btn" onClick={() => openModal('create_board')}><i className="fas fa-plus"></i></button>
             </div>
         </div>
     ) : (
