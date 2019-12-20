@@ -30,14 +30,24 @@ export const createList = list => {
 //     proccessData: false
 // })
 
+// export const updateList = list => {
+//     return $.ajax({
+//         url: `/api/lists/${list.id}`,
+//         method: 'PATCH',
+//         data: list,
+//         contentType: false,
+//         proccessData: false
+//     })
+// };
+
 export const updateList = list => {
-    return $.ajax({
-        url: `/api/lists/${list.id}`,
-        method: 'PATCH',
-        data: list,
-        contentType: false,
-        proccessData: false
-    })
+  return $.ajax({
+    url: `/api/lists/${list.getAll('list[id]')}`,
+    method: "PATCH",
+    data: list,
+    processData: false,
+    contentType: false
+  });
 };
 
 export const deleteList = listId => {
