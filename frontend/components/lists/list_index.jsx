@@ -20,7 +20,7 @@ class ListIndex extends React.Component {
 
         const { lists } = this.props;
         return (
-                    lists.map((list, id) => <ListIndexItem key={id} list={list} />)
+                    lists.map((list, id) => <ListIndexItem key={id} list={list} updateList={this.props.updateList} />)
         );
     }
 }
