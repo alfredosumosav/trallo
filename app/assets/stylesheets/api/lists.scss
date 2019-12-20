@@ -78,6 +78,40 @@
     flex-direction: column;
 
     #submit-list-input {
+        text-align: center;
         width: 34%;
     }
+
+    #list-input2 {
+        width: 15%;
+        border: 1px solid transparent;
+        padding: 0;
+        margin: 0 3%;
+        color: #42526e;
+
+        div {
+            font-size: 2em;
+        }
+    }
+
+    #list-input2:hover {
+        cursor: pointer;
+        color: #172b4d;
+        // font-weight: bold;
+    }
+}
+
+#list-actions-container {
+    cursor: default;
+    display: flex;
+    align-items: center;
+}
+
+#list-input {
+    font-size: 16px;
+    font-weight: bold;
+    background: #ebecf0;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    margin: 3px;
 }
