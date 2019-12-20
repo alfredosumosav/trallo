@@ -49,7 +49,7 @@ class BoardForm extends React.Component {
         return (
             <div className="board-form-container">
                 <form onSubmit={this.handleSubmit} className="board-form-box">
-                    <div onClick={this.props.closeModal} className="close-x"><span><i class="fas fa-times"></i></span></div>
+                    <div onClick={this.props.closeModal} className="close-x"><span><i className="fas fa-times"></i></span></div>
                     {this.renderErrors()}
                     <div className="in form-name">
                         {formType === 'create' ? 'Create a Board' : 'Update a Board'}
