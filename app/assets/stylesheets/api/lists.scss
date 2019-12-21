@@ -44,9 +44,9 @@
     }
 }
 
-.board-list-title:hover {
-    cursor: pointer;
-}
+// .board-list-title:hover {
+//     cursor: pointer;
+// }
 
 .new-list {
     background: hsla(0,0%,100%,.32);
@@ -102,7 +102,7 @@
 }
 
 #list-actions-container {
-    cursor: default;
+    // cursor: default;
     display: flex;
     align-items: center;
 }
@@ -116,10 +116,25 @@
     margin: 3px;
 }
 
+.list-title-text:hover {
+    cursor: default;
+}
+
 .list-title-text {
+    justify-content: space-between;
     color: #42526e;
+
+    div:hover {
+        cursor: pointer;
+    }
 }
 
 .list-title-input {
     color: #42526e;
 }
+
+// .list-title-container {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+// }
