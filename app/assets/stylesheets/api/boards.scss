@@ -57,33 +57,6 @@
     }
 }
 
-// .boards-item-container {
-//     background: #0079BF;
-//     width: 20%;
-//     border: 1px solid transparent;
-//     border-radius: 3px;
-//     display: block;
-//     line-height: 20px;
-//     margin: 8px;
-//     position: relative;
-//     margin: 0 2% 8px 0;
-//     min-height: 1px;
-//     min-width: 100px;
-// }
-
-// .boards-item {
-//     min-width: 100px;
-// }
-
-// .boards-item {
-//     background: #0079BF;
-//     transition: background 0.2s;
-// }
-
-// .boards-item:hover {
-//     background: rgba(0, 0, 0, 0.5);
-// }
-
 #new-b {
     border: 1px solid transparent;
     border-radius: 3px;
@@ -93,8 +66,6 @@
 
 .item-link:link, .item-link:visited {
     text-align: center;
-    // width: 100%;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -181,10 +152,6 @@
     border-radius: 3px;
 }
 
-.board-bg {
-
-}
-
 .b-title {
     z-index: 1;
 }
@@ -222,7 +189,6 @@
     background: rgba(0,0,0,0.04);
     padding: 8px 4px 4px 8px;
     display: flex;
-    // justify-content: center;
     border: 1px solid transparent;
     border-radius: 3px;
     background: transparent;
@@ -288,25 +254,8 @@
     font-size: 1.25rem;
     text-align: center;
     vertical-align: middle;
-    // border: 1px solid transparent;
     padding: 6px 12px;
 }
-
-// .i-carot {
-//     // border: 1px solid #172b4d;
-//     // border: 1px solid rgba(23, 43, 77, 0.5);
-//     // border: 1px solid rgba(23, 43, 77, 0.23);
-//     border: 1px solid transparent;
-//     border-radius: 3px;
-//     background: transparent;
-//     transition: background  0.2s ease 0s;
-// }
-
-// .i-carot:hover {
-//     cursor: pointer;
-//     background: rgba(0, 0, 0, 0.2);
-// }
-
 
 .archived {
     visibility: hidden;
@@ -318,7 +267,6 @@
 
 .show {
     visibility: visible;
-    // display: flex;
     max-height: 100%;
     opacity: 1;
     transition: visibility 700ms ease 0s, opacity 300ms;
@@ -326,10 +274,6 @@
 
 .list-container {
     min-height: 100px;
-}
-
-.nav-ele {
-    // margin: 0 32px;
 }
 
 .board-bg {
@@ -386,7 +330,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    // margin-right: -16%;
 }
 
 #file-input {
@@ -413,10 +356,6 @@
     }
 }
 
-// .in {
-//     padding: 10px;
-// }
-
 .login-input {
     font-size: 20px;
     height: 10px;
@@ -440,7 +379,6 @@
 
 .bg-update-text {
     text-align: center;
-    // font-size: 0.87em;
     font-size: 70%;
     font-weight: 700;
 }
