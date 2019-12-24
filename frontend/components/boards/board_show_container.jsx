@@ -6,12 +6,10 @@ import { createList } from '../../actions/list_actions';
 
 class BoardShowEdit extends React.Component {
     componentDidMount() {
-        // debugger
         this.props.requestBoard(this.props.match.params.boardId);
     }
 
     render() {
-        // debugger
         if (this.props.board === undefined) {
             return null;
         }
