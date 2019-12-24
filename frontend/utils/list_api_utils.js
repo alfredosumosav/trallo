@@ -59,10 +59,3 @@ export const deleteList = listId => {
     contentType: false
   });
 };
-
-// export const deleteList = listId => {
-//     return $.ajax({
-//         url: `/api/lists/${listId}`,
-//         method: 'DELETE'
-//     })
-// };
