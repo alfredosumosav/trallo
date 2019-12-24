@@ -167,18 +167,24 @@ class BoardShow extends React.Component {
               </div>
               <div className="nav-actions nav-ele">
                 <div className="bg-board">
-                  <label className="in photo-up">
-                    <div className="bg-update-text">Update background</div>
-                    <input
-                      id="file-input"
-                      type="file"
-                      onChange={e => {
-                        this.handleFile(e);
-                        this.focusInput(e);
-                        this.blurInput(e);
-                      }}
+                  <div className="inputfile-container">
+                    <input 
+                    type="file" 
+                    name="file" 
+                    id="file" 
+                    onChange={e => {
+                      this.handleFile(e);
+                      this.focusInput(e);
+                      this.blurInput(e);
+                    }}
+                    className="inputfile" 
+                    data-multiple-caption="{count} files selected" multiple 
                     />
-                  </label>
+                    <label className="board-name inputlabel" htmlFor="file">
+                      <i className="fas fa-upload"></i>
+                      <strong>Update background...</strong>
+                    </label>
+                  </div>
                 </div>
                 <div className="star-board board-name">
                   <i
