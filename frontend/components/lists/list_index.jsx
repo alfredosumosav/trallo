@@ -8,7 +8,6 @@ class ListIndex extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
         this.props.requestLists(this.props.match.params);
     };
 
