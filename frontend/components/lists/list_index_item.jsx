@@ -19,29 +19,16 @@ class ListIndexItem extends React.Component {
 
   focusInput(e) {
       e.preventDefault();
-      debugger
-    //   document.getElementById(`list-title-text-${this.props.list.id}`).classList.add('hidden2');
       $(`#list-title-text-${this.state.id}`);
       $(`#list-title-text-${this.state.id}`).addClass("hidden2");
       $(`#list-title-input-${this.state.id}`).removeClass("hidden2");
       $(`#list-title-input-${this.state.id}`).focus();
       $(`#list-title-input-${this.state.id}`).select();
-    // const { list } = this.props;
-    // document.getElementById(`list-title-text-${list.id}`).classList.add('hidden2');
-    // document.getElementById(`list-title-input-${list.id}`).classList.remove('hidden2');
-    // document.getElementById(`list-title-input-${list.id}`).select();
   }
   
   blurInput(e) {
       e.preventDefault();
       $(`#list-title-input-${this.state.id}`).blur();
-      // $(`#list-title-input-${this.state.id}`).addClass("hidden2");
-      // $(`#list-title-text-${this.state.id}`).removeClass("hidden2");
-    // e.preventDefault();
-    // debugger
-    // document.getElementById(`list-title-input-${list.id}`).classList.add("hidden2");
-    // document.getElementById(`list-title-text-${list.id}`).classList.remove("hidden2");
-    // document.getElementById(`list-title-input-${list.id}`).blur();
   }
 
   handleSubmit(e) {
@@ -52,17 +39,10 @@ class ListIndexItem extends React.Component {
       formData.append("list[id]", this.state.id);
       formData.append("list[title]", this.state.title);
       this.props.updateList(formData);
-        // let formData = new FormData();
-        // formData.append('list[id]', this.state.id);
-        // formData.append('list[title]', this.state.title);
-        // this.props.updateList(formData);
   }
 
   handleDelete(e) {
     e.preventDefault();
-    // debugger
-    // let formData = new FormData();
-    // formData.append("list[id]", this.state.id);
     this.props.deleteList(this.state.id);
   }
 
