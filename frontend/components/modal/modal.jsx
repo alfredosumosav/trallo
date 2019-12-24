@@ -2,7 +2,6 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import CreateBoardFormContainer from '../../components/boards/create_board_form_container';
-import UpdateBoardFormContainer from '../../components/boards/update_board_form_container';
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
@@ -12,9 +11,6 @@ function Modal({ modal, closeModal }) {
     switch (modal) {
         case 'create_board':
             component = <CreateBoardFormContainer />;
-            break;
-        case 'update_board':
-            component = <UpdateBoardFormContainer />;
             break;
         default:
             return null;
