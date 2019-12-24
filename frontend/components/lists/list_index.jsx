@@ -10,7 +10,11 @@ class ListIndex extends React.Component {
     componentDidMount() {
         // debugger
         this.props.requestLists(this.props.match.params);
-    }
+    };
+
+    componentWillUnmount() {
+        this.props.removeLists();
+    };
 
     render() {
 
@@ -20,7 +24,7 @@ class ListIndex extends React.Component {
 
         const { lists } = this.props;
         return (
-                    lists.map((list, id) => <ListIndexItem key={id} list={list} updateList={this.props.updateList} />)
+                    lists.map((list, id) => <ListIndexItem key={id} list={list} updateList={this.props.updateList} deleteList={this.props.deleteList} />)
         );
     }
 }
