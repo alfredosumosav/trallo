@@ -51,8 +51,18 @@ export const updateList = list => {
 };
 
 export const deleteList = listId => {
-    return $.ajax({
-        url: `/api/lists/${listId}`,
-        method: 'DELETE'
-    })
+    // debugger
+  return $.ajax({
+    url: `/api/lists/${listId}`,
+    method: "DELETE",
+    processData: false,
+    contentType: false
+  });
 };
+
+// export const deleteList = listId => {
+//     return $.ajax({
+//         url: `/api/lists/${listId}`,
+//         method: 'DELETE'
+//     })
+// };
