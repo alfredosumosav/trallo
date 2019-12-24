@@ -18,14 +18,12 @@ class BoardShow extends React.Component {
 
     update(field) {
         return e => {
-            // debugger
             this.setState({ [field]: e.currentTarget.value });
         }
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        // debugger
         let formData = new FormData();
         formData.append('board[id]', this.state.id);
         formData.append('board[title]', this.state.title);
@@ -65,7 +63,6 @@ class BoardShow extends React.Component {
 
     handleNewList(e) {
         e.preventDefault();
-        // debugger
 
         let listFormData = new FormData();
         listFormData.append('list[title]', this.state.list_title);
@@ -100,7 +97,6 @@ class BoardShow extends React.Component {
     }
 
     render() {
-        // debugger
         let img;
 
         if (this.props.board.photoUrl) {
