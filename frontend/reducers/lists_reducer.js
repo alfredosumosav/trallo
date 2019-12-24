@@ -1,7 +1,8 @@
 import {
     RECEIVE_LISTS,
     RECEIVE_LIST,
-    REMOVE_LIST
+    REMOVE_LIST,
+    REMOVE_LISTS
 } from '../actions/list_actions';
 
 const listsReducer = (oldState = {}, action) => {
@@ -13,13 +14,16 @@ const listsReducer = (oldState = {}, action) => {
             // debugger
             return action.lists;
         case RECEIVE_LIST:
-            //debugger?
+            // debugger
             let list = Object.values(action.list)[0]
             nextState[list.id] = list;
             return nextState;
         case REMOVE_LIST:
+            // debugger
             delete nextState[action.listId];
             return nextState;
+        case REMOVE_LISTS:
+            return {};
         default:
             return oldState;
     }
