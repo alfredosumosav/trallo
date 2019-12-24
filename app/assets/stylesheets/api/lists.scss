@@ -110,10 +110,19 @@
 
 .list-title-text {
     justify-content: space-between;
+    align-items: center;
     color: #42526e;
+    
+    div {
+        width: inherit;
+    }
 
     div:hover {
         cursor: pointer;
+    }
+
+    i:hover {
+        background: #eb5a46;
     }
 }
 
