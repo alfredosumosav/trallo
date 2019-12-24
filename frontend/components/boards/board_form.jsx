@@ -64,14 +64,22 @@ class BoardForm extends React.Component {
                                 placeholder="Enter board title"
                             />
                         </label>
-                        <label className="in photo-up">
-                        <div>
-                            Photo:
-                        </div>
-                            <input type="file"
-                                onChange={this.handleFile}
+                        <div className="inputfile-container">
+                            <input
+                                type="file"
+                                name="file"
+                                id="file"
+                                onChange={e => {
+                                    this.handleFile(e);
+                                }}
+                                className="inputfile"
+                                data-multiple-caption="{count} files selected" multiple
                             />
-                        </label>
+                            <label className="board-name inputlabel dark-text" htmlFor="file">
+                                <i className="fas fa-upload"></i>
+                                <strong>Update background...</strong>
+                            </label>
+                        </div>
                         <input className="in session-submit btn-success" type="submit" value={formType === 'create' ? 'Create Board' : 'Update Board'} />
                     </div>
                 </form>
