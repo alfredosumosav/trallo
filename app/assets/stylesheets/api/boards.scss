@@ -387,10 +387,6 @@
     font-weight: 700;
 }
 
-.bg-board {
-    display: flex;
-}
-
 .inputfile-container {
     label {
         display: flex;
@@ -421,21 +417,13 @@
     align-items: center;
 
     i {
-        padding: 0 10%;
+        padding: 0 5%;
     }
 }
 
-// .inputfile:focus + label,
-// .inputfile + label:hover {
-//     // background-color: red;
-//     // outline: 1px dotted #000;
-//     // outline: -webkit-focus-ring-color auto 5px;
-// }
-
-// OPTIONAL
-// .inputfile + label * {
-// 	pointer-events: none;
-// }
+.dark-text {
+    color: #454545;
+}
 
 @media only screen and (min-width: 700px) {
   .boards-container {
