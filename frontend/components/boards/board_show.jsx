@@ -181,7 +181,7 @@ class BoardShow extends React.Component {
                   />
                   <label className="board-name inputlabel" htmlFor="file">
                     <i className="fas fa-upload"></i>
-                    <strong>Update background...</strong>
+                      <strong>Update background...</strong>
                   </label>
                 </div>
                 <div className="star-board board-name">
