@@ -33,7 +33,7 @@ class Api::ListsController < ApplicationController
         @list = List.find_by(id: params[:id])
 
         if @list.destroy
-            render json: @list
+            render :show
         else
             render json: { message: 'Could not be deleted' }, status: 404
         end
