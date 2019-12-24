@@ -6,6 +6,7 @@ class ListIndexItem extends React.Component {
     super(props);
     this.state = this.props.list;
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
     this.focusInput = this.focusInput.bind(this);
     this.blurInput = this.blurInput.bind(this);
   }
@@ -34,8 +35,8 @@ class ListIndexItem extends React.Component {
   blurInput(e) {
       e.preventDefault();
       $(`#list-title-input-${this.state.id}`).blur();
-      $(`#list-title-input-${this.state.id}`).addClass("hidden2");
-      $(`#list-title-text-${this.state.id}`).removeClass("hidden2");
+      // $(`#list-title-input-${this.state.id}`).addClass("hidden2");
+      // $(`#list-title-text-${this.state.id}`).removeClass("hidden2");
     // e.preventDefault();
     // debugger
     // document.getElementById(`list-title-input-${list.id}`).classList.add("hidden2");
@@ -45,6 +46,8 @@ class ListIndexItem extends React.Component {
 
   handleSubmit(e) {
       e.preventDefault();
+      $(`#list-title-input-${this.state.id}`).addClass("hidden2");
+      $(`#list-title-text-${this.state.id}`).removeClass("hidden2");
       let formData = new FormData();
       formData.append("list[id]", this.state.id);
       formData.append("list[title]", this.state.title);
@@ -55,6 +58,14 @@ class ListIndexItem extends React.Component {
         // this.props.updateList(formData);
   }
 
+  handleDelete(e) {
+    e.preventDefault();
+    // debugger
+    // let formData = new FormData();
+    // formData.append("list[id]", this.state.id);
+    this.props.deleteList(this.state.id);
+  }
+
   render() {
     const { list } = this.props;
 
@@ -62,9 +73,12 @@ class ListIndexItem extends React.Component {
       <div className="board-list-container">
         <div className="list-content-container">
           <div className="board-list-title">
-            <div id={`list-title-text-${list.id}`} onClick={this.focusInput} className="list-title-text board-name">
-                {this.state.title}
-            </div>
+              <div id={`list-title-text-${list.id}`} className="list-title-text board-name">
+                <div onClick={this.focusInput}>
+                  {this.state.title}
+                </div>
+                <i onClick={this.handleDelete} className="far fa-trash-alt btn"></i>
+              </div>
             <form onSubmit={this.blurInput}>
               <input
                 id={`list-title-input-${list.id}`}
