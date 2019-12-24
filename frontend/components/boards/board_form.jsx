@@ -49,13 +49,13 @@ class BoardForm extends React.Component {
         return (
             <div className="board-form-container">
                 <form onSubmit={this.handleSubmit} className="board-form-box">
-                    <div onClick={this.props.closeModal} className="close-x"><span><i className="fas fa-times"></i></span></div>
+                    <div onClick={this.props.closeModal} className="close-x field"><span><i className="fas fa-times"></i></span></div>
                     {this.renderErrors()}
-                    <div className="in form-name">
+                    <div className="in form-name field">
                         {formType === 'create' ? 'Create a Board' : 'Update a Board'}
                     </div>
                     <div className="board-form">
-                        <label id="i-title" className="in">
+                        <label id="i-title" className="in field">
                             <input type="text"
                                 value={this.state.title}
                                 onChange={this.update('title')}
@@ -64,7 +64,7 @@ class BoardForm extends React.Component {
                                 placeholder="Enter board title"
                             />
                         </label>
-                        <div className="inputfile-container">
+                        <div className="inputfile-container field">
                             <input
                                 type="file"
                                 name="file"
@@ -80,7 +80,7 @@ class BoardForm extends React.Component {
                                 <strong>Update background...</strong>
                             </label>
                         </div>
-                        <input className="in session-submit btn-success" type="submit" value={formType === 'create' ? 'Create Board' : 'Update Board'} />
+                        <input className="in session-submit btn-success field" type="submit" value={formType === 'create' ? 'Create Board' : 'Update Board'} />
                     </div>
                 </form>
             </div>
