@@ -8,7 +8,7 @@ const SplashFeatures = (props) => {
                 <div className="splash-row">
                     <div id="f1" className="splash-col text-center">
                         <h3>Trallo your way</h3>
-                        <p>Use Trello the way your team works best. We’ve got the flexibility & features to fit any team’s style.</p>
+                        <p>Use Trallo the way your team works best. We’ve got the flexibility & features to fit any team’s style.</p>
                     </div>
                 </div>
                 <div className="splash-row">
@@ -18,7 +18,7 @@ const SplashFeatures = (props) => {
                         </div>
                         <h5>The Team Playbook</h5>
                         <p className="small">
-                            It’s easy to get your team up and running with Trello. We’ve collected all of the boards and tools you need to succeed in one handy resource.
+                            It’s easy to get your team up and running with Trallo. We’ve collected all of the boards and tools you need to succeed in one handy resource.
                         </p>
                         <p>
                             <Link className="btn btn-secondary" to="/signup">Make&nbsp;A&nbsp;Game&nbsp;Plan</Link>
@@ -30,7 +30,7 @@ const SplashFeatures = (props) => {
                         </div>
                         <h5>A Productivity Plataform</h5>
                         <p className="small">
-                            Integrate the apps your team already uses directly into your workflow. Power-Ups turn Trello boards into living applications to meet your team's unique business needs.
+                            Integrate the apps your team already uses directly into your workflow. Power-Ups turn Trallo boards into living applications to meet your team's unique business needs.
                         </p>
                         <p>
                             <Link className="btn btn-secondary" to="/signup">Power-Up&nbsp;Your&nbsp;Workflow</Link>
@@ -42,7 +42,7 @@ const SplashFeatures = (props) => {
                         </div>
                         <h5>Always In Sync</h5>
                         <p className="small">
-                            No matter where you are, Trello stays in sync across all of your devices. Collaborate with your team anywhere, from sitting on the bus to sitting on the beach.
+                            No matter where you are, Trallo stays in sync across all of your devices. Collaborate with your team anywhere, from sitting on the bus to sitting on the beach.
                         </p>
                         <p className="app-store">
                             <img src="https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/eebf313cb223112b503b7322173b013c/btn-appstore-black.png" className="img-fluid" alt="Available on the App Store"></img>

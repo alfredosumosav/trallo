@@ -7,7 +7,7 @@ const SplashCollaborate = (props) => {
             <div className="splash-row">
                 <div className="splash-column sm-col">
                     <h3>Work with any team</h3>
-                    <p>Whether it’s for work, a side project or even the next family vacation, Trello helps your team stay organized.</p>
+                    <p>Whether it’s for work, a side project or even the next family vacation, Trallo helps your team stay organized.</p>
                     <p><Link className="btn btn-secondary" to="/signup">Start&nbsp;doing&nbsp;→</Link></p>
                 </div>
                 <div className="splash-column">
