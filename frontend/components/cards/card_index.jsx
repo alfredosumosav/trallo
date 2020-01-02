@@ -8,22 +8,24 @@ class CardIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.requestCards(this.props.match.params);
+        // debugger
+        // this.props.requestCards(this.props.match.params);
     };
 
-    componentWillUnmount() {
-        this.props.removeCards();
-    };
+    // componentWillUnmount() {
+    //     this.props.removeCards();
+    // };
 
     render() {
 
-        if (this.props.cards === undefined) {
+        if (this.props.cards === undefined || this.props.list === undefined) {
             return null;
         }
 
-        const { cards } = this.props;
+        const { cards, list } = this.props;
+        debugger
         return (
-            cards.map((card, id) => <CardIndexItem key={id} card={card} />)
+            cards.filter(card => card.list_id === list.id).map((card, id) => <CardIndexItem key={id} card={card} />)
         );
     }
 }
