@@ -1,4 +1,5 @@
 export const fetchCards = (data) => {
+    // debugger
     return $.ajax({
         url: `/api/cards`,
         method: 'GET',
@@ -6,42 +7,42 @@ export const fetchCards = (data) => {
     });
 };
 
-export const fetchCard = (data) => {
-    return $.ajax({
-        url: `/api/cards/${cardId}`,
-        method: 'GET',
-        data
-    });
-};
+// export const fetchCard = (data) => {
+//     return $.ajax({
+//         url: `/api/cards/${cardId}`,
+//         method: 'GET',
+//         data
+//     });
+// };
 
-export const createCard = card => {
-    return $.ajax({
-        url: `/api/cards`,
-        method: 'POST',
-        data: card,
-        processData: false,
-        contentType: false
-    });
-};
+// export const createCard = card => {
+//     return $.ajax({
+//         url: `/api/cards`,
+//         method: 'POST',
+//         data: card,
+//         processData: false,
+//         contentType: false
+//     });
+// };
 
-export const updateCard = card => {
-    return $.ajax({
-        url: `/api/cards/${card.getAll('card[id]')}`,
-        method: 'PATCH',
-        data: card,
-        processData: false,
-        contentType: false
-    });
-};
+// export const updateCard = card => {
+//     return $.ajax({
+//         url: `/api/cards/${card.getAll('card[id]')}`,
+//         method: 'PATCH',
+//         data: card,
+//         processData: false,
+//         contentType: false
+//     });
+// };
 
-export const deleteCard = cardId => {
-    return $.ajax({
-        url: `/api/cards/${cardId}`,
-        method: 'DELETE',
-        processData: false,
-        contentType: false
-    });
-};
+// export const deleteCard = cardId => {
+//     return $.ajax({
+//         url: `/api/cards/${cardId}`,
+//         method: 'DELETE',
+//         processData: false,
+//         contentType: false
+//     });
+// };
 
 
 // ---
