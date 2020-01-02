@@ -51,13 +51,11 @@ ActiveRecord::Schema.define(version: 2020_01_02_013729) do
     t.string "title", null: false
     t.text "description"
     t.datetime "due_date"
-    t.integer "board_id", null: false
     t.integer "list_id", null: false
     t.integer "author_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_cards_on_author_id"
-    t.index ["board_id"], name: "index_cards_on_board_id"
     t.index ["list_id"], name: "index_cards_on_list_id"
     t.index ["title"], name: "index_cards_on_title"
   end

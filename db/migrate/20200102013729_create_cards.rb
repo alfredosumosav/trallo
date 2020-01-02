@@ -4,7 +4,6 @@ class CreateCards < ActiveRecord::Migration[5.2]
       t.string :title, null: false
       t.text :description
       t.datetime :due_date
-      t.integer :board_id, null: false
       t.integer :list_id, null: false
       t.integer :author_id, null: false
 
@@ -12,7 +11,6 @@ class CreateCards < ActiveRecord::Migration[5.2]
     end
 
     add_index :cards, :title
-    add_index :cards, :board_id
     add_index :cards, :list_id
     add_index :cards, :author_id
   end
