@@ -36,31 +36,32 @@ export const removeErrors = () => ({
 });
 
 export const requestCards = filters => dispatch => {
+    // debugger
     return CardAPIUtil.fetchCards(filters)
         .then(cards => dispatch(receiveCards(cards)))
         .fail(errors => dispatch(receiveCardErrors(errors)));
 };
 
-export const requestCard = cardId => dispatch => {
-    return CardAPIUtil.fetchCard(cardId)
-        .then(card => dispatch(receiveCard(card)))
-        .fail(errors => dispatch(receiveCardErrors(errors)));
-};
+// export const requestCard = cardId => dispatch => {
+//     return CardAPIUtil.fetchCard(cardId)
+//         .then(card => dispatch(receiveCard(card)))
+//         .fail(errors => dispatch(receiveCardErrors(errors)));
+// };
 
-export const createCard = card => dispatch => {
-    return CardAPIUtil.createCard(card)
-        .then(card => dispatch(receiveCard(card)))
-        .fail(errors => dispatch(receiveCardErrors(errors)));
-};
+// export const createCard = card => dispatch => {
+//     return CardAPIUtil.createCard(card)
+//         .then(card => dispatch(receiveCard(card)))
+//         .fail(errors => dispatch(receiveCardErrors(errors)));
+// };
 
-export const updateCard = card => dispatch => {
-    return CardAPIUtil.updateCard(card)
-        .then(card => dispatch(receiveCard(card)))
-        .fail(errors => dispatch(receiveCardErrors(errors)));
-};
+// export const updateCard = card => dispatch => {
+//     return CardAPIUtil.updateCard(card)
+//         .then(card => dispatch(receiveCard(card)))
+//         .fail(errors => dispatch(receiveCardErrors(errors)));
+// };
 
-export const deleteCard = cardId => dispatch => {
-    return CardAPIUtil.deleteCard(cardId)
-        .then(() => dispatch(removeCard(cardId)))
-        .fail(errors => dispatch(receiveCardErrors(errors)));
-};
+// export const deleteCard = cardId => dispatch => {
+//     return CardAPIUtil.deleteCard(cardId)
+//         .then(() => dispatch(removeCard(cardId)))
+//         .fail(errors => dispatch(receiveCardErrors(errors)));
+// };
