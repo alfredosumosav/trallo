@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :boards, except: [:new, :edit]
     resources :lists, except: [:new, :edit]
-    # resources :cards, except: [:new, :edit]
+    resources :cards, except: [:new, :edit]
   end
 end
 

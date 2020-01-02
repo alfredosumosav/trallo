@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import CardIndexContainer from '../cards/card_index_container';
 
 class ListIndexItem extends React.Component {
   constructor(props) {
@@ -47,7 +48,8 @@ class ListIndexItem extends React.Component {
   }
 
   render() {
-    const { list } = this.props;
+    // debugger
+    const { list, cards } = this.props;
 
     return (
       <div className="board-list-container">
@@ -70,12 +72,7 @@ class ListIndexItem extends React.Component {
               />
             </form>
           </div>
-          {/* <div className="cards-container">
-                        <div>card 1</div>
-                        <div>card 2</div>
-                        <div>card 3</div>
-                        <div>card 4</div>
-                    </div> */}
+          <CardIndexContainer list={list} cards={cards} />
         </div>
       </div>
     );

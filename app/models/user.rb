@@ -30,6 +30,11 @@ class User < ApplicationRecord
         foreign_key: :author_id,
         class_name: :List
 
+    has_many :cards,
+        primary_key: :id,
+        foreign_key: :author_id,
+        class_name: :Card
+
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
         user && user.is_password?(password) ? user : nil
