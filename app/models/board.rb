@@ -25,4 +25,8 @@ class Board < ApplicationRecord
         primary_key: :id,
         foreign_key: :board_id,
         class_name: :List
+
+    has_many :cards,
+        through: :lists,
+        source: :cards
 end
