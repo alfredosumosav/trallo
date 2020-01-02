@@ -14,4 +14,7 @@
 #
 
 class Card < ApplicationRecord
+    validates :title, :board_id, :list_id, :author_id, presence: true
+
+    
 end
