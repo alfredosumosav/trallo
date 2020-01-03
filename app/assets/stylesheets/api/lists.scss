@@ -104,6 +104,11 @@
     margin: 3px;
 }
 
+#title-text {
+    max-width: 25vw;
+    overflow-x: hidden;
+}
+
 .list-title-text:hover {
     cursor: default;
 }
