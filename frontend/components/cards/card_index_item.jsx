@@ -51,10 +51,13 @@ class CardIndexItem extends React.Component {
         // debugger
 
         return (
-            <div className="list-cards-container">
-                <p>
-                    {this.props.card.title}
-                </p>
+            <div className="cards-content-container">
+                <div className="list-card-details">
+                    <span>
+                        <span className="card-short-id hidden2">{card.id}</span>
+                        {card.title}
+                    </span>
+                </div>
             </div>
             // <div className="board-list-container">
             //     <div className="list-content-container">

@@ -130,3 +130,12 @@
 .list-title-input {
     color: #42526e;
 }
+
+.list-cards-container {
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 0 4px;
+    padding: 0 4px;
+    z-index: 1;
+    min-height: 0;
+}

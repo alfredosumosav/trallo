@@ -23,7 +23,7 @@ class CardIndex extends React.Component {
         }
 
         const { cards, list } = this.props;
-        debugger
+        // debugger
         return (
             cards.filter(card => card.list_id === list.id).map((card, id) => <CardIndexItem key={id} card={card} />)
         );
