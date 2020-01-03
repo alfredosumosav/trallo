@@ -72,7 +72,9 @@ class ListIndexItem extends React.Component {
               />
             </form>
           </div>
-          <CardIndexContainer list={list} cards={cards} />
+          <div className="list-cards-container">
+            <CardIndexContainer list={list} cards={cards} />
+          </div>
         </div>
       </div>
     );
