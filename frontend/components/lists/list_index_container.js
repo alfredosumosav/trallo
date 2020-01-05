@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import ListIndex from './list_index';
 import { requestLists, updateList, deleteList, removeLists } from '../../actions/list_actions';
-import { requestCards, removeCards } from '../../actions/card_actions';
+import { requestCards, createCard, removeCards } from '../../actions/card_actions';
 
 const mSTP = state => ({
     lists: Object.values(state.entities.lists),
@@ -14,6 +14,7 @@ const mDTP = dispatch => ({
     deleteList: listId => dispatch(deleteList(listId)),
     removeLists: () => dispatch(removeLists()),
     requestCards: boardId => dispatch(requestCards(boardId)),
+    createCard: card => dispatch(createCard(card)),
     removeCards: () => dispatch(removeCards())
 });
 
