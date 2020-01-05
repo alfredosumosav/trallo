@@ -6,10 +6,12 @@ class ListIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.list;
+    this.state.card_title = '';
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.focusInput = this.focusInput.bind(this);
     this.blurInput = this.blurInput.bind(this);
+    this.handleNewCard = this.handleNewCard.bind(this);
   }
 
   update(field) {
@@ -40,6 +42,25 @@ class ListIndexItem extends React.Component {
       formData.append("list[id]", this.state.id);
       formData.append("list[title]", this.state.title);
       this.props.updateList(formData);
+  }
+
+  handleNewCard(e) {
+    e.preventDefault();
+
+    if (e.target.value !== '') {
+      let cardFormData = new FormData();
+      cardFormData.append('card[title]', this.state.card_title);
+      cardFormData.append('card[list_id]', this.state.id);
+      this.props.createCard(cardFormData).then(() => {
+        this.setState({
+          card_title: ''
+        });
+  
+        document.getElementById(`card-input-${this.state.id}`).classList.add('hidden2');
+        document.getElementById(`card-actions-container-${this.state.id}`).classList.add("hidden2");
+        document.getElementById(`card-text-${this.state.id}`).classList.remove('hidden2');
+      });
+    }
   }
 
   handleDelete(e) {
@@ -74,6 +95,54 @@ class ListIndexItem extends React.Component {
           </div>
           <div className="list-cards-container">
             <CardIndexContainer list={list} cards={cards} />
+            <div className="cards-content-container">
+              <div className="list-card-details">
+                <div id={`card-text-${this.state.id}`}
+                  onClick={e => {
+                    e.currentTarget.classList.add("hidden2");
+                    document.getElementById(`card-input-${this.state.id}`).classList.remove("hidden2");
+                    document.getElementById(`card-input2-${this.state.id}`).classList.remove("hidden2");
+                    document.getElementById(`card-actions-container-${this.state.id}`).classList.remove("hidden2");
+                    document.getElementById(`card-input-${this.state.id}`).select();
+                  }}>
+                  <i className="fas fa-plus"></i> Add a card
+                </div>
+                <form
+                  id={`card-f-${this.state.id}`}
+                  onSubmit={e => this.handleNewCard(e)}>
+                    <input 
+                      id={`card-input-${this.state.id}`}
+                      type="text"
+                      value={this.state.card_title}
+                      autoComplete="off"
+                      placeholder="Enter card title..."
+                      onChange={this.update("card_title")}
+                      onBlur={this.handleNewCard}
+                      className="list-card-title card-input hidden2"/>
+                    <div id={`card-actions-container-${this.state.id}`} className="card-input hidden2">
+                      <div onClick={this.handleNewCard} id={`submit-card-input-${this.state.id}`} className="btn-success card-input">
+                        Add Card
+                      </div>
+                      <div
+                        id={`card-input2-${this.state.id}`}
+                        className="card-input hidden2 board-name"
+                        onClick={e => {
+                          this.setState({
+                            card_title: ""
+                          });
+                          document.getElementById(`card-input-${this.state.id}`).classList.add('hidden2');
+                          document.getElementById(`card-input2-${this.state.id}`).classList.add("hidden2");
+                          document.getElementById(`card-actions-container-${this.state.id}`).classList.add("hidden2");
+                          document.getElementById(`card-text-${this.state.id}`).classList.remove('hidden2');
+                        }}>
+                        <div className="btn">
+                          <i className="fas fa-times"></i>
+                        </div>
+                      </div>
+                    </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>
