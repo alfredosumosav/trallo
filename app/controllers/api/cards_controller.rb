@@ -5,15 +5,15 @@ class Api::CardsController < ApplicationController
         render :index
     end
 
-    # def create
-    #     @card = Card.new(card_params)
-    #     @card.author_id = current_user.id
-    #     if @card.save
-    #         render :show
-    #     else
-    #         render json: @card.errors.full_messages, status: 404
-    #     end
-    # end
+    def create
+        @card = Card.new(card_params)
+        @card.author_id = current_user.id
+        if @card.save
+            render :show
+        else
+            render json: @card.errors.full_messages, status: 404
+        end
+    end
 
     # def update
     #     @card = Card.find_by(id: params[:card][:id])
