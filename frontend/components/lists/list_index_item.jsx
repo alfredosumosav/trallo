@@ -109,7 +109,8 @@ class ListIndexItem extends React.Component {
                 </div>
                 <form
                   id={`card-f-${this.state.id}`}
-                  onSubmit={e => this.handleNewCard(e)}>
+                  onSubmit={e => this.handleNewCard(e)}
+                  className="card-form-container">
                     <input 
                       id={`card-input-${this.state.id}`}
                       type="text"
@@ -118,14 +119,16 @@ class ListIndexItem extends React.Component {
                       placeholder="Enter card title..."
                       onChange={this.update("card_title")}
                       onBlur={this.handleNewCard}
-                      className="list-card-title card-input hidden2"/>
-                    <div id={`card-actions-container-${this.state.id}`} className="card-input hidden2">
-                      <div onClick={this.handleNewCard} id={`submit-card-input-${this.state.id}`} className="btn-success card-input">
-                        Add Card
+                      className="card-input hidden2"/>
+                    <div id={`card-actions-container-${this.state.id}`} className="card-actions hidden2">
+                      <div 
+                        id={`submit-card-input-${this.state.id}`} 
+                        className="btn-success card-input submit-card-input">
+                          Add Card
                       </div>
                       <div
                         id={`card-input2-${this.state.id}`}
-                        className="card-input hidden2 board-name"
+                        className="card-input2 hidden2 board-name"
                         onClick={e => {
                           this.setState({
                             card_title: ""
