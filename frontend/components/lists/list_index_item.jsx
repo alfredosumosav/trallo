@@ -76,12 +76,12 @@ class ListIndexItem extends React.Component {
     return (
       <div className="board-list-container">
         <div className="list-content-container">
-          <div className="board-list-title">
+          <div onMouseEnter={() => $(`#delete-${this.state.id}`).removeClass('hidden2')} onMouseLeave={() => $(`#delete-${this.state.id}`).addClass('hidden2')} className="board-list-title">
               <div id={`list-title-text-${list.id}`} className="list-title-text board-name">
                 <div onClick={this.focusInput}>
                   {this.state.title}
                 </div>
-                <i onClick={this.handleDelete} className="far fa-trash-alt btn"></i>
+                <i id={`delete-${this.state.id}`} onClick={this.handleDelete} className="far fa-trash-alt btn hidden2"></i>
               </div>
             <form onSubmit={this.blurInput}>
               <input
