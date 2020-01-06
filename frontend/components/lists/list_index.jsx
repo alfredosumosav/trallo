@@ -30,7 +30,7 @@ class ListIndex extends React.Component {
         const { lists, cards } = this.props;
         // debugger
         return (
-                    lists.map((list, id) => <ListIndexItem key={id} list={list} cards={cards} updateList={this.props.updateList} deleteList={this.props.deleteList} />)
+                    lists.map((list, id) => <ListIndexItem key={id} list={list} cards={cards} updateList={this.props.updateList} deleteList={this.props.deleteList} createCard={this.props.createCard} />)
         );
     }
 }

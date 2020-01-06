@@ -383,8 +383,8 @@
 }
 
 .hidden2 {
-    visibility: hidden;
-    display: none;
+    visibility: hidden !important;
+    display: none !important;
 }
 
 .bg-update-text {

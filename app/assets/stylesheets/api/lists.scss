@@ -10,6 +10,7 @@
     min-width: 19vw;
     margin: 0 4px;
     z-index: 0;
+    max-height: 80vh;
 }
 
 .board-list-container:first-child {
@@ -21,6 +22,7 @@
     border-radius: 3px;
     padding: 3px;
     background: #ebecf0;
+    overflow-y: auto;
 }
 
 #bl-container {
@@ -137,7 +139,7 @@
 }
 
 .list-cards-container {
-    overflow-y: auto;
+    // overflow-y: auto;
     overflow-x: hidden;
     margin: 0 4px;
     padding: 0 4px;

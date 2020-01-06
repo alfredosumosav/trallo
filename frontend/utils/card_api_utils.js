@@ -15,15 +15,15 @@ export const fetchCards = (data) => {
 //     });
 // };
 
-// export const createCard = card => {
-//     return $.ajax({
-//         url: `/api/cards`,
-//         method: 'POST',
-//         data: card,
-//         processData: false,
-//         contentType: false
-//     });
-// };
+export const createCard = card => {
+    return $.ajax({
+        url: `/api/cards`,
+        method: 'POST',
+        data: card,
+        processData: false,
+        contentType: false
+    });
+};
 
 // export const updateCard = card => {
 //     return $.ajax({

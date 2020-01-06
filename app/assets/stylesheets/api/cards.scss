@@ -27,3 +27,61 @@
     position: relative;
     z-index: 10;
 }
+
+.card-actions {
+    // max-width: 25%;
+    display: flex;
+    align-items: center;
+
+    // .card-btn-text {
+    //     color: #fff;
+    // }
+
+    // .btn {
+    //     color: red;
+    // }
+}
+
+.submit-card-input {
+    text-align: center;
+    width: 34% !important;
+}
+
+.card-input2 {
+    width: 15%;
+    border: 1px solid transparent;
+    padding: 0;
+    margin: 0 3%;
+    color: #42526e;
+}
+
+.card-input2:hover {
+    cursor: pointer;
+    color: #172b4d;
+}
+
+.card-form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-input {
+    min-height: 20px;
+    padding: 10px 8px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    margin: 3px;
+}
+
+// .card-text {
+//     color: #5e6c84;
+//     background-color: transparent;
+//     box-shadow: none;
+// }
+
+// .card-text:hover {
+//     color: #172b4d;
+//     background-color: rgba(9,30,66,.08);
+// }
