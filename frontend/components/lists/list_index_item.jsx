@@ -59,6 +59,7 @@ class ListIndexItem extends React.Component {
         document.getElementById(`card-input-${this.state.id}`).classList.add('hidden2');
         document.getElementById(`card-actions-container-${this.state.id}`).classList.add("hidden2");
         document.getElementById(`card-text-${this.state.id}`).classList.remove('hidden2');
+        document.getElementById(`container-${this.state.id}`).classList.add('card-text')
       });
     }
   }
@@ -95,11 +96,13 @@ class ListIndexItem extends React.Component {
           </div>
           <div className="list-cards-container">
             <CardIndexContainer list={list} cards={cards} />
-            <div className="cards-content-container">
-              <div className="list-card-details">
-                <div id={`card-text-${this.state.id}`}
+            <div id={`container-${this.state.id}`} className="cards-content-container card-text card-input-container">
+              <div className="list-card-details card-input-container">
+                <div 
+                  id={`card-text-${this.state.id}`}
                   onClick={e => {
                     e.currentTarget.classList.add("hidden2");
+                    document.getElementById(`container-${this.state.id}`).classList.remove('card-text')
                     document.getElementById(`card-input-${this.state.id}`).classList.remove("hidden2");
                     document.getElementById(`card-input2-${this.state.id}`).classList.remove("hidden2");
                     document.getElementById(`card-actions-container-${this.state.id}`).classList.remove("hidden2");
@@ -123,7 +126,7 @@ class ListIndexItem extends React.Component {
                     <div id={`card-actions-container-${this.state.id}`} className="card-actions hidden2">
                       <div 
                         id={`submit-card-input-${this.state.id}`} 
-                        className="btn-success card-input submit-card-input">
+                        className="btn-success submit-card-input">
                           Add Card
                       </div>
                       <div
@@ -137,6 +140,7 @@ class ListIndexItem extends React.Component {
                           document.getElementById(`card-input2-${this.state.id}`).classList.add("hidden2");
                           document.getElementById(`card-actions-container-${this.state.id}`).classList.add("hidden2");
                           document.getElementById(`card-text-${this.state.id}`).classList.remove('hidden2');
+                          document.getElementById(`container-${this.state.id}`).classList.add('card-text')
                         }}>
                         <div className="btn">
                           <i className="fas fa-times"></i>

@@ -26,6 +26,7 @@
     padding: 6px 8px 2px;
     position: relative;
     z-index: 10;
+    max-width: 19vw;
 }
 
 .card-actions {
@@ -53,6 +54,10 @@
     padding: 0;
     margin: 0 3%;
     color: #42526e;
+
+    .btn {
+        padding: 0;
+    }
 }
 
 .card-input2:hover {
@@ -66,22 +71,47 @@
 }
 
 .card-input {
-    min-height: 20px;
+    // min-height: 40px;
     padding: 10px 8px;
     font-size: 16px;
-    font-weight: bold;
+    // font-weight: bold;
     border: 1px solid transparent;
     border-radius: 3px;
-    margin: 3px;
+    // margin: 3px;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(9,30,66,.25);
+    cursor: pointer;
+    display: block;
+    margin-bottom: 8px;
+    max-width: 300px;
+    min-height: 20px;
+    position: relative;
+    text-decoration: none;
+    z-index: 0;
 }
 
-// .card-text {
-//     color: #5e6c84;
-//     background-color: transparent;
-//     box-shadow: none;
-// }
+.card-input:focus {
+    outline: none;
+}
 
-// .card-text:hover {
-//     color: #172b4d;
-//     background-color: rgba(9,30,66,.08);
-// }
+.card-input-container {
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.card-input-container:hover {
+    background-color: transparent;
+}
+
+.card-text {
+    color: #5e6c84;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.card-text:hover {
+    color: #172b4d;
+    background-color: rgba(9,30,66,.08);
+}
