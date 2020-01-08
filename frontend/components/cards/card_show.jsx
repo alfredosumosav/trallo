@@ -7,7 +7,19 @@ class CardShow extends React.Component {
     }
 
     render() {
-        return null;
+        return (
+            <div className="card-show-content">
+                <div className="card-header">
+
+                </div>
+                <div className="card-main">
+
+                </div>
+                <div className="card-sidebar">
+
+                </div>
+            </div>
+        );
     }
 }
 
