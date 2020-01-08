@@ -116,3 +116,10 @@
     color: #172b4d;
     background-color: rgba(9,30,66,.08);
 }
+
+.card-show-container {
+    position: relative;
+    z-index: 100;
+    background-color: white;
+    min-height: 400px;
+}
