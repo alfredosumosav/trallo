@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect, Route, withRouter } from 'react-router-dom';
 import ListIndexContainer from '../lists/list_index_container';
+import CardShow from '../cards/card_show';
 
 class BoardShow extends React.Component {
     constructor(props) {
@@ -274,6 +275,9 @@ class BoardShow extends React.Component {
                   </form>
                 </div>
               </div>
+            </div>
+            <div className="card-show-container">
+              <CardShow />
             </div>
           </div>
         );
