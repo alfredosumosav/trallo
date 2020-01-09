@@ -42,11 +42,11 @@ export const requestCards = filters => dispatch => {
         .fail(errors => dispatch(receiveCardErrors(errors)));
 };
 
-// export const requestCard = cardId => dispatch => {
-//     return CardAPIUtil.fetchCard(cardId)
-//         .then(card => dispatch(receiveCard(card)))
-//         .fail(errors => dispatch(receiveCardErrors(errors)));
-// };
+export const requestCard = cardId => dispatch => {
+    return CardAPIUtil.fetchCard(cardId)
+        .then(card => dispatch(receiveCard(card)))
+        .fail(errors => dispatch(receiveCardErrors(errors)));
+};
 
 export const createCard = card => dispatch => {
     return CardAPIUtil.createCard(card)
