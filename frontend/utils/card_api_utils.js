@@ -7,13 +7,13 @@ export const fetchCards = (data) => {
     });
 };
 
-// export const fetchCard = (data) => {
-//     return $.ajax({
-//         url: `/api/cards/${cardId}`,
-//         method: 'GET',
-//         data
-//     });
-// };
+export const fetchCard = (data) => {
+    return $.ajax({
+        url: `/api/cards/${cardId}`,
+        method: 'GET',
+        data
+    });
+};
 
 export const createCard = card => {
     return $.ajax({

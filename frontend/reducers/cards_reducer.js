@@ -13,6 +13,7 @@ const cardsReducer = (oldState = {}, action) => {
         case RECEIVE_CARDS:
             return action.cards;
         case RECEIVE_CARD:
+            debugger
             let card = Object.values(action.card)[0]
             nextState[card.id] = card;
             return nextState;
