@@ -15,6 +15,12 @@ class Api::CardsController < ApplicationController
         end
     end
 
+    def show
+        debugger
+        @card = Card.find(params[:id])
+        render :show
+    end
+
     # def update
     #     @card = Card.find_by(id: params[:card][:id])
     #     # @card.title = params[:card][:title]
