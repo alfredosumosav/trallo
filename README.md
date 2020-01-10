@@ -87,6 +87,5 @@ const entitiesReducer = combineReducers({
 ---
 
 ## Future Features
-- Adding Cards to Lists
 - Adding Comments and Due Dates
 - Sharing boards
