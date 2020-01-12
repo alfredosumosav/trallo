@@ -2,7 +2,7 @@
 
 ### App inspired by the project management app [Trello](https://trello.com) based on the Kanban system which allows you to quickly and seamlessly become productive and tackle work at a personal / organizational level.
 
-Check it out [Live!](https://trallo-fsp.herokuapp.com)
+Check it out [**Live!**](https://trallo-fsp.herokuapp.com)
 
 ---
 
