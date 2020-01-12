@@ -7,11 +7,11 @@ export const fetchCards = (data) => {
     });
 };
 
-export const fetchCard = (data) => {
+export const fetchCard = (cardId) => {
+    debugger
     return $.ajax({
         url: `/api/cards/${cardId}`,
-        method: 'GET',
-        data
+        method: 'GET'
     });
 };
 
