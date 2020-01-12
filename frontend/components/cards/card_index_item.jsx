@@ -51,7 +51,7 @@ class CardIndexItem extends React.Component {
         // debugger
 
         return (
-            <div onClick={() => openModal('showcard')} className="cards-content-container">
+            <div onClick={() => console.log('hello')} className="cards-content-container">
                 <div className="list-card-details">
                     <span>
                         <span className="card-short-id hidden2">{card.id}</span>
