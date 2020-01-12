@@ -6,7 +6,18 @@ class CardShow extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        // debugger
+        // this.props.requestCard(198);
+    }
+
     render() {
+        // debugger
+
+        if (this.props.card === undefined) {
+            return null;
+        }
+
         return (
             <div className="card-show-content">
                 <a href="#">X</a>
