@@ -6,6 +6,27 @@ Check it out [**Live!**](https://trallo-fsp.herokuapp.com)
 
 ---
 
+## Technologies & Languages
+- Ruby / Rails
+- Vanilla JavaScript
+- jQuery
+- React
+- Redux
+- Node.js
+- Webpack
+- Babel
+- PostgreSQL
+- AJAX
+- AWS S3
+- Heroku
+- jBuilder
+- Postman
+- HTML5
+- CSS3
+- Sass
+
+---
+
 ## Visualize Navigation Proccess
 
 <div align="center">
@@ -49,27 +70,6 @@ npm start
 ```
 
 Now you will be able to go to `http://localhost:3000` and see the dashboard.
-
----
-
-## Technologies & Languages
-- Ruby / Rails
-- Vanilla JavaScript
-- jQuery
-- React
-- Redux
-- Node.js
-- Webpack
-- Babel
-- PostgreSQL
-- AJAX
-- AWS S3
-- Heroku
-- jBuilder
-- Postman
-- HTML5
-- CSS3
-- Sass
 
 ---
 
