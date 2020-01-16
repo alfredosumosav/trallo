@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
-import CardIndexContainer from '../cards/card_index_container';
+import CardIndex from '../cards/card_index';
 
 class ListIndexItem extends React.Component {
   constructor(props) {
@@ -70,7 +69,7 @@ class ListIndexItem extends React.Component {
   }
 
   render() {
-    // debugger
+    debugger
     const { list, cards } = this.props;
 
     return (
@@ -95,7 +94,7 @@ class ListIndexItem extends React.Component {
             </form>
           </div>
           <div className="list-cards-container">
-            <CardIndexContainer list={list} cards={cards} />
+            <CardIndex list={list} cards={cards} />
             <div id={`container-${this.state.id}`} className="cards-content-container card-text card-input-container">
               <div className="list-card-details card-input-container">
                 <div 

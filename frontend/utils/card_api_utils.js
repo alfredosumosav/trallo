@@ -1,14 +1,11 @@
-export const fetchCards = (data) => {
-    // debugger
+export const fetchCards = () => {
     return $.ajax({
         url: `/api/cards`,
-        method: 'GET',
-        data
+        method: 'GET'
     });
 };
 
 export const fetchCard = (cardId) => {
-    debugger
     return $.ajax({
         url: `/api/cards/${cardId}`,
         method: 'GET'

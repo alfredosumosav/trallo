@@ -13,7 +13,7 @@ const mDTP = dispatch => ({
     updateList: list => dispatch(updateList(list)),
     deleteList: listId => dispatch(deleteList(listId)),
     removeLists: () => dispatch(removeLists()),
-    requestCards: boardId => dispatch(requestCards(boardId)),
+    requestCards: () => dispatch(requestCards()),
     createCard: card => dispatch(createCard(card)),
     removeCards: () => dispatch(removeCards())
 });

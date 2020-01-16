@@ -17,7 +17,7 @@ const receiveCard = card => ({
     card
 });
 
-const removeCard = cardId => ({
+export const removeCard = cardId => ({
     type: REMOVE_CARD,
     cardId
 });
@@ -35,9 +35,9 @@ export const removeErrors = () => ({
     type: REMOVE_ERRORS
 });
 
-export const requestCards = filters => dispatch => {
+export const requestCards = () => dispatch => {
     // debugger
-    return CardAPIUtil.fetchCards(filters)
+    return CardAPIUtil.fetchCards()
         .then(cards => dispatch(receiveCards(cards)))
         .fail(errors => dispatch(receiveCardErrors(errors)));
 };

@@ -15,8 +15,8 @@ function Modal({ modal, closeModal }) {
             component = <CreateBoardFormContainer />;
             break;
         case 'showcard':
-            // component = <CardShowContainer />;
-            component = <CardShow />;
+            component = <CardShowContainer />;
+            // component = <CardShow />;
             break;
         default:
             return null;

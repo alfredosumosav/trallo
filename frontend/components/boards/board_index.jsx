@@ -11,6 +11,10 @@ class BoardIndex extends React.Component {
         this.props.requestBoards();
     }
 
+    componentWillUnmount() {
+        this.props.removeBoards();
+    }
+
     show(e) {
         document.getElementById('archived').classList.toggle('show');
     }

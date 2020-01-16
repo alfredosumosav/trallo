@@ -1,7 +1,8 @@
 class Api::CardsController < ApplicationController
     def index
-        board = Board.find(params[:boardId])
-        @cards = board.cards
+        # debugger
+        # @board = Board.find(params[:boardId])
+        @cards = Card.all
         render :index
     end
 
@@ -16,8 +17,8 @@ class Api::CardsController < ApplicationController
     end
 
     def show
-        debugger
         @card = Card.find(params[:id])
+        @board = @card.list.board
         render :show
     end
 
