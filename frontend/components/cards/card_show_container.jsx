@@ -2,54 +2,38 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import CardShow from './card_show';
-import { requestCards, removeCard } from '../../actions/card_actions';
-import { requestLists, removeLists } from '../../actions/list_actions';
+import { requestCard, updateCard, removeCard } from '../../actions/card_actions';
+import { requestList, requestLists, removeLists } from '../../actions/list_actions';
 import { requestBoard } from '../../actions/board_actions';
 
 class CardShowEdit extends React.Component {
 
     componentDidMount() {
-        this.props.requestCards();
-        this.props.requestLists();
-        // debugger
-        // this.props.requestList(this.props.card.list_id);
+        this.props.requestCard(this.props.match.params.cardId);
     }
-
-    // componentDidUpdate(prevProps) {
-    //     debugger
-    //     if (this.props.card !== prevProps.card) {
-    //         this.props.requestList(this.props.card.list_id);
-    //     }
-    // }
 
     render() {
 
         if (this.props.card === undefined) {
             return null;
         }
-
-        debugger
-
         
         return (
-            <CardShow card={this.props.card} list={this.props.lists[this.props.card.list_id]} requestBoard={this.props.requestBoard} removeCard={this.props.removeCard} requestLists={this.props.requestLists} />
+            <CardShow card={this.props.card} updateCard={this.props.updateCard} removeCard={this.props.removeCard} />
         )
     }
 }
 
 const mSTP = (state, ownProps) => {
-    debugger
     return {
         card: state.entities.cards[ownProps.match.params.cardId],
-        lists: state.entities.lists
     }
 };
 
 const mDTP = (dispatch, ownProps) => ({
-    requestCards: () => dispatch(requestCards()),
+    requestCard: cardId => dispatch(requestCard(cardId)),
+    updateCard: card => dispatch(updateCard(card)),
     removeCard: cardId => dispatch(removeCard(cardId)),
-    requestBoard: boardId => dispatch(requestBoard(boardId)),
-    requestLists: () => dispatch(requestLists())
 });
 
 export default withRouter(connect(mSTP, mDTP)(CardShowEdit));
