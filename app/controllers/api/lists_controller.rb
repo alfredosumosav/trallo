@@ -4,7 +4,7 @@ class Api::ListsController < ApplicationController
         # debugger
         # @lists = @lists || List.all
         # @lists = List.in_board(params[board_id])
-        @lists = List.all.where(board_id: params[:boardId])
+        @lists = List.all
         render :index
     end
 
@@ -16,6 +16,12 @@ class Api::ListsController < ApplicationController
         else
             render json: @list.errors.full_messages, status: 404
         end
+    end
+
+    def show
+        # debugger
+        @list = List.find_by(id: params[:id])
+        render :show
     end
 
     def update

@@ -7,6 +7,7 @@ class Api::BoardsController < ApplicationController
     end
 
     def show
+        # debugger
         @board = Board.find_by(id: params[:id])
         render :show
     end
@@ -62,7 +63,7 @@ class Api::BoardsController < ApplicationController
     private
     
     def board_params
-        params.require(:board).permit(:title, :photo, :favorited, :archived)
+        params.require(:board).permit(:title, :photo, :favorited, :archived, :card_id)
     end
 
 end

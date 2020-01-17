@@ -35,8 +35,8 @@ export const removeErrors = () => ({
     type: REMOVE_ERRORS
 });
 
-export const requestLists = filters => dispatch => {
-    return ListAPIUtil.fetchLists(filters)
+export const requestLists = () => dispatch => {
+    return ListAPIUtil.fetchLists()
         .then(lists => dispatch(receiveLists(lists)))
         .fail(errors => dispatch(receiveListErrors(errors)));
 };

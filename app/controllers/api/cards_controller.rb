@@ -1,7 +1,8 @@
 class Api::CardsController < ApplicationController
     def index
-        board = Board.find(params[:boardId])
-        @cards = board.cards
+        # debugger
+        # @board = Board.find(params[:boardId])
+        @cards = Card.all
         render :index
     end
 
@@ -13,6 +14,11 @@ class Api::CardsController < ApplicationController
         else
             render json: @card.errors.full_messages, status: 404
         end
+    end
+
+    def show
+        @card = Card.find(params[:id])
+        render :show
     end
 
     # def update

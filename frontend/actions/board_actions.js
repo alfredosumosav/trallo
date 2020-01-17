@@ -5,6 +5,7 @@ export const RECEIVE_BOARD = 'RECEIVE_BOARD';
 export const RECEIVE_CURRENT_BOARD = 'RECEIVE_CURRENT_BOARD';
 export const RECEIVE_BOARD_ERRORS = 'RECEIVE_BOARD_ERRORS';
 export const REMOVE_BOARD = 'REMOVE_BOARD';
+export const REMOVE_BOARDS = 'REMOVE_BOARDS';
 export const REMOVE_ERRORS = 'REMOVE_ERRORS';
 
 const receiveBoards = boards => ({
@@ -17,7 +18,7 @@ const receiveBoard = board => ({
     board
 });
 
-const removeBoard = boardId => ({
+export const removeBoard = boardId => ({
     type: REMOVE_BOARD,
     boardId
 });
@@ -29,6 +30,10 @@ const receiveBoardErrors = errors => ({
 
 export const removeErrors = () => ({
     type: REMOVE_ERRORS
+});
+
+export const removeBoards = () => ({
+    type: REMOVE_BOARDS
 });
 
 export const requestBoards = () => dispatch => {

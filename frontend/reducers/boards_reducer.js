@@ -1,7 +1,8 @@
 import {
     RECEIVE_BOARDS,
     RECEIVE_BOARD,
-    REMOVE_BOARD
+    REMOVE_BOARD,
+    REMOVE_BOARDS
 } from '../actions/board_actions';
 
 const boardsReducer = (oldState = {}, action) => {
@@ -18,6 +19,8 @@ const boardsReducer = (oldState = {}, action) => {
         case REMOVE_BOARD:
             delete nextState[action.boardId];
             return nextState;
+        case REMOVE_BOARDS:
+            return {};
         default:
             return oldState;
     }

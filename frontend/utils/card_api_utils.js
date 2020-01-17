@@ -1,19 +1,16 @@
-export const fetchCards = (data) => {
-    // debugger
+export const fetchCards = () => {
     return $.ajax({
         url: `/api/cards`,
-        method: 'GET',
-        data
+        method: 'GET'
     });
 };
 
-// export const fetchCard = (data) => {
-//     return $.ajax({
-//         url: `/api/cards/${cardId}`,
-//         method: 'GET',
-//         data
-//     });
-// };
+export const fetchCard = (cardId) => {
+    return $.ajax({
+        url: `/api/cards/${cardId}`,
+        method: 'GET'
+    });
+};
 
 export const createCard = card => {
     return $.ajax({
@@ -25,15 +22,15 @@ export const createCard = card => {
     });
 };
 
-// export const updateCard = card => {
-//     return $.ajax({
-//         url: `/api/cards/${card.getAll('card[id]')}`,
-//         method: 'PATCH',
-//         data: card,
-//         processData: false,
-//         contentType: false
-//     });
-// };
+export const updateCard = card => {
+    return $.ajax({
+        url: `/api/cards/${card.getAll('card[id]')}`,
+        method: 'PATCH',
+        data: card,
+        processData: false,
+        contentType: false
+    });
+};
 
 // export const deleteCard = cardId => {
 //     return $.ajax({

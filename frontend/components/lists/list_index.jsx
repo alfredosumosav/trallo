@@ -9,28 +9,26 @@ class ListIndex extends React.Component {
 
     componentDidMount() {
         // debugger
-        this.props.requestLists(this.props.match.params);
-        // debugger
-        this.props.requestCards(this.props.match.params);
+        this.props.requestLists();
+        this.props.requestCards();
     };
 
     componentWillUnmount() {
-        this.props.removeLists();
-        this.props.removeCards();
+        // this.props.removeLists();
+        // this.props.removeCards();
     };
 
     render() {
-        // cards.filter(card => card.list_id === list.id)
 
         if (this.props.lists === undefined || this.props.cards === undefined) {
             return null;
         }
-        // debugger
 
         const { lists, cards } = this.props;
         // debugger
+
         return (
-                    lists.map((list, id) => <ListIndexItem key={id} list={list} cards={cards} updateList={this.props.updateList} deleteList={this.props.deleteList} createCard={this.props.createCard} />)
+                    lists.filter(list => list.board_id === parseInt(this.props.match.params.boardId)).map((list, id) => <ListIndexItem key={id} list={list} cards={cards.filter(card => card.list_id === list.id)} updateList={this.props.updateList} deleteList={this.props.deleteList} createCard={this.props.createCard} />)
         );
     }
 }

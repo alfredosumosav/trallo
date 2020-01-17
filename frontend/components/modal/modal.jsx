@@ -2,6 +2,8 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import CreateBoardFormContainer from '../../components/boards/create_board_form_container';
+import CardShowContainer  from '../cards/card_show_container';
+import CardShow  from '../cards/card_show';
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
@@ -11,6 +13,10 @@ function Modal({ modal, closeModal }) {
     switch (modal) {
         case 'create_board':
             component = <CreateBoardFormContainer />;
+            break;
+        case 'showcard':
+            component = <CardShowContainer />;
+            // component = <CardShow />;
             break;
         default:
             return null;
