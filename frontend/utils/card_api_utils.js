@@ -22,15 +22,15 @@ export const createCard = card => {
     });
 };
 
-// export const updateCard = card => {
-//     return $.ajax({
-//         url: `/api/cards/${card.getAll('card[id]')}`,
-//         method: 'PATCH',
-//         data: card,
-//         processData: false,
-//         contentType: false
-//     });
-// };
+export const updateCard = card => {
+    return $.ajax({
+        url: `/api/cards/${card.getAll('card[id]')}`,
+        method: 'PATCH',
+        data: card,
+        processData: false,
+        contentType: false
+    });
+};
 
 // export const deleteCard = cardId => {
 //     return $.ajax({
