@@ -8,7 +8,7 @@ class ListIndex extends React.Component {
     }
 
     componentDidMount() {
-        debugger
+        // debugger
         this.props.requestLists();
         this.props.requestCards();
     };
@@ -25,7 +25,7 @@ class ListIndex extends React.Component {
         }
 
         const { lists, cards } = this.props;
-        debugger
+        // debugger
 
         return (
                     lists.filter(list => list.board_id === parseInt(this.props.match.params.boardId)).map((list, id) => <ListIndexItem key={id} list={list} cards={cards.filter(card => card.list_id === list.id)} updateList={this.props.updateList} deleteList={this.props.deleteList} createCard={this.props.createCard} />)

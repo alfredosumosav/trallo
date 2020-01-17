@@ -69,7 +69,7 @@ class ListIndexItem extends React.Component {
   }
 
   render() {
-    debugger
+    // debugger
     const { list, cards } = this.props;
 
     return (

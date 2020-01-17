@@ -15,3 +15,27 @@ export const selectBoards = (state, id) => {
 
     return state.entities.boards[id] || nullBoard;
 };
+
+// Select individual list
+export const selectLists = (state, card) => {
+    const nullList = {
+        id: null,
+        title: "",
+        board_id: null
+    };
+
+    return state.entities.lists[card.list_id] || nullBoard;
+};
+
+// Select individual card
+export const selectCards = (state, id) => {
+    const nullCard = {
+        id: null,
+        title: "",
+        description: null,
+        due_date: null,
+        list_id: null
+    };
+
+    return state.entities.cards[id] || nullCard
+};
