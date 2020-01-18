@@ -21,19 +21,19 @@ class Api::CardsController < ApplicationController
         render :show
     end
 
-    # def update
-    #     @card = Card.find_by(id: params[:card][:id])
-    #     # @card.title = params[:card][:title]
-    #     # @card.description = params[:card][:description]
-    #     # @card.due_date = params[:card][:due_date]
-    #     # @card.list_id = params[:card][:list_id]
+    def update
+        @card = Card.find_by(id: params[:card][:id])
+        # @card.title = params[:card][:title]
+        # @card.description = params[:card][:description]
+        # @card.due_date = params[:card][:due_date]
+        # @card.list_id = params[:card][:list_id]
 
-    #     if @card.update(card_params)
-    #         render :show
-    #     else
-    #         render json: @card.errors.full_messages, status: 404
-    #     end
-    # end
+        if @card.update(card_params)
+            render :show
+        else
+            render json: @card.errors.full_messages, status: 404
+        end
+    end
 
     # def destroy
     #     @card = Card.find_by(id: params[:id])

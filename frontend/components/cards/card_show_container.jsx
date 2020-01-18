@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import CardShow from './card_show';
 import { requestCard, updateCard, removeCard } from '../../actions/card_actions';
-import { requestList, requestLists, removeLists } from '../../actions/list_actions';
-import { requestBoard } from '../../actions/board_actions';
 
 class CardShowEdit extends React.Component {
 
