@@ -7,6 +7,23 @@ class CardShow extends React.Component {
     this.state = this.props.card;
   }
 
+  update(field) {
+    return e => {
+      this.setState({ [field]: e.currentTarget.value });
+    };
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    let formData = new FormData();
+    formData.append("card[id]", this.state.id);
+    formData.append("card[title]", this.state.title);
+    formData.append("card[description]", this.state.description);
+    formData.append("card[due_date]", this.state.due_date);
+    formData.append("card[list_id]", this.state.list_id);
+    this.props.updateCard(formData);
+  }
+
   // componentDidUpdate(prevProps, prevState) {
   //   if (this.props.list !== prevProps.list) {
   //     // debugger;
@@ -32,11 +49,26 @@ class CardShow extends React.Component {
                 <i className="fas fa-pager"></i>
               </div>
 
-              <div className="card-title-label">
-                <h2>{this.state.title}</h2>
+              <div className="card-title-input card-title">
+                <form onSubmit={e => {
+                  // this.handleSubmit(e);
+                  e.target.elements[0].focus();
+                  e.target.elements[0].blur();
+                }}>
+                  <h2>
+                    <input
+                      id="card-title-input"
+                      type="text"
+                      value={this.state.title}
+                      autoComplete="off"
+                      onChange={this.update("title")}
+                      onClick={e => e.target.select()}
+                      onBlur={e => this.handleSubmit(e)}
+                      className="board-name card-title-label"
+                    />
+                  </h2>
+                </form>
               </div>
-
-              <div className="card-title-input hidden2"></div>
             </div>
 
             <div className="card-current-list quiet">
@@ -56,12 +88,51 @@ class CardShow extends React.Component {
                 </div>
 
                 <div className="card-desc-content">
-                  <div className="card-desc-summary-label">
-                    {this.state.description}
-                  </div>
 
                   <div className="card-desc-input-container">
-                    <div className="card-desc-input"></div>
+                    <div className="card-desc-input">
+                      <form onSubmit={e => {
+                        e.target.elements[0].focus();
+                        e.target.elements[0].blur();
+                      }}>
+                        <textarea
+                          id="styled"
+                          type="text"
+                          value={this.state.description}
+                          autoComplete="off"
+                          placeholder="Add a more detailed description…"
+                          onChange={this.update("description")}
+                          onClick={e => e.target.select()}
+                          onBlur={e => {
+                            if (e.relatedTarget && e.relatedTarget.className === "btn-cancel") {
+                              this.setState({
+                                description: this.props.card.description
+                              })
+                              console.log('no update!');
+                            } else {
+                              this.handleSubmit(e);
+                            }
+                          }}
+                          className="card-description-input"
+                        />
+
+                        <div>
+                          
+                        </div>
+                        
+                        <input 
+                        type="button"
+                        value="Add"
+                        className="btn-description"
+                        />
+
+                        <input 
+                        type="button"
+                        value="X"
+                        className="btn-cancel"
+                        />
+                      </form>
+                    </div>
 
                     <div className="edit controls">
                       <div className="desc-save"></div>
