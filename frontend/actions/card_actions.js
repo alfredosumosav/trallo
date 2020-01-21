@@ -60,8 +60,8 @@ export const updateCard = card => dispatch => {
         .fail(errors => dispatch(receiveCardErrors(errors)));
 };
 
-// export const deleteCard = cardId => dispatch => {
-//     return CardAPIUtil.deleteCard(cardId)
-//         .then(() => dispatch(removeCard(cardId)))
-//         .fail(errors => dispatch(receiveCardErrors(errors)));
-// };
+export const deleteCard = cardId => dispatch => {
+    return CardAPIUtil.deleteCard(cardId)
+        .then(() => dispatch(removeCard(cardId)))
+        .fail(errors => dispatch(receiveCardErrors(errors)));
+};

@@ -8,6 +8,7 @@ class Api::CardsController < ApplicationController
 
     def create
         @card = Card.new(card_params)
+        @card.description = params[:card][:description] || ""
         @card.author_id = current_user.id
         if @card.save
             render :show
@@ -35,15 +36,15 @@ class Api::CardsController < ApplicationController
         end
     end
 
-    # def destroy
-    #     @card = Card.find_by(id: params[:id])
+    def destroy
+        @card = Card.find_by(id: params[:id])
 
-    #     if @card.destroy
-    #         render :show
-    #     else
-    #         render json: { message: 'Could not be deleted' }, status: 404
-    #     end
-    # end
+        if @card.destroy
+            render :show
+        else
+            render json: { message: 'Could not be deleted' }, status: 404
+        end
+    end
 
     private
 

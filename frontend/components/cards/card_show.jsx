@@ -24,6 +24,11 @@ class CardShow extends React.Component {
     this.props.updateCard(formData);
   }
 
+  handleDelete(e) {
+    e.preventDefault();
+    this.props.deleteCard(this.state.id).then(() => this.props.history.push(`/boards/${this.state.board_id}`));
+  }
+
   // componentDidUpdate(prevProps, prevState) {
   //   if (this.props.list !== prevProps.list) {
   //     // debugger;
@@ -52,6 +57,7 @@ class CardShow extends React.Component {
               <div className="card-title-input card-title">
                 <form onSubmit={e => {
                   // this.handleSubmit(e);
+                  e.preventDefault();
                   e.target.elements[0].focus();
                   e.target.elements[0].blur();
                 }}>
@@ -108,7 +114,7 @@ class CardShow extends React.Component {
                               this.setState({
                                 description: this.props.card.description
                               })
-                              console.log('no update!');
+                              // console.log('no update!');
                             } else {
                               this.handleSubmit(e);
                             }
@@ -148,7 +154,7 @@ class CardShow extends React.Component {
                     <i className="fas fa-list-ul"></i>
                   </div>
                   <div className="activity-title">
-                    <h3>Activity</h3>
+                    <h3>Comments</h3>
                   </div>
                   <div className="activity-options"></div>
                 </div>
@@ -206,6 +212,13 @@ class CardShow extends React.Component {
                   <div className="share-icon"></div>
                   <div>
                     <a href="#">Share</a>
+                  </div>
+                </div>
+
+                <div onClick={(e) => this.handleDelete(e)} className="button-link share-card">
+                  <div className="delete-icon"></div>
+                  <div className="">
+                    Delete
                   </div>
                 </div>
               </div>

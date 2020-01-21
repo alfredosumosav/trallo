@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import CardShow from './card_show';
-import { requestCard, updateCard, removeCard } from '../../actions/card_actions';
+import { requestCard, updateCard, deleteCard } from '../../actions/card_actions';
 
 class CardShowEdit extends React.Component {
 
@@ -17,7 +17,7 @@ class CardShowEdit extends React.Component {
         }
         
         return (
-            <CardShow card={this.props.card} updateCard={this.props.updateCard} removeCard={this.props.removeCard} />
+            <CardShow card={this.props.card} updateCard={this.props.updateCard} deleteCard={this.props.deleteCard} />
         )
     }
 }
@@ -31,7 +31,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = (dispatch, ownProps) => ({
     requestCard: cardId => dispatch(requestCard(cardId)),
     updateCard: card => dispatch(updateCard(card)),
-    removeCard: cardId => dispatch(removeCard(cardId)),
+    deleteCard: cardId => dispatch(deleteCard(cardId)),
 });
 
 export default withRouter(connect(mSTP, mDTP)(CardShowEdit));

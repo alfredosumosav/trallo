@@ -32,14 +32,14 @@ export const updateCard = card => {
     });
 };
 
-// export const deleteCard = cardId => {
-//     return $.ajax({
-//         url: `/api/cards/${cardId}`,
-//         method: 'DELETE',
-//         processData: false,
-//         contentType: false
-//     });
-// };
+export const deleteCard = cardId => {
+    return $.ajax({
+        url: `/api/cards/${cardId}`,
+        method: 'DELETE',
+        processData: false,
+        contentType: false
+    });
+};
 
 
 // ---
