@@ -44,9 +44,9 @@ class CardShow extends React.Component {
 
     return (
       <div className="card-show-content">
-        <a className="close-card" href="#">
+        <div onClick={() => this.props.history.push(`/boards/${this.state.board_id}`)} className="close-card" href="#">
           X
-        </a>
+        </div>
         <div className="card-show-details">
           <div className="card-header">
             <div className="card-title">
