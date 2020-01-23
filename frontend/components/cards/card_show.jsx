@@ -41,14 +41,14 @@ class CardShow extends React.Component {
   render() {
 
     return (
-      <div className="modal-background" onClick={() => {
+      <div className="modal-background card-content-container" onClick={() => {
         this.props.history.push(`/boards/${this.state.board_id}`);
       }}>
         <div className="modal-child" onClick={e => e.stopPropagation()}>
 
           <div className="card-show-content">
             <div onClick={() => this.props.history.push(`/boards/${this.state.board_id}`)} className="close-card" >
-              X
+              <i className="fas fa-times"></i>
             </div>
             <div className="card-show-details">
               <div className="card-header">
@@ -188,7 +188,8 @@ class CardShow extends React.Component {
                     <h3>Add To Card</h3>
 
                     <div className="add-to-card-actions">
-                      <div className="button-link due-date">
+                      <div className="button-link due-date-cont">
+                        <div className="clock-icon"><i className="fas fa-clock"></i></div>
                         <a href="#">Due Date</a>
                       </div>
                     </div>
@@ -197,30 +198,30 @@ class CardShow extends React.Component {
                   <div className="sidebar-actions">
                     <h3>Actions</h3>
 
-                    <div className="button-link move-card">
-                      <div className="move-icon"></div>
+                    <div className="button-link move-card move-cont">
+                      <div className="move-icon"><i className="fas fa-arrow-right"></i></div>
                       <div>
                         <a href="#">Move</a>
                       </div>
                     </div>
 
-                    <div className="button-link copy-card">
-                      <div className="copy-icon"></div>
+                    <div className="button-link copy-card copy-cont">
+                      <div className="copy-icon"><i className="fas fa-clone"></i></div>
                       <div>
                         <a href="#">Copy</a>
                       </div>
                     </div>
 
-                    <div className="button-link share-card">
-                      <div className="share-icon"></div>
+                    <div className="button-link share-card share-cont">
+                      <div className="share-icon"><i className="fas fa-share-alt"></i></div>
                       <div>
                         <a href="#">Share</a>
                       </div>
                     </div>
 
-                    <div onClick={(e) => this.handleDelete(e)} className="button-link share-card">
-                      <div className="delete-icon"></div>
-                      <div className="">
+                    <div onClick={(e) => this.handleDelete(e)} className="button-link share-card delete-cont">
+                      <div className="delete-icon"><i className="fas fa-minus"></i></div>
+                      <div className="delete-txt">
                         Delete
                       </div>
                     </div>
