@@ -124,13 +124,20 @@
 }
 
 .card-show-content {
+    background: #f4f5f7;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
-    padding: 8px 0 0 8px;
-    margin: 0 32px 0 32px;
-    padding-bottom: 85px;
+    padding: 16px;
+    padding-bottom: 24px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+    height: 80%;
+    margin: 48px 0 80px;
+    // width: 768px;
 }
 
 .quiet {
@@ -140,6 +147,29 @@
 .close-card {
     display: flex;
     place-self: flex-end;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    padding: 4px;
+    margin: 4px;
+    transition: background-color 85ms,color 85ms;
+
+    i {
+        font-size: 24px;
+        color: #42526e;
+    }
+}
+
+.close-card:hover {
+    cursor: pointer;
+    background-color: rgba(9,30,66,.08);
+    color: #42526e;
 }
 
 a {
@@ -165,6 +195,8 @@ a:hover {
     overflow: hidden;
     padding: 6px 12px;
     position: relative;
+    font-weight: 400;
+    font-size: 14px;
     text-decoration: none;
     text-overflow: ellipsis;
     -webkit-user-select: none;
@@ -176,8 +208,13 @@ a:hover {
     transition-duration: 85ms;
     transition-timing-function: ease;
 
+    a {
+        color: #172b4d;
+    }
+
     a:hover {
         text-decoration: none;
+        color: #091e42;
     }
 }
 
@@ -191,7 +228,7 @@ a:hover {
 .card-header {
     display: flex;
     flex-direction: column;
-    padding: 8px;
+    padding: 8px 0;
 
     .card-title {
         display: flex;
@@ -232,6 +269,10 @@ a:hover {
     .card-current-list {
         cursor: default;
         margin: 4px 8px 4px 2px;
+        
+        strong {
+            font-weight: bold;
+        }
     }
 }
 
@@ -241,6 +282,7 @@ a:hover {
     .card-main {
 
         width: -webkit-fill-available;
+        padding: 8px 0;
 
         .card-main-desc {
 
@@ -292,12 +334,14 @@ a:hover {
 
     .card-sidebar {
         width: 168px;
+        padding: 8px 0;
     }
 }
 
 .card-sidebar {
-    padding: 0 16px 8px 8px;
+    // padding: 0 16px 8px 8px;
     overflow: hidden;
+    position: relative;
 
     h3 {
         color: #5e6c84;
@@ -311,6 +355,7 @@ a:hover {
 }
 
 .card-description-input {
+    // min-height: 108px;
     font-size: 14px;
     font-weight: 400;
     border: none;
@@ -319,8 +364,117 @@ a:hover {
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
 }
 
+.card-description-input:hover {
+    cursor: pointer;
+}
+
 .card-description-input:focus {
+    cursor: auto;
     min-height: 108px;
     background: #fff;
     box-shadow: none;
+}
+
+.card-content-container {
+
+    .modal-child {
+        // margin: 48px 0 80px;
+        width: auto;
+        z-index: 25;
+        height: 100%;
+        width: 768px;
+    }
+}
+
+.delete-cont {
+    display: flex;
+    background-color: #cf513d;
+    color: #fff;
+    box-shadow: none;
+    border: none;
+    transition-property: background-color,border-color,box-shadow;
+    transition-duration: 85ms;
+    transition-timing-function: ease;
+
+}
+
+.delete-icon, .share-icon, .copy-icon, .move-icon, .clock-icon {
+    margin: 0 6px 0 -6px;
+}
+
+.cancel-desc-icon {
+    color: #42526e;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0 11px;
+}
+
+.delete-cont:hover {
+    background-color: #eb5a46;
+}
+
+.share-cont, .copy-cont, .move-cont, .due-date-cont {
+    display: flex;
+    color: #42526e;
+    box-shadow: none;
+    border: none;
+    transition-property: background-color,border-color,box-shadow;
+    transition-duration: 85ms;
+    transition-timing-function: ease;
+}
+
+.main-action-cont {
+    display: flex;
+    align-items: center;
+
+    .btn-success {
+        width: auto;
+        height: 32px;
+    }
+
+}
+
+#cancel-desc {
+    margin: 0 11px;
+    background-color: transparent;
+    color: #42526e;
+    font-size: 24px;
+    // font-family: Helvetica Neue;
+    font-weight: 250;
+    line-height: 32px;
+}
+
+.url-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // position: absolute;
+    min-height: 100px;
+    // overflow-x: scroll;
+    z-index: 4;
+    // width: 200px;
+    width: 100%;
+    position: relative;
+    right: 0;
+    
+    #url-text {
+        max-height: 30px;
+        border: 1px solid #5e6c84;
+        border-radius: 3px;
+        color: #42526e;
+        font-size: 14px;
+        overflow: auto;
+        outline: none;
+        width: 100%;
+        resize: none;
+    }
+
+    .btn-success {
+        margin: 4px;
+        width: auto;
+    }
 }
