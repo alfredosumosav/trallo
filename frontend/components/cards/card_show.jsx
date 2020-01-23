@@ -29,18 +29,16 @@ class CardShow extends React.Component {
     this.props.deleteCard(this.state.id).then(() => this.props.history.push(`/boards/${this.state.board_id}`));
   }
 
-  // componentDidUpdate(prevProps, prevState) {
-  //   if (this.props.list !== prevProps.list) {
-  //     // debugger;
-  //   }
-  // }
+  componentDidUpdate(prevProps, prevState) {
+    debugger
+    if (this.props.card !== prevProps.card) {
+      this.setState({state: this.props.card});
+      this.forceUpdate();
+    }
+  }
 
-  // componentWillUnmount() {
-  //   this.props.removeCard(this.state.id);
-  // }
 
   render() {
-    // debugger;
 
     return (
       <div className="card-show-content">
