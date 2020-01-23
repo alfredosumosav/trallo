@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import BoardShow from './board_show';
-import { requestBoard, updateBoard, deleteBoard, removeBoard } from '../../actions/board_actions';
+import { requestBoard, updateBoard, deleteBoard, removeBoards } from '../../actions/board_actions';
 import { createList, removeLists } from '../../actions/list_actions';
 import { removeCards } from '../../actions/card_actions';
 
@@ -10,10 +11,10 @@ class BoardShowEdit extends React.Component {
         this.props.requestBoard(this.props.match.params.boardId);
     }
 
-    componentWillUnmount() {
-        // this.props.removeBoard(this.props.match.params.boardId);
-        // this.props.removeCards();
-        // this.props.removeLists();
+    componentDidUpdate(prevProps) {
+        if (prevProps.location.pathname !== this.props.location.pathname) {
+            this.props.requestBoard(this.props.match.params.boardId).then(() => this.forceUpdate());
+        }
     }
 
     render() {
@@ -40,7 +41,8 @@ const mDTP = (dispatch, ownProps) => ({
     removeBoard: boardId => dispatch(removeBoard(boardId)),
     createList: list => dispatch(createList(list)),
     removeLists: () => dispatch(removeLists()),
-    removeCards: () => dispatch(removeCards())
+    removeCards: () => dispatch(removeCards()),
+    removeBoards: () => dispatch(removeBoards())
 });
 
-export default connect(mSTP, mDTP)(BoardShowEdit);
+export default withRouter(connect(mSTP, mDTP)(BoardShowEdit));
