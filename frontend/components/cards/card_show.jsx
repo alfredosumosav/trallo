@@ -231,7 +231,7 @@ class CardShow extends React.Component {
                       </div>
                     </div>
 
-                    <div className="button-link copy-card url-cont">
+                    <div className="button-link copy-card url-cont hidden2">
                         <textarea 
                           id="url-text"
                           value={this.state.url_link}
