@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 const CardIndexItem = (props) => {
     return (
         <div className="cards-content-container">
             <div className="list-card-details">
-                <Link to={`/cards/${props.card.id}`} >
+                <Link to={`/boards/${props.card.board_id}/cards/${props.card.id}`} >
                     <div className="c-title">
                         {props.card.title}
                     </div>
@@ -15,4 +15,4 @@ const CardIndexItem = (props) => {
     );
 }
 
-export default CardIndexItem;
+export default withRouter(CardIndexItem);
