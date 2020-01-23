@@ -1,10 +1,11 @@
 import React from 'react';
-import { Route, withRouter } from 'react-router-dom';
+import { Link, Route, withRouter } from 'react-router-dom';
 
 class CardShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.card;
+    this.state.url_link = '';
   }
 
   update(field) {
@@ -44,9 +45,9 @@ class CardShow extends React.Component {
       <div className="modal-background card-content-container" onClick={() => {
         this.props.history.push(`/boards/${this.state.board_id}`);
       }}>
-        <div className="modal-child" onClick={e => e.stopPropagation()}>
+        <div className="modal-child">
 
-          <div className="card-show-content">
+          <div className="card-show-content" onClick={e => e.stopPropagation()}>
             <div onClick={() => this.props.history.push(`/boards/${this.state.board_id}`)} className="close-card" >
               <i className="fas fa-times"></i>
             </div>
@@ -81,7 +82,7 @@ class CardShow extends React.Component {
                 </div>
 
                 <div className="card-current-list quiet">
-                  <p>In list&nbsp;{this.state.list_title}</p>
+                  <p>In list&nbsp;<strong>{this.state.list_title}</strong></p>
                 </div>
               </div>
 
@@ -111,8 +112,12 @@ class CardShow extends React.Component {
                               autoComplete="off"
                               placeholder="Add a more detailed description…"
                               onChange={this.update("description")}
+                              onFocus={e => {
+                                document.getElementsByClassName('main-action-cont')[0].classList.remove('hidden2');
+                              }}
                               onClick={e => e.target.select()}
                               onBlur={e => {
+                                document.getElementsByClassName('main-action-cont')[0].classList.add('hidden2');
                                 if (e.relatedTarget && e.relatedTarget.className === "btn-cancel") {
                                   this.setState({
                                     description: this.props.card.description
@@ -128,18 +133,21 @@ class CardShow extends React.Component {
                             <div>
                               
                             </div>
-                            
-                            <input 
-                            type="button"
-                            value="Add"
-                            className="btn-description"
-                            />
 
-                            <input 
-                            type="button"
-                            value="X"
-                            className="btn-cancel"
-                            />
+                            <div className="main-action-cont hidden2">
+                              <input 
+                              type="button"
+                              value="Save"
+                              className="btn-description btn-success"
+                              />
+                              <input 
+                              id="cancel-desc"
+                              type="button"
+                              value="X"
+                              className="btn-cancel"
+                              />
+                            </div>
+                            
                           </form>
                         </div>
 
@@ -212,11 +220,30 @@ class CardShow extends React.Component {
                       </div>
                     </div>
 
-                    <div className="button-link share-card share-cont">
+                    <div className="button-link share-card share-cont" onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementsByClassName('url-cont')[0].classList.remove('hidden2');
+                      this.setState({url_link: window.location.href}, () => document.getElementById('url-text').select());
+                    }}>
                       <div className="share-icon"><i className="fas fa-share-alt"></i></div>
                       <div>
-                        <a href="#">Share</a>
+                        <div>Share</div>
                       </div>
+                    </div>
+
+                    <div className="button-link copy-card url-cont">
+                        <textarea 
+                          id="url-text"
+                          value={this.state.url_link}
+                          wrap="off"
+                        />
+                        <div id="copy-state" className="btn-success" onClick={e => {
+                          document.getElementById("url-text").select();
+                          document.execCommand("copy");
+                          document.getElementById('copy-state').innerText = "Copied!";
+                        }} >
+                          Copy
+                        </div>
                     </div>
 
                     <div onClick={(e) => this.handleDelete(e)} className="button-link share-card delete-cont">

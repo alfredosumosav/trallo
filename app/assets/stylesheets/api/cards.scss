@@ -269,6 +269,10 @@ a:hover {
     .card-current-list {
         cursor: default;
         margin: 4px 8px 4px 2px;
+        
+        strong {
+            font-weight: bold;
+        }
     }
 }
 
@@ -337,6 +341,7 @@ a:hover {
 .card-sidebar {
     // padding: 0 16px 8px 8px;
     overflow: hidden;
+    position: relative;
 
     h3 {
         color: #5e6c84;
@@ -350,6 +355,7 @@ a:hover {
 }
 
 .card-description-input {
+    // min-height: 108px;
     font-size: 14px;
     font-weight: 400;
     border: none;
@@ -358,7 +364,12 @@ a:hover {
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
 }
 
+.card-description-input:hover {
+    cursor: pointer;
+}
+
 .card-description-input:focus {
+    cursor: auto;
     min-height: 108px;
     background: #fff;
     box-shadow: none;
@@ -391,6 +402,16 @@ a:hover {
     margin: 0 6px 0 -6px;
 }
 
+.cancel-desc-icon {
+    color: #42526e;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0 11px;
+}
+
 .delete-cont:hover {
     background-color: #eb5a46;
 }
@@ -403,4 +424,57 @@ a:hover {
     transition-property: background-color,border-color,box-shadow;
     transition-duration: 85ms;
     transition-timing-function: ease;
+}
+
+.main-action-cont {
+    display: flex;
+    align-items: center;
+
+    .btn-success {
+        width: auto;
+        height: 32px;
+    }
+
+}
+
+#cancel-desc {
+    margin: 0 11px;
+    background-color: transparent;
+    color: #42526e;
+    font-size: 24px;
+    // font-family: Helvetica Neue;
+    font-weight: 250;
+    line-height: 32px;
+}
+
+.url-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // position: absolute;
+    min-height: 100px;
+    // overflow-x: scroll;
+    z-index: 4;
+    // width: 200px;
+    width: 100%;
+    position: relative;
+    right: 0;
+    
+    #url-text {
+        max-height: 30px;
+        border: 1px solid #5e6c84;
+        border-radius: 3px;
+        color: #42526e;
+        font-size: 14px;
+        overflow: auto;
+        outline: none;
+        width: 100%;
+        resize: none;
+    }
+
+    .btn-success {
+        margin: 4px;
+        width: auto;
+    }
 }
