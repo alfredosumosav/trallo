@@ -11,7 +11,7 @@ class BoardShowEdit extends React.Component {
     }
 
     componentWillUnmount() {
-        this.props.removeBoard(this.props.match.params.boardId);
+        // this.props.removeBoard(this.props.match.params.boardId);
         // this.props.removeCards();
         // this.props.removeLists();
     }
