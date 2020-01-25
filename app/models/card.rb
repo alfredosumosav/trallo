@@ -24,4 +24,10 @@ class Card < ApplicationRecord
         primary_key: :id,
         foreign_key: :author_id,
         class_name: :User
+
+    has_many :comments,
+        primary_key: :id,
+        foreign_key: :card_id,
+        class_name: :Comment,
+        dependent: :destroy
 end
