@@ -3,12 +3,12 @@ import { withRouter } from "react-router-dom";
 import CommentIndexItem from "./comment_index_item";
 
 const CommentIndex = props => {
-  if (props.comments.length === 0) {
+    // debugger
+  if (props.card.comments.length === 0) {
     return null;
   }
 
-  return props.comments
-    .filter(comment => comment.card_id === props.card.id)
+  return props.card.comments
     .map((comment, id) => <CommentIndexItem key={id} comment={comment} />);
 };
 
