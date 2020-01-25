@@ -26,5 +26,10 @@ class List < ApplicationRecord
     has_many :cards,
         primary_key: :id,
         foreign_key: :list_id,
-        class_name: :Card
+        class_name: :Card,
+        dependent: :destroy
+
+    has_many :comments,
+        through: :cards,
+        source: :comments
 end
