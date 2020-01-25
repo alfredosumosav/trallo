@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link, Route, withRouter } from 'react-router-dom';
+import CommentIndex from '../comments/comment_index';
 
 class CardShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.card;
-    this.state.url_link = '';
   }
 
   update(field) {
@@ -179,11 +179,7 @@ class CardShow extends React.Component {
                     </div>
 
                     <div className="comments-container">
-                      <div className="comment-user"></div>
-                      <div className="comment-info"></div>
-
-                      <div className="comment"></div>
-
+                      <CommentIndex card={this.props.card} />
                       <div className="comment-actions"></div>
                     </div>
                   </div>
@@ -221,7 +217,7 @@ class CardShow extends React.Component {
                     <div className="button-link share-card share-cont" onClick={(e) => {
                       e.preventDefault();
                       document.getElementsByClassName('url-cont')[0].classList.remove('hidden2');
-                      this.setState({url_link: window.location.href}, () => document.getElementById('url-text').select());
+                      document.getElementById("url-text").select();
                     }}>
                       <div className="share-icon"><i className="fas fa-share-alt"></i></div>
                       <div>
@@ -233,8 +229,9 @@ class CardShow extends React.Component {
                         <p>Share this url:</p>
                         <textarea 
                           id="url-text"
-                          value={this.state.url_link}
+                          value={window.location.href}
                           wrap="off"
+                          readOnly={true}
                         />
                         <div id="copy-state" className="btn-success" onClick={e => {
                           document.getElementById("url-text").select();

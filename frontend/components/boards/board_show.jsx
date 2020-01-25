@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect, Route, withRouter } from 'react-router-dom';
 import ListIndexContainer from '../lists/list_index_container';
-import CardShowContainer from '../cards/card_show_container';
 
 class BoardShow extends React.Component {
     constructor(props) {
