@@ -1,7 +1,5 @@
 class Api::CommentsController < ApplicationController
     def index
-        # debugger
-        # @board = Board.find(params[:boardId])
         @comments = Comment.all
         render :index
     end
