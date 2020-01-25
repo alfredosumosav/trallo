@@ -13,11 +13,6 @@ class ListIndex extends React.Component {
         this.props.requestCards();
     };
 
-    componentWillUnmount() {
-        // this.props.removeLists();
-        // this.props.removeCards();
-    };
-
     render() {
 
         if (this.props.lists === undefined || this.props.cards === undefined) {

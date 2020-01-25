@@ -1,9 +1,6 @@
 class Api::ListsController < ApplicationController
 
     def index
-        # debugger
-        # @lists = @lists || List.all
-        # @lists = List.in_board(params[board_id])
         @lists = List.all
         render :index
     end
@@ -19,7 +16,6 @@ class Api::ListsController < ApplicationController
     end
 
     def show
-        # debugger
         @list = List.find_by(id: params[:id])
         render :show
     end

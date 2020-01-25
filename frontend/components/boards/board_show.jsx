@@ -276,9 +276,6 @@ class BoardShow extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="card-show-container">
-              {/* <CardShowContainer /> */}
-            </div>
           </div>
         );
     }

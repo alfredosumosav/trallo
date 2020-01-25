@@ -16,7 +16,6 @@ function Modal({ modal, closeModal }) {
             break;
         case 'showcard':
             component = <CardShowContainer />;
-            // component = <CardShow />;
             break;
         default:
             return null;

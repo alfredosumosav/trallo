@@ -10,9 +10,3 @@ Rails.application.routes.draw do
     resources :cards, except: [:new, :edit]
   end
 end
-
-# namespace :api, defaults: { format: :json} do
-#   resources :boards
-#   resources :lists, only: [:create, :update, :destroy]
-#   resources :cards, except: [:new, :edit]
-# end

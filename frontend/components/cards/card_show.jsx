@@ -60,7 +60,6 @@ class CardShow extends React.Component {
 
                   <div className="card-title-input card-title">
                     <form onSubmit={e => {
-                      // this.handleSubmit(e);
                       e.preventDefault();
                       e.target.elements[0].focus();
                       e.target.elements[0].blur();
@@ -122,7 +121,6 @@ class CardShow extends React.Component {
                                   this.setState({
                                     description: this.props.card.description
                                   })
-                                  // console.log('no update!');
                                 } else {
                                   this.handleSubmit(e);
                                 }
@@ -197,7 +195,7 @@ class CardShow extends React.Component {
 
                     <div className="add-to-card-actions">
                       <div className="button-link due-date-cont">
-                        <div className="clock-icon"><i className="fas fa-clock"></i></div>
+                        <div className="clock-icon"><i className="far fa-clock"></i></div>
                         <a href="#">Due Date</a>
                       </div>
                     </div>
@@ -214,7 +212,7 @@ class CardShow extends React.Component {
                     </div>
 
                     <div className="button-link copy-card copy-cont">
-                      <div className="copy-icon"><i className="fas fa-clone"></i></div>
+                      <div className="copy-icon"><i className="far fa-clone"></i></div>
                       <div>
                         <a href="#">Copy</a>
                       </div>
@@ -232,6 +230,7 @@ class CardShow extends React.Component {
                     </div>
 
                     <div className="button-link copy-card url-cont hidden2">
+                        <p>Share this url:</p>
                         <textarea 
                           id="url-text"
                           value={this.state.url_link}

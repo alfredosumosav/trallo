@@ -21,25 +21,6 @@ export const createList = list => {
     })
 };
 
-// EXAMPLE
-// $.ajax({
-//     url: `/api/lists`,
-//     method: 'POST',
-//     data: { list: { title: "hola", board_id: 87, author_id: 10 } },
-//     contentType: false,
-//     proccessData: false
-// })
-
-// export const updateList = list => {
-//     return $.ajax({
-//         url: `/api/lists/${list.id}`,
-//         method: 'PATCH',
-//         data: list,
-//         contentType: false,
-//         proccessData: false
-//     })
-// };
-
 export const updateList = list => {
   return $.ajax({
     url: `/api/lists/${list.getAll('list[id]')}`,
@@ -51,7 +32,6 @@ export const updateList = list => {
 };
 
 export const deleteList = listId => {
-    // debugger
   return $.ajax({
     url: `/api/lists/${listId}`,
     method: "DELETE",
