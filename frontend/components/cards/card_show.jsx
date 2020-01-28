@@ -235,6 +235,7 @@ class CardShow extends React.Component {
                           id="url-text"
                           value={this.state.url_link}
                           wrap="off"
+                          readOnly={true}
                         />
                         <div id="copy-state" className="btn-success" onClick={e => {
                           document.getElementById("url-text").select();
