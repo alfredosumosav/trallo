@@ -2,14 +2,28 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import CommentIndexItem from "./comment_index_item";
 
-const CommentIndex = props => {
-    // debugger
-  if (props.card.comments.length === 0) {
-    return null;
+class CommentIndex extends React.Component {
+  constructor(props) {
+    super(props);
   }
 
-  return props.card.comments
-    .map((comment, id) => <CommentIndexItem key={id} comment={comment} />);
-};
+  componentDidMount() {
+    this.props.requestComments();
+  }
+  
+  render() {
+    if (this.props.comments === undefined) {
+      return null;
+    }
+
+    return (
+      <div>
+        {
+          this.props.comments.filter(comment => comment.card_id === this.props.card.id).map(comment => <CommentIndexItem key={comment.id} comment={comment} />)
+        }
+      </div>
+    );
+  }
+}
 
 export default withRouter(CommentIndex);
