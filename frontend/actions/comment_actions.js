@@ -4,7 +4,7 @@ export const RECEIVE_COMMENTS = 'RECEIVE_COMMENTS';
 export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
 export const RECEIVE_COMMENT_ERRORS = 'RECEIVE_COMMENT_ERRORS';
 export const REMOVE_COMMENT = 'REMOVE_COMMENT';
-// export const REMOVE_COMMENTS = 'REMOVE_COMMENTS';
+export const REMOVE_COMMENTS = 'REMOVE_COMMENTS';
 // export const REMOVE_ERRORS = 'REMOVE_ERRORS';
 
 const receiveComments = comments => ({
@@ -25,6 +25,10 @@ const receiveCommentErrors = errors => ({
 const removeComment = commentId => ({
     type: REMOVE_COMMENT,
     commentId
+});
+
+export const removeComments = () => ({
+    type: REMOVE_COMMENTS
 });
 
 export const requestComments = () => dispatch => {
