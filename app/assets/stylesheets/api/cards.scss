@@ -247,6 +247,10 @@ a:hover {
             justify-content: center;
             align-items: center;
         }
+
+        .card-title-label:focus {
+            cursor: auto;
+        }
     }
 
     .card-current-list {

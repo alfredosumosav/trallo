@@ -71,7 +71,7 @@ class CardShow extends React.Component {
                           value={this.state.title}
                           autoComplete="off"
                           onChange={this.update("title")}
-                          onClick={e => e.target.select()}
+                          onFocus={e => e.target.select()}
                           onBlur={e => this.handleSubmit(e)}
                           className="board-name card-title-label"
                         />
@@ -112,9 +112,10 @@ class CardShow extends React.Component {
                               placeholder="Add a more detailed description…"
                               onChange={this.update("description")}
                               onFocus={e => {
+                                e.target.select();
                                 document.getElementsByClassName('main-action-cont')[0].classList.remove('hidden2');
                               }}
-                              onClick={e => e.target.select()}
+                              // onClick={e => console.log('nothing')}
                               onBlur={e => {
                                 document.getElementsByClassName('main-action-cont')[0].classList.add('hidden2');
                                 if (e.relatedTarget && e.relatedTarget.className === "btn-cancel") {
