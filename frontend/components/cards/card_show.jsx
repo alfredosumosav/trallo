@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Route, withRouter } from 'react-router-dom';
-import CommentIndex from '../comments/comment_index';
+import CommentIndexContainer from '../comments/comment_index_container';
 
 class CardShow extends React.Component {
   constructor(props) {
@@ -179,7 +179,7 @@ class CardShow extends React.Component {
                     </div>
 
                     <div className="comments-container">
-                      <CommentIndex card={this.props.card} />
+                      <CommentIndexContainer />
                       <div className="comment-actions"></div>
                     </div>
                   </div>
