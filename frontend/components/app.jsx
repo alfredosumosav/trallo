@@ -45,10 +45,9 @@ class App extends React.Component {
                         <AuthRoute2 exact path="/" component={SplashContainer} />
                         <Redirect to="/" />
                     </Switch>
-                    <div id="footer-container">
-                        
-                    </div>
-                <Footer />
+                    {/* <div id="footer-container">
+                        <Footer />
+                    </div> */}
                 </div>
             </div>
         );
