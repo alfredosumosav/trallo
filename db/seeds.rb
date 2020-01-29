@@ -50,6 +50,36 @@ board6.photo.attach(io: f6, filename: 'bg6.jpg')
 
 board7 = user.boards.create!(title: 'Cultural activities')
 board7.photo.attach(io: f7, filename: 'bg7.jpg')
+
+# create lists
+list1 = board4.lists.create!(title: "Test 1", author_id: user.id)
+list2 = board4.lists.create!(title: "Test 2", author_id: user.id)
+list3 = board4.lists.create!(title: "Test 3", author_id: user.id)
+list4 = board4.lists.create!(title: "Test 4", author_id: user.id)
+list5 = board4.lists.create!(title: "Test 5", author_id: user.id)
+list6 = board4.lists.create!(title: "Test 6", author_id: user.id)
+list7 = board4.lists.create!(title: "Test 7", author_id: user.id)
+
+# create cards
+card1 = list1.cards.create!(title: "Card 1", author_id: user.id)
+card2 = list1.cards.create!(title: "Card 2", author_id: user.id)
+card3 = list1.cards.create!(title: "Card 3", author_id: user.id)
+card4 = list2.cards.create!(title: "Card 4", author_id: user.id)
+card5 = list2.cards.create!(title: "Card 5", author_id: user.id)
+card6 = list2.cards.create!(title: "Card 6", author_id: user.id)
+card7 = list2.cards.create!(title: "Card 7", author_id: user.id)
+card8 = list3.cards.create!(title: "Card 8", author_id: user.id)
+card9 = list3.cards.create!(title: "Card 9", author_id: user.id)
+card10 = list3.cards.create!(title: "Card 10", author_id: user.id)
+card11 = list3.cards.create!(title: "Card 11", author_id: user.id)
+
+# create comments
+comment1 = card11.comments.create!(body: "Comment 1", author_id: user.id)
+comment2 = card11.comments.create!(body: "Comment 2", author_id: user.id)
+comment3 = card11.comments.create!(body: "Comment 3", author_id: user.id)
+comment4 = card11.comments.create!(body: "Comment 4", author_id: user.id)
+comment5 = card11.comments.create!(body: "Comment 5", author_id: user.id)
+
 # board.save
 # board2 = user.boards.create(title: 'board 2')
 # board3 = user.boards.create(title: 'board 3')
