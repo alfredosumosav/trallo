@@ -2,8 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-html {
+html, body {
+    height: 100%;
     scroll-behavior: smooth;
+}
+
+#root {
+    height: 100%;
 }
 
 .main {
@@ -599,6 +604,7 @@ a:hover {
   left: 0;
   background: rgba(0, 0, 0, 0.7);
   z-index: 10;
+  overflow: scroll;
 }
 
 .modal-child {
