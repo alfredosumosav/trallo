@@ -23,17 +23,26 @@ class User < ApplicationRecord
     has_many :boards,
         primary_key: :id,
         foreign_key: :author_id,
-        class_name: :Board
+        class_name: :Board,
+        dependent: :destroy
 
     has_many :lists,
         primary_key: :id,
         foreign_key: :author_id,
-        class_name: :List
+        class_name: :List,
+        dependent: :destroy
 
     has_many :cards,
         primary_key: :id,
         foreign_key: :author_id,
-        class_name: :Card
+        class_name: :Card,
+        dependent: :destroy
+
+    has_many :comments,
+        primary_key: :id,
+        foreign_key: :author_id,
+        class_name: :Comment,
+        dependent: :destroy
 
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)

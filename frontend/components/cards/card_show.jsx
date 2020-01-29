@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link, Route, withRouter } from 'react-router-dom';
+import CommentIndexContainer from '../comments/comment_index_container';
 
 class CardShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.card;
-    this.state.url_link = '';
   }
 
   update(field) {
@@ -71,7 +71,7 @@ class CardShow extends React.Component {
                           value={this.state.title}
                           autoComplete="off"
                           onChange={this.update("title")}
-                          onClick={e => e.target.select()}
+                          onFocus={e => e.target.select()}
                           onBlur={e => this.handleSubmit(e)}
                           className="board-name card-title-label"
                         />
@@ -112,9 +112,10 @@ class CardShow extends React.Component {
                               placeholder="Add a more detailed description…"
                               onChange={this.update("description")}
                               onFocus={e => {
+                                e.target.select();
                                 document.getElementsByClassName('main-action-cont')[0].classList.remove('hidden2');
                               }}
-                              onClick={e => e.target.select()}
+                              // onClick={e => console.log('nothing')}
                               onBlur={e => {
                                 document.getElementsByClassName('main-action-cont')[0].classList.add('hidden2');
                                 if (e.relatedTarget && e.relatedTarget.className === "btn-cancel") {
@@ -179,11 +180,7 @@ class CardShow extends React.Component {
                     </div>
 
                     <div className="comments-container">
-                      <div className="comment-user"></div>
-                      <div className="comment-info"></div>
-
-                      <div className="comment"></div>
-
+                      <CommentIndexContainer />
                       <div className="comment-actions"></div>
                     </div>
                   </div>
@@ -221,7 +218,7 @@ class CardShow extends React.Component {
                     <div className="button-link share-card share-cont" onClick={(e) => {
                       e.preventDefault();
                       document.getElementsByClassName('url-cont')[0].classList.remove('hidden2');
-                      this.setState({url_link: window.location.href}, () => document.getElementById('url-text').select());
+                      document.getElementById("url-text").select();
                     }}>
                       <div className="share-icon"><i className="fas fa-share-alt"></i></div>
                       <div>
@@ -233,7 +230,7 @@ class CardShow extends React.Component {
                         <p>Share this url:</p>
                         <textarea 
                           id="url-text"
-                          value={this.state.url_link}
+                          value={window.location.href}
                           wrap="off"
                           readOnly={true}
                         />

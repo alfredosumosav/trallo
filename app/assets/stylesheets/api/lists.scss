@@ -142,6 +142,10 @@
     color: #42526e;
 }
 
+.list-title-input:focus {
+    cursor: auto;
+}
+
 .list-cards-container {
     overflow-x: hidden;
     margin: 0 4px;

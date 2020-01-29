@@ -24,9 +24,14 @@ class Board < ApplicationRecord
     has_many :lists,
         primary_key: :id,
         foreign_key: :board_id,
-        class_name: :List
+        class_name: :List,
+        dependent: :destroy
 
     has_many :cards,
         through: :lists,
         source: :cards
+
+    has_many :comments,
+        through: :cards,
+        source: :comments
 end

@@ -1,0 +1,75 @@
+// Place all the styles related to the api/comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.comment-content-container {
+    display: flex;
+    min-height: 32px;
+    padding: 8px 0;
+    position: relative;
+
+    .comment-author {
+        width: 10%;
+        background-color: #dfe1e6;
+        border: 1px solid transparent;
+        border-radius: 25em;
+        color: #172b4d;
+        cursor: default;
+        height: 32px;
+        margin: 0 8px 8px 0;
+        overflow: visible;
+        position: relative;
+        width: 32px;
+        text-decoration: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        z-index: 0;
+
+        .author-avatar {
+            font-size: 12px;
+            font-weight: 700;
+            height: 32px;
+            left: 0;
+            line-height: 32px;
+            overflow: hidden;
+            position: absolute;
+            text-align: center;
+            top: 0;
+            width: 100%;
+        }
+    }
+
+    .comment-details-container {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        // margin-left: 8px;
+
+        .card-comment-details {
+
+            .comment-author-name {
+                font-weight: bold;
+            }
+
+            .comment-title {
+                margin: 4px 2px 4px 0;
+                padding: 8px 12px;
+                background-color: #fff;
+                border-radius: 3px;
+                box-shadow: 0 1px 2px -1px rgba(9,30,66,.25), 0 0 0 1px rgba(9,30,66,.08);
+                box-sizing: border-box;
+                clear: both;
+                display: inline-block;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 100%;
+            }
+        }
+
+        .comment-reactions {
+            display: flex;
+        }
+    }
+}

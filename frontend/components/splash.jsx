@@ -4,6 +4,7 @@ import SplashWelcome from './splash_welcome';
 import SplashCollaborate from './splash-collaborate';
 import SplashFeatures from './splash_features';
 import SplashGetStarted from './splash_get_started';
+import Footer from './footer';
 
 class Splash extends React.Component {
     constructor(props) {
@@ -24,6 +25,9 @@ class Splash extends React.Component {
                 </div>
                 <div id="get-started" className="splash-get-started-container">
                     <SplashGetStarted />
+                </div>
+                <div id="footer-container">
+                        <Footer />
                 </div>
             </div>
         );
