@@ -48,15 +48,19 @@
         // margin-left: 8px;
 
         .card-comment-details {
+            color: #172b4d;
 
             .comment-author-name {
                 font-weight: bold;
             }
 
-            .comment-title {
+            .comment-title, .comment-input > form > textarea {
+                width: auto;
                 margin: 4px 2px 4px 0;
                 padding: 8px 12px;
                 background-color: #fff;
+                font-size: 16px;
+                border: none;
                 border-radius: 3px;
                 box-shadow: 0 1px 2px -1px rgba(9,30,66,.25), 0 0 0 1px rgba(9,30,66,.08);
                 box-sizing: border-box;
@@ -66,10 +70,46 @@
                 text-overflow: ellipsis;
                 max-width: 100%;
             }
+
+            .comment-input > form > textarea {
+                width: 100%;
+                min-height: 100px;
+                color: #172b4d;
+            }
+
+            .comment-input > form > .comment-action-cont {
+                display: flex;
+
+                .btn-save {
+                    width: auto;
+                    margin-right: 4px;
+                }
+
+                .btn-cancel {
+                    margin: 0 11px;
+                    background-color: transparent;
+                    color: #42526e;
+                    font-size: 24px;
+                    font-weight: 250;
+                    line-height: 32px;
+                }
+            }
         }
 
         .comment-reactions {
+            cursor: pointer;
             display: flex;
+            // text-decoration: underline;
+        }
+
+        .comment-reactions {
+            div:first-child, div:last-child {
+                text-decoration: underline;
+            }
+
+            div:hover {
+                color: #172b4d;
+            }
         }
     }
 }
