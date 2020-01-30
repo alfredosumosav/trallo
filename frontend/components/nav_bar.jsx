@@ -12,7 +12,7 @@ const NavBar = ({ currentUser, logout, openModal }) => {
         </div>
     ) : (
             <div id="session-actions-container">
-                <Link id="login" className="btn" to="/login">Login</Link>
+                <Link id="login" className="btn" to="/login">Log&nbsp;In</Link>
                 <Link id="signup" className="btn" to="/signup">Sign&nbsp;up</Link>
             </div>
         );
