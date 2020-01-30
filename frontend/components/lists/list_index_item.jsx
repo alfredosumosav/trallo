@@ -61,6 +61,10 @@ class ListIndexItem extends React.Component {
         return null;
       });
 
+    }).fail(e => {
+      document.getElementById(`card-f-${this.state.id}`).classList.add('hidden2');
+      document.getElementById(`card-text-${this.state.id}`).classList.remove('hidden2');
+      return null;
     });
   }
 
