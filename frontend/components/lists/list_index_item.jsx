@@ -148,7 +148,7 @@ class ListIndexItem extends React.Component {
 
                     <div 
                       id={`submit-card-input-${this.state.id}`} 
-                      className="btn-success submit-card-input"
+                      className="btn-success btn-save"
                       >
                         Add Card
                     </div>
