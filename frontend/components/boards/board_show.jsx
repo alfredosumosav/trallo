@@ -70,11 +70,10 @@ class BoardShow extends React.Component {
         this.props.createList(listFormData).then(() => {
             this.setState({
                 list_title: ''
+            }, (e) => {
+              document.getElementById('list-input').focus();
+              document.getElementById("list-f").scrollIntoView(false);
             });
-            document.getElementById('list-input').classList.add('hidden2');
-            document.getElementById('list-input2').classList.add('hidden2');
-            document.getElementById('submit-list-input').classList.add('hidden2');
-            document.getElementById('list-text').classList.remove('hidden2');
         });
     }
 
@@ -259,12 +258,13 @@ class BoardShow extends React.Component {
                           onClick={e => {
                               this.setState({
                                 list_title: ""
+                              }, (e) => {
+                                document.getElementById("list-input").classList.add("hidden2");
+                                document.getElementById("submit-list-input").classList.add("hidden2");
+                                document.getElementById("list-input2").classList.add("hidden2");
+                                document.getElementById("list-actions-container").classList.add("hidden2");
+                                document.getElementById("list-text").classList.remove("hidden2");
                               });
-                              document.getElementById("list-input").classList.add("hidden2");
-                              document.getElementById("submit-list-input").classList.add("hidden2");
-                              document.getElementById("list-input2").classList.add("hidden2");
-                              document.getElementById("list-actions-container").classList.add("hidden2");
-                              document.getElementById("list-text").classList.remove("hidden2");
                           }}>
                             <div className="btn">
                               <i className="fas fa-times"></i>
