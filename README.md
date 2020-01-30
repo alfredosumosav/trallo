@@ -87,5 +87,5 @@ const entitiesReducer = combineReducers({
 ---
 
 ## Future Features
-- Adding Comments and Due Dates
+- Adding Due Dates
 - Sharing boards
