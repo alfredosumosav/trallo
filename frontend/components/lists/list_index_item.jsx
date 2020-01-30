@@ -46,21 +46,26 @@ class ListIndexItem extends React.Component {
   handleNewCard(e) {
     e.preventDefault();
 
-    if (e.target.value !== '') {
-      let cardFormData = new FormData();
-      cardFormData.append('card[title]', this.state.card_title);
-      cardFormData.append('card[list_id]', this.state.id);
-      this.props.createCard(cardFormData).then(() => {
-        this.setState({
-          card_title: ''
-        });
-  
-        document.getElementById(`card-input-${this.state.id}`).classList.add('hidden2');
-        document.getElementById(`card-actions-container-${this.state.id}`).classList.add("hidden2");
-        document.getElementById(`card-text-${this.state.id}`).classList.remove('hidden2');
-        document.getElementById(`container-${this.state.id}`).classList.add('card-text')
+    let cardFormData = new FormData();
+    cardFormData.append('card[title]', this.state.card_title);
+    cardFormData.append('card[list_id]', this.state.id);
+
+    this.props.createCard(cardFormData).then(e => {
+
+      this.setState({
+        card_title: ''
+      }, (e) => {
+        document.getElementById(`card-input-${this.state.id}`).focus();
+        // scroll to form for easier exp
+        document.getElementById(`card-f-${this.state.id}`).scrollIntoView(false);
+        return null;
       });
-    }
+
+    }).fail(e => {
+      document.getElementById(`card-f-${this.state.id}`).classList.add('hidden2');
+      document.getElementById(`card-text-${this.state.id}`).classList.remove('hidden2');
+      return null;
+    });
   }
 
   handleDelete(e) {
@@ -69,7 +74,6 @@ class ListIndexItem extends React.Component {
   }
 
   render() {
-    // debugger
     const { list, cards } = this.props;
 
     return (
@@ -93,61 +97,79 @@ class ListIndexItem extends React.Component {
               />
             </form>
           </div>
+
           <div className="list-cards-container">
             <CardIndex list={list} cards={cards} />
-            <div id={`container-${this.state.id}`} className="cards-content-container card-text card-input-container">
-              <div className="list-card-details card-input-container">
-                <div 
-                  id={`card-text-${this.state.id}`}
-                  onClick={e => {
-                    e.currentTarget.classList.add("hidden2");
-                    document.getElementById(`container-${this.state.id}`).classList.remove('card-text')
-                    document.getElementById(`card-input-${this.state.id}`).classList.remove("hidden2");
-                    document.getElementById(`card-input2-${this.state.id}`).classList.remove("hidden2");
-                    document.getElementById(`card-actions-container-${this.state.id}`).classList.remove("hidden2");
-                    document.getElementById(`card-input-${this.state.id}`).select();
-                  }}>
+
+              <div 
+                id={`card-text-${this.state.id}`}
+                onClick={e => {
+                  document.getElementById(`card-text-${this.state.id}`).classList.add('hidden2');
+                  document.getElementById(`card-f-${this.state.id}`).classList.remove('hidden2');
+                  document.getElementById(`card-input-${this.state.id}`).focus();
+                }}
+                className="list-card-details cards-content-container card-text card-input-container"
+              >
                   <i className="fas fa-plus"></i> Add a card
-                </div>
-                <form
-                  id={`card-f-${this.state.id}`}
-                  onSubmit={e => this.handleNewCard(e)}
-                  className="card-form-container">
-                    <input 
-                      id={`card-input-${this.state.id}`}
-                      type="text"
-                      value={this.state.card_title}
-                      autoComplete="off"
-                      placeholder="Enter card title..."
-                      onChange={this.update("card_title")}
-                      onBlur={this.handleNewCard}
-                      className="card-input hidden2"/>
-                    <div id={`card-actions-container-${this.state.id}`} className="card-actions hidden2">
-                      <div 
-                        id={`submit-card-input-${this.state.id}`} 
-                        className="btn-success submit-card-input">
-                          Add Card
-                      </div>
-                      <div
-                        id={`card-input2-${this.state.id}`}
-                        className="card-input2 hidden2 board-name"
-                        onClick={e => {
-                          this.setState({
-                            card_title: ""
-                          });
-                          document.getElementById(`card-input-${this.state.id}`).classList.add('hidden2');
-                          document.getElementById(`card-input2-${this.state.id}`).classList.add("hidden2");
-                          document.getElementById(`card-actions-container-${this.state.id}`).classList.add("hidden2");
-                          document.getElementById(`card-text-${this.state.id}`).classList.remove('hidden2');
-                          document.getElementById(`container-${this.state.id}`).classList.add('card-text')
-                        }}>
-                        <div className="btn">
-                          <i className="fas fa-times"></i>
-                        </div>
-                      </div>
-                    </div>
-                </form>
               </div>
+            
+            <div className="c-form-container">
+
+              <form
+                id={`card-f-${this.state.id}`}
+                onSubmit={e => this.handleNewCard(e)}
+                className="card-form-container hidden2"
+                >
+                  <input 
+                    id={`card-input-${this.state.id}`}
+                    type="text"
+                    value={this.state.card_title}
+                    autoComplete="off"
+                    placeholder="Enter card title..."
+                    onChange={this.update("card_title")}
+                    onBlur={e => {
+
+                      if ((e.relatedTarget !== null) && (e.relatedTarget.value === 'X')) {
+                        document.getElementById(`card-f-${this.state.id}`).classList.add('hidden2');
+                        document.getElementById(`card-text-${this.state.id}`).classList.remove('hidden2');
+                        this.setState({
+                          card_title: ''
+                        }, e => null);
+                      } else if (e.relatedTarget === null || e.relatedTarget || e.relatedTarget.value !== 'X') {
+                        return this.handleNewCard(e);
+                      }
+
+                      return null;
+                    }}
+                    className="card-input"
+                  />
+
+                  <div id={`card-actions-container-${this.state.id}`} className="card-actions">
+
+                    <div 
+                      id={`submit-card-input-${this.state.id}`} 
+                      className="btn-success btn-save"
+                      >
+                        Add Card
+                    </div>
+
+                    <input
+                      type="button"
+                      value="X"
+                      onClick={(e) => {
+                        this.setState({
+                          card_title: ''
+                        }, (e) => {
+                          document.getElementById(`card-f-${this.state.id}`).classList.add('hidden2');
+                          document.getElementById(`card-text-${this.state.id}`).classList.remove('hidden2');
+                        });
+                      }}
+                      className="btn-cancel"
+                    />
+
+                  </div>
+              </form>
+
             </div>
           </div>
         </div>

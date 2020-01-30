@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import CardShow from './card_show';
 import { requestCard, updateCard, deleteCard, removeCard } from '../../actions/card_actions';
 import { requestBoard } from '../../actions/board_actions';
+import { createComment } from '../../actions/comment_actions';
 import BoardShowContainer from '../boards/board_show_container';
 
 class CardShowEdit extends React.Component {
@@ -27,7 +28,7 @@ class CardShowEdit extends React.Component {
         return (
             <div>
                 <BoardShowContainer />
-                <CardShow card={this.props.card} updateCard={this.props.updateCard} deleteCard={this.props.deleteCard} />
+                <CardShow card={this.props.card} updateCard={this.props.updateCard} deleteCard={this.props.deleteCard} createComment={this.props.createComment} />
             </div>
         )
     }
@@ -45,7 +46,8 @@ const mDTP = (dispatch, ownProps) => ({
     updateCard: card => dispatch(updateCard(card)),
     deleteCard: cardId => dispatch(deleteCard(cardId)),
     requestBoard: boardId => dispatch(requestBoard(boardId)),
-    removeCard: cardId => dispatch(removeCard(cardId))
+    removeCard: cardId => dispatch(removeCard(cardId)),
+    createComment: comment => dispatch(createComment(comment))
 });
 
 export default withRouter(connect(mSTP, mDTP)(CardShowEdit));

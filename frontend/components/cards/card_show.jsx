@@ -6,6 +6,8 @@ class CardShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.card;
+    this.state.comment_body = '';
+    this.handleComment = this.handleComment.bind(this);
   }
 
   update(field) {
@@ -28,6 +30,22 @@ class CardShow extends React.Component {
   handleDelete(e) {
     e.preventDefault();
     this.props.deleteCard(this.state.id).then(() => this.props.history.push(`/boards/${this.state.board_id}`));
+  }
+
+  handleComment(e) {
+    e.preventDefault();
+    let formData2 = new FormData();
+    formData2.append("comment[body]", this.state.comment_body);
+    formData2.append("comment[card_id]", this.state.id);
+    this.props.createComment(formData2).then(() => {
+      document.getElementById('new-comment-actions').classList.add('hidden2');
+      this.setState({
+        comment_body: ''
+      }, (e) => {
+        document.getElementById('textarea-input').classList.remove('big')
+        document.getElementById('textarea-input').classList.add('small')
+      });
+    });
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -169,12 +187,62 @@ class CardShow extends React.Component {
                       <div className="activity-options"></div>
                     </div>
 
-                    <div className="new-comment-box">
-                      <div className="member-initials"></div>
-                      <div className="comment-form-container focused">
-                        <div className="form">
-                          <div className="textarea-input"></div>
-                          <div className="comment-controls"></div>
+                    <div id="new-comment-b" className="new-comment-box">
+                      <div className="comment-content-container">
+                        <div className="comment-author">
+                          <div className="author-avatar">
+                            {this.state.author_username[0]}
+                          </div>
+                        </div>
+                        <div className="comment-details-container">
+                          <div className="card-comment-details">
+                            <div className="comment-label">
+                              <div className="comment-author-name">
+                                {this.state.author_username}
+                              </div>
+                            </div>
+                            <div id={`new-comment-input`} className="comment-input">
+                              <form>
+                                <textarea
+                                  id="textarea-input"
+                                  className="comment-title small"
+                                  value={this.state.comment_body}
+                                  placeholder="Write a comment..."
+                                  onFocus={e => {
+                                    document.getElementById('textarea-input').classList.remove('small');
+                                    document.getElementById('textarea-input').classList.add('big');
+                                    document.getElementById('new-comment-actions').classList.remove('hidden2');
+                                  }}
+                                  onChange={this.update("comment_body")}
+                                />
+
+                                <div id="new-comment-actions" className="comment-action-cont hidden2">
+                                  <input
+                                    type="button"
+                                    value="Save"
+                                    onClick={(e) => {
+                                      this.handleComment(e);
+                                    }}
+                                    className="btn-description btn-success btn-save"
+                                  />
+                                  <input
+                                    type="button"
+                                    value="X"
+                                    onClick={(e) => {
+                                      document.getElementById(`new-comment-actions`).classList.add('hidden2');
+                                      this.setState({
+                                        comment_body: ''
+                                      }, (e) => {
+                                        document.getElementById('textarea-input').classList.remove('big');
+                                        document.getElementById('textarea-input').classList.add('small');
+                                      });
+                                    }}
+                                    className="btn-cancel"
+                                  />
+                                </div>
+                              </form>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>

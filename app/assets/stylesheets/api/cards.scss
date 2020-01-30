@@ -30,6 +30,20 @@
 .card-actions {
     display: flex;
     align-items: center;
+
+    .btn-save {
+        width: auto;
+        margin-right: 4px;
+    }
+
+    .btn-cancel {
+        margin: 0 11px;
+        background-color: transparent;
+        color: #42526e;
+        font-size: 24px;
+        font-weight: 250;
+        line-height: 32px;
+    }
 }
 
 .submit-card-input {
