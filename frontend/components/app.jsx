@@ -1,5 +1,4 @@
 import React from 'react';
-import GreetingContainer from './greeting_container';
 import LoginFormContainer from './login_form_container';
 import SignupFormContainer from './signup_form_container';
 import BoardShowContainer from './boards/board_show_container';
@@ -29,7 +28,7 @@ class App extends React.Component {
                 <header id="header">
                     <nav className="navbar">
                         <div id="logo-container">
-                            <i className="fab fa-trello"></i>
+                            <Link to="/"><i className="fab fa-trello"></i></Link>
                             <Link id="logo" to={"/"}>Trallo</Link>
                         </div>
                         <Route exact to="/" component={NavBarContainer} />
