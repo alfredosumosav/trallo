@@ -242,7 +242,11 @@ form {
 }
 
 .header-name {
-    margin-right: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // margin-right: 1rem;
+    // margin-left: 1rem;
     color: #ffffff;
 }
 
