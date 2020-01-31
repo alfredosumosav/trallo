@@ -84,11 +84,11 @@ class SessionForm extends React.Component {
                         </div>
                         <div id="submit-container">
                             <input id="submit-btn" className="btn" type="submit" value={formType === 'signup' ? 'Sign Up' : 'Log In'} />
+                            {formType === 'login' ? (<input id="demo-btn" type="button" value="Demo User" className="btn-success" onClick={() => this.props.login(demoUser)} />) : ''}
                         </div>
                     </div>
                 </form>
                 <ul className="bottom-form-link">
-                    {formType === 'login' ? (<button className="btn-success" onClick={() => this.props.login(demoUser)}>Demo User</button>) : ''}
                     {formType === 'login' ? <Link id="toggle-form" className="btn" to={'/signup'} >Sign up for an account</Link> : <Link id="toggle-form" className="btn" to={'/login'} >Already have an account? Log in</Link>}
                 </ul>
                 <div id="footer-container">

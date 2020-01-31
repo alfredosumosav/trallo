@@ -41,6 +41,10 @@
         }
     }
 
+    .nav-avatar {
+        margin: 0 1rem;
+    }
+
     .comment-details-container {
         display: flex;
         flex-direction: column;
@@ -75,6 +79,7 @@
                 width: 100%;
                 min-height: 100px;
                 color: #172b4d;
+                resize: none;
             }
 
             .comment-input > form > .comment-action-cont {
@@ -92,6 +97,7 @@
                     font-size: 24px;
                     font-weight: 250;
                     line-height: 32px;
+                    border: 1px solid transparent;
                 }
             }
         }
