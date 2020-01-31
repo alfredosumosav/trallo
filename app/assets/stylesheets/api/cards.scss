@@ -43,7 +43,7 @@
         font-size: 24px;
         font-weight: 250;
         line-height: 32px;
-        border: 1px solid transparent;
+        border: 1px solid transparent !important;
     }
 }
 
@@ -450,6 +450,7 @@ a:hover {
     font-size: 24px;
     font-weight: 250;
     line-height: 32px;
+    border: 1px solid transparent;
 }
 
 .url-cont {
