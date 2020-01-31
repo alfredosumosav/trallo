@@ -3,6 +3,14 @@ export const getAllBoards = (state) => (
     Object.keys(state.entities.boards).map(id => state.entities.boards[id])
 );
 
+export const getAllLists = (state, boardId) => (
+    Object.keys(state.entities.lists).map(id => state.entities.lists[id]).filter(list => list.board_id === boardId)
+);
+
+export const getAllCards = (state, boardId) => (
+    Object.keys(state.entities.cards).map(id => state.entities.cards[id]).filter(card => card.board_id === boardId)
+);
+
 // Select individual board
 export const selectBoards = (state, id) => {
     const nullBoard = {
