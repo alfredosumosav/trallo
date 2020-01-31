@@ -59,9 +59,11 @@ class BoardIndex extends React.Component {
                     </div>
                     <div id="archived" className="boards-list archived">
                         {
-                            boards.filter(board => board.archived).map(board => (
-                                <BoardIndexItem openModal={openModal} key={board.id} board={board} />
-                            ))
+                            boards.some(board => !board.archived === false) ? (
+                                boards.filter(board => board.archived).map(board => (
+                                    <BoardIndexItem openModal={openModal} key={board.id} board={board} />
+                                ))
+                            ) : "No archived boards"
                         }
                     </div>
                 </div>
