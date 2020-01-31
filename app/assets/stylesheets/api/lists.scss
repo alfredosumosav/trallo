@@ -30,6 +30,43 @@
     display: flex;
     max-width: 100vw;
     overflow-x: scroll;
+    z-index: 1;
+}
+
+.hello {
+    color: #fff;
+}
+
+html, body, #bl-container {
+    ::-webkit-scrollbar {
+        height: 12px;
+        width: 12px
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+        // display: hidden;
+        // box-shadow: inset 0 0 5px grey; 
+        border-radius: 10px;
+    }
+
+    // track-piece
+    ::-webkit-scrollbar-track {
+        // display: hidden;
+        background: rgba(0, 0, 0, .15);
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: hsla(0, 0%, 100%, .4);
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-button {
+        display: block;
+        height: 4px;
+        width: 4px
+    }
 }
 
 .board-list-title {

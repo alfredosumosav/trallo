@@ -666,6 +666,7 @@ form {
     position: relative;
     background: #fafbfc;
     min-height: 100vh;
+    z-index: -1;
 }
 
 .board-show-container {
