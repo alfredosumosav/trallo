@@ -7,7 +7,6 @@ import { getAllLists, getAllCards } from '../../reducers/selectors';
 
 const mSTP = (state, ownProps) => {
     let boardId = parseInt(ownProps.match.params.boardId);
-    debugger
     return ({
         lists: getAllLists(state, boardId),
         cards: getAllCards(state, boardId)
@@ -15,7 +14,6 @@ const mSTP = (state, ownProps) => {
 };
 
 const mDTP = dispatch => {
-    debugger
     return ({
         requestLists: () => dispatch(requestLists()),
         updateList: list => dispatch(updateList(list)),
