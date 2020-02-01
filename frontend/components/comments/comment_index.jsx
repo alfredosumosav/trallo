@@ -10,7 +10,7 @@ class CommentIndex extends React.Component {
   componentDidMount() {
     this.props.requestComments();
   }
-  
+
   render() {
     if (this.props.comments === undefined) {
       return null;
@@ -18,9 +18,17 @@ class CommentIndex extends React.Component {
 
     return (
       <div>
-        {
-          this.props.comments.filter(comment => comment.card_id === this.props.card.id).sort((a,b) => b.id - a.id).map(comment => <CommentIndexItem key={comment.id} comment={comment} updateComment={this.props.updateComment} deleteComment={this.props.deleteComment} />)
-        }
+        {this.props.comments
+          .filter(comment => comment.card_id === this.props.card.id)
+          .sort((a, b) => b.id - a.id)
+          .map(comment => (
+            <CommentIndexItem
+              key={comment.id}
+              comment={comment}
+              updateComment={this.props.updateComment}
+              deleteComment={this.props.deleteComment}
+            />
+          ))}
       </div>
     );
   }
