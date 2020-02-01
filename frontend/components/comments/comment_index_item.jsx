@@ -21,9 +21,15 @@ class CommentIndexItem extends React.Component {
     formData.append("comment[id]", this.state.id);
     formData.append("comment[body]", this.state.body);
     this.props.updateComment(formData).then(() => {
-      document.getElementById(`comment-input-${this.state.id}`).classList.add('hidden2');
-      document.getElementById(`comment-title-${this.state.id}`).classList.remove('hidden2');
-      document.getElementById(`comment-reactions-${this.state.id}`).classList.remove('hidden2');
+      document
+        .getElementById(`comment-input-${this.state.id}`)
+        .classList.add("hidden2");
+      document
+        .getElementById(`comment-title-${this.state.id}`)
+        .classList.remove("hidden2");
+      document
+        .getElementById(`comment-reactions-${this.state.id}`)
+        .classList.remove("hidden2");
     });
   }
 
@@ -31,7 +37,7 @@ class CommentIndexItem extends React.Component {
     e.preventDefault();
     this.props.deleteComment(this.state.id);
   }
-  
+
   render() {
     return (
       <div className="comment-content-container">
@@ -46,11 +52,17 @@ class CommentIndexItem extends React.Component {
               <div className="comment-author-name">
                 {this.props.comment.author_username}
               </div>
-              <div id={`comment-title-${this.state.id}`} className="comment-title">
+              <div
+                id={`comment-title-${this.state.id}`}
+                className="comment-title"
+              >
                 {this.props.comment.body}
               </div>
             </div>
-            <div id={`comment-input-${this.state.id}`} className="comment-input hidden2">
+            <div
+              id={`comment-input-${this.state.id}`}
+              className="comment-input hidden2"
+            >
               <form>
                 <textarea
                   className="comment-title ctf"
@@ -62,7 +74,7 @@ class CommentIndexItem extends React.Component {
                   <input
                     type="button"
                     value="Save"
-                    onClick={(e) => {
+                    onClick={e => {
                       this.handleComment(e);
                     }}
                     className="btn-description btn-success btn-save"
@@ -70,10 +82,16 @@ class CommentIndexItem extends React.Component {
                   <input
                     type="button"
                     value="X"
-                    onClick={(e) => {
-                      document.getElementById(`comment-input-${this.state.id}`).classList.add('hidden2');
-                      document.getElementById(`comment-title-${this.state.id}`).classList.remove('hidden2');
-                      document.getElementById(`comment-reactions-${this.state.id}`).classList.remove('hidden2');
+                    onClick={e => {
+                      document
+                        .getElementById(`comment-input-${this.state.id}`)
+                        .classList.add("hidden2");
+                      document
+                        .getElementById(`comment-title-${this.state.id}`)
+                        .classList.remove("hidden2");
+                      document
+                        .getElementById(`comment-reactions-${this.state.id}`)
+                        .classList.remove("hidden2");
                       this.setState({
                         body: this.props.comment.body
                       });
@@ -84,18 +102,27 @@ class CommentIndexItem extends React.Component {
               </form>
             </div>
           </div>
-          <div id={`comment-reactions-${this.state.id}`} className="comment-reactions quiet">
-            <div onClick={(e) => {
-              document.getElementById(`comment-title-${this.state.id}`).classList.add('hidden2');
-              document.getElementById(`comment-reactions-${this.state.id}`).classList.add('hidden2');
-              document.getElementById(`comment-input-${this.state.id}`).classList.remove('hidden2');
-            }}>
+          <div
+            id={`comment-reactions-${this.state.id}`}
+            className="comment-reactions quiet"
+          >
+            <div
+              onClick={e => {
+                document
+                  .getElementById(`comment-title-${this.state.id}`)
+                  .classList.add("hidden2");
+                document
+                  .getElementById(`comment-reactions-${this.state.id}`)
+                  .classList.add("hidden2");
+                document
+                  .getElementById(`comment-input-${this.state.id}`)
+                  .classList.remove("hidden2");
+              }}
+            >
               Edit
             </div>
             &nbsp;
-            <div onClick={this.handleDelete}>
-              Delete
-            </div>
+            <div onClick={this.handleDelete}>Delete</div>
           </div>
         </div>
       </div>
