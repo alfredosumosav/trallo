@@ -285,7 +285,7 @@ class CardShow extends React.Component {
 
                     <div className="button-link share-card share-cont" onClick={(e) => {
                       e.preventDefault();
-                      document.getElementsByClassName('url-cont')[0].classList.remove('hidden2');
+                      document.getElementsByClassName('url-cont')[0].classList.toggle('hidden2');
                       document.getElementById("url-text").select();
                     }}>
                       <div className="share-icon"><i className="fas fa-share-alt"></i></div>
