@@ -26,7 +26,7 @@ class Splash extends React.Component {
                 <div id="get-started" className="splash-get-started-container">
                     <SplashGetStarted />
                 </div>
-                <div id="footer-container">
+                <div id="footer-container1">
                         <Footer />
                 </div>
             </div>

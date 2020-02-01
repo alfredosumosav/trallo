@@ -91,7 +91,7 @@ class SessionForm extends React.Component {
                 <ul className="bottom-form-link">
                     {formType === 'login' ? <Link id="toggle-form" className="btn" to={'/signup'} >Sign up for an account</Link> : <Link id="toggle-form" className="btn" to={'/login'} >Already have an account? Log in</Link>}
                 </ul>
-                <div id="footer-container">
+                <div id="footer-container2">
                         <Footer />
                 </div>
             </div>
