@@ -3,129 +3,129 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .comment-content-container {
-    display: flex;
-    min-height: 32px;
-    padding: 8px 0;
+  display: flex;
+  min-height: 32px;
+  padding: 8px 0;
+  position: relative;
+
+  .comment-author {
+    width: 10%;
+    background-color: #dfe1e6;
+    border: 1px solid transparent;
+    border-radius: 25em;
+    color: #172b4d;
+    cursor: default;
+    height: 32px;
+    margin: 0 8px 8px 0;
+    overflow: visible;
     position: relative;
+    width: 32px;
+    text-decoration: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    z-index: 0;
 
-    .comment-author {
-        width: 10%;
-        background-color: #dfe1e6;
-        border: 1px solid transparent;
-        border-radius: 25em;
+    .author-avatar {
+      font-size: 12px;
+      font-weight: 700;
+      height: 32px;
+      left: 0;
+      line-height: 32px;
+      overflow: hidden;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  .nav-avatar {
+    margin: 0 1rem;
+  }
+
+  .comment-details-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+
+    .card-comment-details {
+      color: #172b4d;
+
+      .comment-author-name {
+        font-weight: bold;
+      }
+
+      .comment-title,
+      .comment-input > form > textarea {
+        width: auto;
+        margin: 4px 2px 4px 0;
+        padding: 8px 12px;
+        background-color: #fff;
+        font-size: 16px;
+        border: none;
+        border-radius: 3px;
+        box-shadow: 0 1px 2px -1px rgba(9, 30, 66, 0.25),
+          0 0 0 1px rgba(9, 30, 66, 0.08);
+        box-sizing: border-box;
+        clear: both;
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+      }
+
+      .comment-input > form > textarea {
+        width: 100%;
+        min-height: 100px;
         color: #172b4d;
-        cursor: default;
-        height: 32px;
-        margin: 0 8px 8px 0;
-        overflow: visible;
-        position: relative;
-        width: 32px;
-        text-decoration: none;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        z-index: 0;
+        resize: none;
+      }
 
-        .author-avatar {
-            font-size: 12px;
-            font-weight: 700;
-            height: 32px;
-            left: 0;
-            line-height: 32px;
-            overflow: hidden;
-            position: absolute;
-            text-align: center;
-            top: 0;
-            width: 100%;
-        }
-    }
-
-    .nav-avatar {
-        margin: 0 1rem;
-    }
-
-    .comment-details-container {
+      .comment-input > form > .comment-action-cont {
         display: flex;
-        flex-direction: column;
-        width: 80%;
-        // margin-left: 8px;
 
-        .card-comment-details {
-            color: #172b4d;
-
-            .comment-author-name {
-                font-weight: bold;
-            }
-
-            .comment-title, .comment-input > form > textarea {
-                width: auto;
-                margin: 4px 2px 4px 0;
-                padding: 8px 12px;
-                background-color: #fff;
-                font-size: 16px;
-                border: none;
-                border-radius: 3px;
-                box-shadow: 0 1px 2px -1px rgba(9,30,66,.25), 0 0 0 1px rgba(9,30,66,.08);
-                box-sizing: border-box;
-                clear: both;
-                display: inline-block;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                max-width: 100%;
-            }
-
-            .comment-input > form > textarea {
-                width: 100%;
-                min-height: 100px;
-                color: #172b4d;
-                resize: none;
-            }
-
-            .comment-input > form > .comment-action-cont {
-                display: flex;
-
-                .btn-save {
-                    width: auto;
-                    margin-right: 4px;
-                }
-
-                .btn-cancel {
-                    margin: 0 11px;
-                    background-color: transparent;
-                    color: #42526e;
-                    font-size: 24px;
-                    font-weight: 250;
-                    line-height: 32px;
-                    border: 1px solid transparent;
-                }
-            }
+        .btn-save {
+          width: auto;
+          margin-right: 4px;
         }
 
-        .comment-reactions {
-            cursor: pointer;
-            display: flex;
-            // text-decoration: underline;
+        .btn-cancel {
+          margin: 0 11px;
+          background-color: transparent;
+          color: #42526e;
+          font-size: 24px;
+          font-weight: 250;
+          line-height: 32px;
+          border: 1px solid transparent;
         }
-
-        .comment-reactions {
-            div:first-child, div:last-child {
-                text-decoration: underline;
-            }
-
-            div:hover {
-                color: #172b4d;
-            }
-        }
+      }
     }
+
+    .comment-reactions {
+      cursor: pointer;
+      display: flex;
+    }
+
+    .comment-reactions {
+      div:first-child,
+      div:last-child {
+        text-decoration: underline;
+      }
+
+      div:hover {
+        color: #172b4d;
+      }
+    }
+  }
 }
 #new-comment-b {
+  .comment-input > form > textarea.small {
+    min-height: 50px;
+  }
 
-    .comment-input > form > textarea.small {
-        min-height: 50px;
-    }
-
-    .comment-input > form > textarea.big {
-        min-height: 100px;
-    }
+  .comment-input > form > textarea.big {
+    min-height: 100px;
+  }
 }

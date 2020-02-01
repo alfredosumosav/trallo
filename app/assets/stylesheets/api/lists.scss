@@ -3,192 +3,191 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .board-list-container {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    height: calc(100vh - 149px);
-    min-width: 19vw;
-    margin: 0 4px;
-    z-index: 0;
-    max-height: 80vh;
-    width: 19vw;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 149px);
+  min-width: 19vw;
+  margin: 0 4px;
+  z-index: 0;
+  max-height: 80vh;
+  width: 19vw;
 }
 
 .board-list-container:first-child {
-    margin-left: 8px;
+  margin-left: 8px;
 }
 
 .list-content-container {
-    border: 1px solid transparent;
-    border-radius: 3px;
-    padding: 3px;
-    background: #ebecf0;
-    overflow-y: auto;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding: 3px;
+  background: #ebecf0;
+  overflow-y: auto;
 }
 
 #bl-container {
-    display: flex;
-    max-width: 100vw;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    z-index: 1;
-    height: calc(100vh - 150px);
+  display: flex;
+  max-width: 100vw;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  z-index: 1;
+  height: calc(100vh - 150px);
 }
 
 .hello {
-    color: #fff;
+  color: #fff;
 }
 
-html, body, #bl-container {
-    ::-webkit-scrollbar {
-        height: 12px;
-        width: 12px
-    }
-    
-    /* Track */
-    ::-webkit-scrollbar-track {
-        // display: hidden;
-        // box-shadow: inset 0 0 5px grey; 
-        border-radius: 10px;
-    }
+html,
+body,
+#bl-container {
+  ::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+  }
 
-    // track-piece
-    ::-webkit-scrollbar-track {
-        // display: hidden;
-        background: rgba(0, 0, 0, .15);
-    }
-    
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-        background: hsla(0, 0%, 100%, .4);
-        border-radius: 10px;
-    }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
 
-    ::-webkit-scrollbar-button {
-        display: block;
-        height: 4px;
-        width: 4px
-    }
+  // track-piece
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.15);
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: hsla(0, 0%, 100%, 0.4);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-button {
+    display: block;
+    height: 4px;
+    width: 4px;
+  }
 }
 
 .board-list-title {
-    min-height: 20px;
-    padding: 10px 8px;
+  min-height: 20px;
+  padding: 10px 8px;
 
-    h2 {
-        font-weight: bold;
-    }
+  h2 {
+    font-weight: bold;
+  }
 
-    .btn {
-        padding: 0 6px;
-    }
+  .btn {
+    padding: 0 6px;
+  }
 }
 
 .new-list {
-    background: hsla(0,0%,100%,.32);
-    h2 {
-        font-size: 14px;
-    }
+  background: hsla(0, 0%, 100%, 0.32);
+  h2 {
+    font-size: 14px;
+  }
 }
 
 .new-list:hover {
-    cursor: pointer;
-    background-color: hsla(0,0%,100%,.52);
+  cursor: pointer;
+  background-color: hsla(0, 0%, 100%, 0.52);
 }
 
 .fa-plus {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .cards-container {
-    padding: 0 8px 10px;
+  padding: 0 8px 10px;
 }
 
 .list-btn {
-    display: block;
+  display: block;
 }
 
 #list-f {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    #submit-list-input {
-        text-align: center;
-        width: 34%;
+  #submit-list-input {
+    text-align: center;
+    width: 34%;
+  }
+
+  #list-input2 {
+    width: 15%;
+    border: 1px solid transparent;
+    padding: 0;
+    margin: 0 3%;
+    color: #42526e;
+
+    div {
+      font-size: 2em;
     }
+  }
 
-    #list-input2 {
-        width: 15%;
-        border: 1px solid transparent;
-        padding: 0;
-        margin: 0 3%;
-        color: #42526e;
-
-        div {
-            font-size: 2em;
-        }
-    }
-
-    #list-input2:hover {
-        cursor: pointer;
-        color: #172b4d;
-    }
+  #list-input2:hover {
+    cursor: pointer;
+    color: #172b4d;
+  }
 }
 
 #list-actions-container {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 #list-input {
-    font-size: 16px;
-    font-weight: bold;
-    background: #ebecf0;
-    border: 1px solid transparent;
-    border-radius: 3px;
-    margin: 3px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #ebecf0;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  margin: 3px;
 }
 
 #title-text {
-    max-width: 25vw;
-    overflow-x: hidden;
+  max-width: 25vw;
+  overflow-x: hidden;
 }
 
 .list-title-text:hover {
-    cursor: default;
+  cursor: default;
 }
 
 .list-title-text {
-    justify-content: space-between;
-    align-items: center;
-    color: #42526e;
-    font-weight: bold;
-    
-    div {
-        width: inherit;
-    }
+  justify-content: space-between;
+  align-items: center;
+  color: #42526e;
+  font-weight: bold;
 
-    div:hover {
-        cursor: pointer;
-    }
+  div {
+    width: inherit;
+  }
 
-    i:hover {
-        color: #eb5a46;
-    }
+  div:hover {
+    cursor: pointer;
+  }
+
+  i:hover {
+    color: #eb5a46;
+  }
 }
 
 .list-title-input {
-    color: #42526e;
+  color: #42526e;
 }
 
 .list-title-input:focus {
-    cursor: auto;
+  cursor: auto;
 }
 
 .list-cards-container {
-    overflow-x: hidden;
-    margin: 0 4px;
-    padding: 0 4px;
-    z-index: 1;
-    min-height: 0;
+  overflow-x: hidden;
+  margin: 0 4px;
+  padding: 0 4px;
+  z-index: 1;
+  min-height: 0;
 }
