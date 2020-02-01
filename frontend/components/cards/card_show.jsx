@@ -1,12 +1,12 @@
-import React from 'react';
-import { Link, Route, withRouter } from 'react-router-dom';
-import CommentIndexContainer from '../comments/comment_index_container';
+import React from "react";
+import { Link, Route, withRouter } from "react-router-dom";
+import CommentIndexContainer from "../comments/comment_index_container";
 
 class CardShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.card;
-    this.state.comment_body = '';
+    this.state.comment_body = "";
     this.handleComment = this.handleComment.bind(this);
   }
 
@@ -29,7 +29,9 @@ class CardShow extends React.Component {
 
   handleDelete(e) {
     e.preventDefault();
-    this.props.deleteCard(this.state.id).then(() => this.props.history.push(`/boards/${this.state.board_id}`));
+    this.props
+      .deleteCard(this.state.id)
+      .then(() => this.props.history.push(`/boards/${this.state.board_id}`));
   }
 
   handleComment(e) {
@@ -38,35 +40,42 @@ class CardShow extends React.Component {
     formData2.append("comment[body]", this.state.comment_body);
     formData2.append("comment[card_id]", this.state.id);
     this.props.createComment(formData2).then(() => {
-      document.getElementById('new-comment-actions').classList.add('hidden2');
-      this.setState({
-        comment_body: ''
-      }, (e) => {
-        document.getElementById('textarea-input').classList.remove('big')
-        document.getElementById('textarea-input').classList.add('small')
-      });
+      document.getElementById("new-comment-actions").classList.add("hidden2");
+      this.setState(
+        {
+          comment_body: ""
+        },
+        e => {
+          document.getElementById("textarea-input").classList.remove("big");
+          document.getElementById("textarea-input").classList.add("small");
+        }
+      );
     });
   }
 
   componentDidUpdate(prevProps, prevState) {
-    // debugger
     if (this.props.card !== prevProps.card) {
-      this.setState({state: this.props.card});
+      this.setState({ state: this.props.card });
       this.forceUpdate();
     }
   }
 
-
   render() {
-
     return (
-      <div className="modal-background card-content-container" onClick={() => {
-        this.props.history.push(`/boards/${this.state.board_id}`);
-      }}>
+      <div
+        className="modal-background card-content-container"
+        onClick={() => {
+          this.props.history.push(`/boards/${this.state.board_id}`);
+        }}
+      >
         <div className="modal-child">
-
           <div className="card-show-content" onClick={e => e.stopPropagation()}>
-            <div onClick={() => this.props.history.push(`/boards/${this.state.board_id}`)} className="close-card" >
+            <div
+              onClick={() =>
+                this.props.history.push(`/boards/${this.state.board_id}`)
+              }
+              className="close-card"
+            >
               <i className="fas fa-times"></i>
             </div>
             <div className="card-show-details">
@@ -77,11 +86,13 @@ class CardShow extends React.Component {
                   </div>
 
                   <div className="card-title-input card-title">
-                    <form onSubmit={e => {
-                      e.preventDefault();
-                      e.target.elements[0].focus();
-                      e.target.elements[0].blur();
-                    }}>
+                    <form
+                      onSubmit={e => {
+                        e.preventDefault();
+                        e.target.elements[0].focus();
+                        e.target.elements[0].blur();
+                      }}
+                    >
                       <h2>
                         <input
                           id="card-title-input"
@@ -99,7 +110,9 @@ class CardShow extends React.Component {
                 </div>
 
                 <div className="card-current-list quiet">
-                  <p>In list&nbsp;<strong>{this.state.list_title}</strong></p>
+                  <p>
+                    In list&nbsp;<strong>{this.state.list_title}</strong>
+                  </p>
                 </div>
               </div>
 
@@ -115,13 +128,14 @@ class CardShow extends React.Component {
                     </div>
 
                     <div className="card-desc-content">
-
                       <div className="card-desc-input-container">
                         <div className="card-desc-input">
-                          <form onSubmit={e => {
-                            e.target.elements[0].focus();
-                            e.target.elements[0].blur();
-                          }}>
+                          <form
+                            onSubmit={e => {
+                              e.target.elements[0].focus();
+                              e.target.elements[0].blur();
+                            }}
+                          >
                             <textarea
                               id="styled"
                               type="text"
@@ -131,15 +145,21 @@ class CardShow extends React.Component {
                               onChange={this.update("description")}
                               onFocus={e => {
                                 e.target.select();
-                                document.getElementsByClassName('main-action-cont')[0].classList.remove('hidden2');
+                                document
+                                  .getElementsByClassName("main-action-cont")[0]
+                                  .classList.remove("hidden2");
                               }}
-                              // onClick={e => console.log('nothing')}
                               onBlur={e => {
-                                document.getElementsByClassName('main-action-cont')[0].classList.add('hidden2');
-                                if (e.relatedTarget && e.relatedTarget.className === "btn-cancel") {
+                                document
+                                  .getElementsByClassName("main-action-cont")[0]
+                                  .classList.add("hidden2");
+                                if (
+                                  e.relatedTarget &&
+                                  e.relatedTarget.className === "btn-cancel"
+                                ) {
                                   this.setState({
                                     description: this.props.card.description
-                                  })
+                                  });
                                 } else {
                                   this.handleSubmit(e);
                                 }
@@ -147,24 +167,19 @@ class CardShow extends React.Component {
                               className="card-description-input"
                             />
 
-                            <div>
-                              
-                            </div>
-
                             <div className="main-action-cont hidden2">
-                              <input 
-                              type="button"
-                              value="Save"
-                              className="btn-description btn-success"
+                              <input
+                                type="button"
+                                value="Save"
+                                className="btn-description btn-success"
                               />
-                              <input 
-                              id="cancel-desc"
-                              type="button"
-                              value="X"
-                              className="btn-cancel"
+                              <input
+                                id="cancel-desc"
+                                type="button"
+                                value="X"
+                                className="btn-cancel"
                               />
                             </div>
-                            
                           </form>
                         </div>
 
@@ -201,7 +216,10 @@ class CardShow extends React.Component {
                                 {this.state.author_username}
                               </div>
                             </div>
-                            <div id={`new-comment-input`} className="comment-input">
+                            <div
+                              id={`new-comment-input`}
+                              className="comment-input"
+                            >
                               <form>
                                 <textarea
                                   id="textarea-input"
@@ -209,18 +227,27 @@ class CardShow extends React.Component {
                                   value={this.state.comment_body}
                                   placeholder="Write a comment..."
                                   onFocus={e => {
-                                    document.getElementById('textarea-input').classList.remove('small');
-                                    document.getElementById('textarea-input').classList.add('big');
-                                    document.getElementById('new-comment-actions').classList.remove('hidden2');
+                                    document
+                                      .getElementById("textarea-input")
+                                      .classList.remove("small");
+                                    document
+                                      .getElementById("textarea-input")
+                                      .classList.add("big");
+                                    document
+                                      .getElementById("new-comment-actions")
+                                      .classList.remove("hidden2");
                                   }}
                                   onChange={this.update("comment_body")}
                                 />
 
-                                <div id="new-comment-actions" className="comment-action-cont hidden2">
+                                <div
+                                  id="new-comment-actions"
+                                  className="comment-action-cont hidden2"
+                                >
                                   <input
                                     type="button"
                                     value="Save"
-                                    onClick={(e) => {
+                                    onClick={e => {
                                       this.handleComment(e);
                                     }}
                                     className="btn-description btn-success btn-save"
@@ -228,14 +255,23 @@ class CardShow extends React.Component {
                                   <input
                                     type="button"
                                     value="X"
-                                    onClick={(e) => {
-                                      document.getElementById(`new-comment-actions`).classList.add('hidden2');
-                                      this.setState({
-                                        comment_body: ''
-                                      }, (e) => {
-                                        document.getElementById('textarea-input').classList.remove('big');
-                                        document.getElementById('textarea-input').classList.add('small');
-                                      });
+                                    onClick={e => {
+                                      document
+                                        .getElementById(`new-comment-actions`)
+                                        .classList.add("hidden2");
+                                      this.setState(
+                                        {
+                                          comment_body: ""
+                                        },
+                                        e => {
+                                          document
+                                            .getElementById("textarea-input")
+                                            .classList.remove("big");
+                                          document
+                                            .getElementById("textarea-input")
+                                            .classList.add("small");
+                                        }
+                                      );
                                     }}
                                     className="btn-cancel"
                                   />
@@ -260,7 +296,9 @@ class CardShow extends React.Component {
 
                     <div className="add-to-card-actions">
                       <div className="button-link due-date-cont">
-                        <div className="clock-icon"><i className="far fa-clock"></i></div>
+                        <div className="clock-icon">
+                          <i className="far fa-clock"></i>
+                        </div>
                         <a href="#">Due Date</a>
                       </div>
                     </div>
@@ -270,59 +308,77 @@ class CardShow extends React.Component {
                     <h3>Actions</h3>
 
                     <div className="button-link move-card move-cont">
-                      <div className="move-icon"><i className="fas fa-arrow-right"></i></div>
+                      <div className="move-icon">
+                        <i className="fas fa-arrow-right"></i>
+                      </div>
                       <div>
                         <a href="#">Move</a>
                       </div>
                     </div>
 
                     <div className="button-link copy-card copy-cont">
-                      <div className="copy-icon"><i className="far fa-clone"></i></div>
+                      <div className="copy-icon">
+                        <i className="far fa-clone"></i>
+                      </div>
                       <div>
                         <a href="#">Copy</a>
                       </div>
                     </div>
 
-                    <div className="button-link share-card share-cont" onClick={(e) => {
-                      e.preventDefault();
-                      document.getElementsByClassName('url-cont')[0].classList.toggle('hidden2');
-                      document.getElementById("url-text").select();
-                    }}>
-                      <div className="share-icon"><i className="fas fa-share-alt"></i></div>
+                    <div
+                      className="button-link share-card share-cont"
+                      onClick={e => {
+                        e.preventDefault();
+                        document
+                          .getElementsByClassName("url-cont")[0]
+                          .classList.toggle("hidden2");
+                        document.getElementById("url-text").select();
+                      }}
+                    >
+                      <div className="share-icon">
+                        <i className="fas fa-share-alt"></i>
+                      </div>
                       <div>
                         <div>Share</div>
                       </div>
                     </div>
 
                     <div className="button-link copy-card url-cont hidden2">
-                        <p>Share this url:</p>
-                        <textarea 
-                          id="url-text"
-                          value={window.location.href}
-                          wrap="off"
-                          readOnly={true}
-                        />
-                        <div id="copy-state" className="btn-success" onClick={e => {
+                      <p>Share this url:</p>
+                      <textarea
+                        id="url-text"
+                        value={window.location.href}
+                        wrap="off"
+                        readOnly={true}
+                      />
+                      <div
+                        id="copy-state"
+                        className="btn-success"
+                        onClick={e => {
                           document.getElementById("url-text").select();
                           document.execCommand("copy");
-                          document.getElementById('copy-state').innerText = "Copied!";
-                        }} >
-                          Copy
-                        </div>
+                          document.getElementById("copy-state").innerText =
+                            "Copied!";
+                        }}
+                      >
+                        Copy
+                      </div>
                     </div>
 
-                    <div onClick={(e) => this.handleDelete(e)} className="button-link share-card delete-cont">
-                      <div className="delete-icon"><i className="fas fa-minus"></i></div>
-                      <div className="delete-txt">
-                        Delete
+                    <div
+                      onClick={e => this.handleDelete(e)}
+                      className="button-link share-card delete-cont"
+                    >
+                      <div className="delete-icon">
+                        <i className="fas fa-minus"></i>
                       </div>
+                      <div className="delete-txt">Delete</div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     );
