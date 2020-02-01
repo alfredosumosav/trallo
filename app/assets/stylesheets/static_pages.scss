@@ -13,6 +13,7 @@ html, body {
 
 .main {
     position: relative;
+    height: 100vh;
 }
 
 header {
@@ -665,12 +666,11 @@ form {
 .content {
     position: relative;
     background: #fafbfc;
-    min-height: 100vh;
     z-index: -1;
 }
 
 .board-show-container {
-    padding-bottom: 40px;
+    height: calc(100vh - 72px);
 }
 
 #footer-container {
@@ -684,3 +684,7 @@ form {
     width: 100%;
     height: 100%;
 }
+// workaround for scrollbar
+// .oy-hidden {
+    // overflow: hidden;
+// }

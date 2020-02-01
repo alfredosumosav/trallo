@@ -15,6 +15,16 @@ class BoardShow extends React.Component {
         this.handleNewList = this.handleNewList.bind(this);
         this.delete = this.delete.bind(this);
     }
+    
+    // workaround for scrollbar
+    // componentDidMount() {
+    //   debugger
+    //   document.getElementsByTagName("html")[0].classList.toggle("oy-hidden");
+    // }
+
+    // componentWillUnmount() {
+    //   document.getElementsByTagName("html")[0].classList.toggle("oy-hidden");
+    // }
 
     update(field) {
         return e => {

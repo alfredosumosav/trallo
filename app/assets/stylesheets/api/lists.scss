@@ -30,7 +30,9 @@
     display: flex;
     max-width: 100vw;
     overflow-x: scroll;
+    overflow-y: hidden;
     z-index: 1;
+    height: calc(100vh - 150px);
 }
 
 .hello {
