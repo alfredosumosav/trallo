@@ -1,6 +1,6 @@
 # Trallo
 
-### App inspired by the project management app [**Trello**](https://trello.com) based on the Kanban system which allows you to quickly and seamlessly become productive and tackle work at a personal / organizational level.
+#### A Single-page App inspired by Trello, where users can create and favorite boards, create and share cards and add description and comments
 
 Check it out [**Live!**](https://trallo-fsp.herokuapp.com)
 
@@ -8,22 +8,16 @@ Check it out [**Live!**](https://trallo-fsp.herokuapp.com)
 
 ## Technologies & Languages
 - Ruby / Rails
-- Vanilla JavaScript
+- React / Redux
+- JavaScript
 - jQuery
-- React
-- Redux
 - Node.js
 - Webpack
 - Babel
 - PostgreSQL
-- AJAX
 - AWS S3
 - Heroku
-- jBuilder
-- Postman
-- HTML5
 - CSS3
-- Sass
 
 ---
 
