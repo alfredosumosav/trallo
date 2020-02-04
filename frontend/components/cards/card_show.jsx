@@ -10,6 +10,14 @@ class CardShow extends React.Component {
     this.handleComment = this.handleComment.bind(this);
   }
 
+  componentDidMount() {
+    document.getElementById('header').classList.toggle('header-hidden');
+  }
+
+  componentWillUnmount() {
+    document.getElementById("header").classList.toggle("header-hidden");
+  }
+
   update(field) {
     return e => {
       this.setState({ [field]: e.currentTarget.value });

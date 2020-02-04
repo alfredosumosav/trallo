@@ -18,7 +18,6 @@ class App extends React.Component {
   render() {
     return (
       <div className="main">
-        <Modal />
         <header id="header">
           <nav className="navbar">
             <div id="logo-container">
@@ -32,6 +31,7 @@ class App extends React.Component {
             <Route exact to="/" component={NavBarContainer} />
           </nav>
         </header>
+        <Modal />
         <div className="content">
           <Switch>
             <AuthRoute path="/login" component={LoginFormContainer} />
