@@ -8,22 +8,16 @@ Check it out [**Live!**](https://trallo-fsp.herokuapp.com)
 
 ## Technologies & Languages
 - Ruby / Rails
-- Vanilla JavaScript
+- React / Redux
+- JavaScript
 - jQuery
-- React
-- Redux
 - Node.js
 - Webpack
 - Babel
 - PostgreSQL
-- AJAX
 - AWS S3
 - Heroku
-- jBuilder
-- Postman
-- HTML5
 - CSS3
-- Sass
 
 ---
 
