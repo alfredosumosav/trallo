@@ -44,7 +44,7 @@
 ### Boards & Cards
 
 <div align="center">
-    <img width=80% src="https://trallo-dev.s3-us-west-1.amazonaws.com/board-card31.gif">
+    <img width=80% src="https://trallo-dev.s3-us-west-1.amazonaws.com/gif3.gif">
 </div>
 
 Engineered a seamless modal like transition between a board and a card by leveraging React Router props and React's _"diffing"_ algorithm to only render the card component when the board component is present or render both if you are accessing the card url directly resulting in improved user experience & navigation and predictable behavior & integrity.
@@ -89,7 +89,7 @@ image
 ### AWS S3 Image Upload
 
 <div align="center">
-    <img width=80% src="https://trallo-dev.s3-us-west-1.amazonaws.com/test.gif">
+    <img width=80% src="https://trallo-dev.s3-us-west-1.amazonaws.com/gif1.gif">
 </div>
 
 Users can personalize their boards by attaching a background photo to a board. Leveraging Rails Active Storage and setting up a bucket in S3 it was possible to include the photo file in the form data sent to the server.
