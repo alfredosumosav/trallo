@@ -1,8 +1,8 @@
-<div align="center">
-    <img width=5% src="https://raw.githubusercontent.com/alfredosumosav/trallo/master/app/assets/images/trello-mark-blue.png">
-</div>
+<img align="left" width=10% src="https://raw.githubusercontent.com/alfredosumosav/trallo/master/app/assets/images/trello-mark-blue.png">
 
-# Trallo
+# &nbsp;&nbsp;Trallo
+
+<br>
 
 #### A Single-page App inspired by Trello, where users can create and favorite boards, create and share cards and add description and comments
 
