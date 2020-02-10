@@ -54,6 +54,7 @@
       color: #172b4d;
 
       .comment-author-name {
+        font-size: 14px;
         font-weight: bold;
       }
 
@@ -63,11 +64,12 @@
         margin: 4px 2px 4px 0;
         padding: 8px 12px;
         background-color: #fff;
-        font-size: 16px;
+        font-size: 14px;
         border: none;
         border-radius: 3px;
-        box-shadow: 0 1px 2px -1px rgba(9, 30, 66, 0.25),
-          0 0 0 1px rgba(9, 30, 66, 0.08);
+        // box-shadow: 0 1px 2px -1px rgba(9, 30, 66, 0.25),
+        //   0 0 0 1px rgba(9, 30, 66, 0.08);
+        box-shadow: 0 4px 8px -2px rgba(9,30,66,.25), 0 0 0 1px rgba(9,30,66,.08);
         box-sizing: border-box;
         clear: both;
         display: inline-block;
@@ -81,6 +83,11 @@
         min-height: 100px;
         color: #172b4d;
         resize: none;
+      }
+
+      .comment-title {
+        box-shadow: 0 1px 2px -1px rgba(9, 30, 66, 0.25),
+          0 0 0 1px rgba(9, 30, 66, 0.08);
       }
 
       .comment-input > form > .comment-action-cont {
@@ -106,6 +113,7 @@
     .comment-reactions {
       cursor: pointer;
       display: flex;
+      font-size: 12px;
     }
 
     .comment-reactions {
@@ -120,12 +128,20 @@
     }
   }
 }
+
+.shadow {
+  box-shadow: 0 4px 8px -2px rgba(9,30,66,.25), 0 0 0 1px rgba(9,30,66,.08);
+}
+
 #new-comment-b {
   .comment-input > form > textarea.small {
     min-height: 50px;
+    box-shadow: 0 1px 2px -1px rgba(9, 30, 66, 0.25),
+          0 0 0 1px rgba(9, 30, 66, 0.08);
   }
 
   .comment-input > form > textarea.big {
     min-height: 100px;
+    box-shadow: 0 4px 8px -2px rgba(9,30,66,.25), 0 0 0 1px rgba(9,30,66,.08);
   }
 }
