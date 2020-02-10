@@ -89,7 +89,7 @@ image
 ### AWS S3 Image Upload
 
 <div align="center">
-    <img width=80% src="https://trello-attachments.s3.amazonaws.com/5b9270821913198b25dc6c3f/5e3a0311c186046f719be6fb/f440b0dd2e709b647acdca41757f1afe/board_photo.gif">
+    <img width=80% src="https://trallo-dev.s3-us-west-1.amazonaws.com/test.gif">
 </div>
 
 Users can personalize their boards by attaching a background photo to a board. Leveraging Rails Active Storage and setting up a bucket in S3 it was possible to include the photo file in the form data sent to the server.
