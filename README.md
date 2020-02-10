@@ -1,4 +1,5 @@
-<img align="left" width=10% src="https://raw.githubusercontent.com/alfredosumosav/trallo/master/app/assets/images/trello-mark-blue.png">
+<img src="https://raw.githubusercontent.com/alfredosumosav/trallo/master/app/assets/images/trello-mark-blue.png" align="left"
+     title="Size Limit logo by Anton Lovchikov" width="10%">
 
 # &nbsp;&nbsp;Trallo
 
@@ -11,6 +12,7 @@ Check it out [**Live!**](https://trallo-fsp.herokuapp.com)
 ---
 
 ## Technologies & Languages
+
 - Ruby / Rails
 - React / Redux
 - JavaScript
@@ -34,54 +36,64 @@ Check it out [**Live!**](https://trallo-fsp.herokuapp.com)
 ---
 
 ## How to Run It
-1. First you need to install all the ruby gems by running the following in the terminal:
 
-```
-bundle install
-```
+<details><summary><b>Show Instructions</b></summary>
 
-2. Now you need to install a few node libraries, so make sure you have installed [Node.js](https://nodejs.org/en/download/package-manager) before running the following:
+1. Install the ruby gems:
 
-```
-npm install
-```
+   ```sh
+   $ bundle install
+   ```
+
+2. Install the node libraries (you must have [Node.js](https://nodejs.org/en/download/package-manager) installed):
+
+   ```sh
+   $ npm install
+   ```
 
 3. Create, configure and seed the database running:
 
-```
-rails db:setup
-rails db:seed
-```
+    ```sh
+    $ rails db:setup
+    ```
 
-4. Run in the terminal:
+    ```sh
+    $ rails db:seed
+    ```
 
-```
-rails s
-```
+4. Start the rails server:
 
-5. In another terminal window run:
+   ```sh
+   $ rails s
+   ```
 
-```
-npm start
-```
+5. And in another terminal window run:
 
-Now you will be able to go to `http://localhost:3000` and see the dashboard.
+   ```sh
+   $ npm start
+   ```
+
+Go to `http://localhost:3000` and you'll see the dashboard.
+
+</details>
 
 ---
 
 ## Creating the state shape
+
 By having a standardized state shape it was possible to take advantage of the redux store to provide essential pieces of information to specific react components. It definitely made the code DRY and allowed to have the necessary information at hand and reduce the amount of code to be written. Using the redux `combineReducers` allowed me to obtain my desired state shape:
 
 ```javascript
 const entitiesReducer = combineReducers({
-    users: usersReducer,
-    boards: boardsReducer,
-    lists: listsReducer
+  users: usersReducer,
+  boards: boardsReducer,
+  lists: listsReducer
 });
 ```
 
 ---
 
 ## Future Features
+
 - Adding Due Dates
 - Adding New Members
