@@ -311,6 +311,10 @@ a:hover {
           transform: rotateX(180deg);
         }
       }
+
+      .card-desc-content {
+        margin-left: 40px;
+      }
     }
 
     .card-activity {
@@ -388,6 +392,13 @@ a:hover {
     z-index: 25;
     height: 100%;
     width: 768px;
+  }
+
+  @media only screen and (max-width: 750px) {
+    .modal-child {
+      margin: 36px 8px;
+      width: auto;
+    }
   }
 }
 
