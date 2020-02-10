@@ -65,6 +65,7 @@ class CommentIndexItem extends React.Component {
             >
               <form>
                 <textarea
+                  id={`textarea-body-${this.state.id}`}
                   className="comment-title ctf"
                   value={this.state.body}
                   onChange={this.update("body")}
@@ -107,6 +108,7 @@ class CommentIndexItem extends React.Component {
             className="comment-reactions quiet"
           >
             <div
+              className="react-edit"
               onClick={e => {
                 document
                   .getElementById(`comment-title-${this.state.id}`)
@@ -117,12 +119,13 @@ class CommentIndexItem extends React.Component {
                 document
                   .getElementById(`comment-input-${this.state.id}`)
                   .classList.remove("hidden2");
+                document.getElementById(`textarea-body-${this.state.id}`).select();
               }}
             >
               Edit
             </div>
-            &nbsp;
-            <div onClick={this.handleDelete}>Delete</div>
+            &nbsp;-&nbsp;
+            <div className="react-del" onClick={this.handleDelete}>Delete</div>
           </div>
         </div>
       </div>
