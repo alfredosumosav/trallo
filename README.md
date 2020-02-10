@@ -23,7 +23,7 @@ Check it out [**Live!**](https://trallo-fsp.herokuapp.com)
 
 ---
 
-## Visualize Navigation Proccess
+## Creating a Board
 
 <div align="center">
     <img width=80% src="https://media.giphy.com/media/S51qj0O338oJCgRQ4U/giphy.gif">
