@@ -15,13 +15,11 @@ Check it out [**Live!**](https://trallo-fsp.herokuapp.com)
 - React / Redux
 - JavaScript
 - jQuery
-- Node.js
 - Webpack
 - Babel
 - PostgreSQL
 - AWS S3
 - Heroku
-- CSS3
 
 ---
 
