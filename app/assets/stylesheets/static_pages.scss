@@ -36,7 +36,7 @@ header {
 }
 
 .header {
-  background: #0079bf;
+  background: #026aa7;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -60,7 +60,7 @@ a:hover {
 }
 
 .main {
-  background-color: #0079bf;
+  background-color: #026aa7;
 }
 
 #logo {
@@ -137,6 +137,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 400px;
   margin-top: 85px;
 }
 
@@ -159,6 +160,7 @@ form {
     border-color 0.2s ease-in-out 0s;
   width: 100%;
   margin-bottom: 18px;
+  font-weight: 300;
 }
 
 .form-input:focus {
@@ -169,14 +171,15 @@ form {
 
 #submit-btn {
   background-color: #5aac44;
-  border: 2px solid transparent;
-  border-radius: 3px;
+  border: 0px solid transparent;
+  border-radius: .3em;
   color: #ffffff;
   font-size: 14px;
   font-weight: bold;
-  padding: 0.5rem;
+  padding: .6em 1.3em;
   margin-bottom: 18px;
   width: 100%;
+  line-height: normal;
 }
 
 .bottom-form-link {
@@ -281,7 +284,7 @@ form {
   width: 100%;
   padding: 0.6em 1.3em;
   font-size: 14px;
-  line-height: 20px;
+  line-height: normal;
 }
 
 .btn-success:hover {
@@ -299,10 +302,11 @@ form {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  border: 1px solid transparent;
+  border: 0px solid transparent;
   padding: 6px 6px;
   font-size: 1.25rem;
-  border-radius: 6px;
+  border-radius: .3em;
+  line-height: normal;
   -webkit-transition: color 0.15s ease-in-out,
     background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
     box-shadow 0.15s ease-in-out;
