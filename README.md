@@ -135,7 +135,7 @@ Users can create, update or delete lists within a board and create, update or de
 
 ### Comments
 
-Members of a board can add comments to cards and Comment authors can edit or delete their comments.
+Members of a board can add comments to cards and comment's authors can edit or delete their comments.
 
 ### Sharing Boards
 
