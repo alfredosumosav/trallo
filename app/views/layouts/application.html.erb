@@ -15,10 +15,18 @@
     <link rel="icon" href=<%= image_path('trello-mark-blue.png') %> type="image/png" sizes="16x16">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    
+    <%# Metadata %>
+    <meta property="og:title" content="Trallo" >
+    <meta property="og:description" content="A Single-page App inspired by Trello." >
+    <meta property="og:type" content="website" >
+    <meta property="og:site_name" content="Trallo" >
+    <meta property="og:url" content="https://trallo-fsp.herokuapp.com" >
+    <meta property="og:image" content="https://trello-attachments.s3.amazonaws.com/5b9270821913198b25dc6c3f/5e3a0311c186046f719be6fb/af84f7893e1c9f4ebbec099c660c6789/DASHBOARD_TRALLO.png" >
+    <meta property="og:image:alt" content="A sample dashboard with 5 personal boards. One of them is archived." >
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    <%# <script src="https://kit.fontawesome.com/a076d05399.js"></script> %>
     <script src="https://kit.fontawesome.com/0489562293.js" crossorigin="anonymous"></script>
   </head>
 
