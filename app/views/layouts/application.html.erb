@@ -1,8 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" prefix="og: https://ogp.me/ns#">
+<html lang="en" prefix="og: http://ogp.me/ns#">
   <head>
     <title>Trallo</title>
-    <meta name="description" content="A Single-page App inspired by Trello.">
+    <meta name="description" content="[Test] A Single-page App inspired by Trello.">
+
+    <%# Metadata Facebook OGP (Open Graph Protocol) %>
+    <meta property="og:url" content="https://trallo-fsp.herokuapp.com/#/" >
+    <meta property="og:type" content="website" >
+    <meta property="og:title" content="Trallo" >
+    <meta property="og:description" content="A Single-page App inspired by Trello." >
+    <meta property="og:image" content="https://trello-attachments.s3.amazonaws.com/5b9270821913198b25dc6c3f/5e3a0311c186046f719be6fb/af84f7893e1c9f4ebbec099c660c6789/DASHBOARD_TRALLO.png" >
+    <meta property="og:image:width" content="700" >
+    <meta property="og:image:height" content="700" >
+    <meta property="og:image:alt" content="A sample dashboard with 5 personal boards. One of them is archived." >
 
     <!-- Google Analytics -->
     <script>
@@ -18,13 +28,6 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     
-    <%# Metadata Facebook OGP (Open Graph Protocol) %>
-    <meta property="og:url" content="https://trallo-fsp.herokuapp.com" >
-    <meta property="og:type" content="website" >
-    <meta property="og:title" content="Trallo" >
-    <meta property="og:description" content="A Single-page App inspired by Trello." >
-    <meta property="og:image" content="https://trello-attachments.s3.amazonaws.com/5b9270821913198b25dc6c3f/5e3a0311c186046f719be6fb/af84f7893e1c9f4ebbec099c660c6789/DASHBOARD_TRALLO.png" >
-    <meta property="og:image:alt" content="A sample dashboard with 5 personal boards. One of them is archived." >
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
