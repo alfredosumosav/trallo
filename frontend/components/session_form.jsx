@@ -41,10 +41,6 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    const demoUser = {
-      username: "demoUser",
-      password: "password"
-    };
     const { formType, loggedIn } = this.props;
     return (
       <div id="form-container">
@@ -91,17 +87,6 @@ class SessionForm extends React.Component {
                 type="submit"
                 value={formType === "signup" ? "Sign Up" : "Log In"}
               />
-              {formType === "login" ? (
-                <input
-                  id="demo-btn"
-                  type="button"
-                  value="Demo User"
-                  className="btn-success"
-                  onClick={() => this.props.login(demoUser)}
-                />
-              ) : (
-                ""
-              )}
             </div>
           </div>
         </form>
