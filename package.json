@@ -36,9 +36,15 @@
     "type": "git",
     "url": "git+https://github.com/alfredosumosav/trallo.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "react",
+    "javascript",
+    "ruby",
+    "posgresql",
+    "redux"
+  ],
+  "author": "alfredosumosav",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/alfredosumosav/trallo/issues"
   },
